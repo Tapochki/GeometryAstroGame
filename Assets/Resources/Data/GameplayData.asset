@@ -1,0 +1,978 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b76f769537025f643b1f44e853c2e976, type: 3}
+  m_Name: GameplayData
+  m_EditorClassIdentifier: 
+  enemies:
+  - enemyId: 0
+    health: 70
+    damage: 10
+    experience: 1
+    movementSpeed: 110
+    movementType: 1
+    actionType: 1
+    type: 0
+    enemyPrefab: {fileID: 218965217888290087, guid: 00b67cf2c2f62d54a88824b22272469a,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 1
+    health: 100
+    damage: 20
+    experience: 2
+    movementSpeed: 110
+    movementType: 1
+    actionType: 1
+    type: 1
+    enemyPrefab: {fileID: 4263599856279568614, guid: d413874bd8b07a34db73502831be567a,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 2
+    health: 60
+    damage: 20
+    experience: 1
+    movementSpeed: 140
+    movementType: 1
+    actionType: 1
+    type: 2
+    enemyPrefab: {fileID: 1496550595615945662, guid: 4a777b360b974d1428cf85f4f4566a16,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 3
+    health: 60
+    damage: 30
+    experience: 1
+    movementSpeed: 100
+    movementType: 2
+    actionType: 1
+    type: 4
+    enemyPrefab: {fileID: 5159414423297275037, guid: 8b43f302867beef4ea401e15d0799045,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 4
+    health: 200
+    damage: 25
+    experience: 2
+    movementSpeed: 110
+    movementType: 1
+    actionType: 1
+    type: 5
+    enemyPrefab: {fileID: 218965217888290087, guid: b5a77960fa78a60469875ad16e3e0233,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 5
+    health: 100
+    damage: 15
+    experience: 1
+    movementSpeed: 110
+    movementType: 1
+    actionType: 1
+    type: 6
+    enemyPrefab: {fileID: 218965217888290087, guid: 1797e31778d0d6a4294d41013a5031c4,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 6
+    health: 60
+    damage: 10
+    experience: 1
+    movementSpeed: 110
+    movementType: 1
+    actionType: 1
+    type: 7
+    enemyPrefab: {fileID: 218965217888290087, guid: 33432dfe0c3f9ef4f8755d3acceb1e5c,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 7
+    health: 40
+    damage: 10
+    experience: 1
+    movementSpeed: 110
+    movementType: 1
+    actionType: 1
+    type: 9
+    enemyPrefab: {fileID: 218965217888290087, guid: cfeefcdc24b4d5243b687850b8da82e3,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 8
+    health: 200
+    damage: 30
+    experience: 2
+    movementSpeed: 80
+    movementType: 3
+    actionType: 2
+    type: 10
+    enemyPrefab: {fileID: 218965217888290087, guid: f24f9a3d6d00b4e47914e70f28252c3d,
+      type: 3}
+    lifeTime: 100
+  - enemyId: 9
+    health: 10
+    damage: 3
+    experience: 2
+    movementSpeed: 110
+    movementType: 1
+    actionType: 1
+    type: 11
+    enemyPrefab: {fileID: 4199862694796594425, guid: 92346b5837df0bb46a4726f029eee195,
+      type: 3}
+    lifeTime: 15
+  - enemyId: 10
+    health: 10
+    damage: 5
+    experience: 2
+    movementSpeed: 110
+    movementType: 2
+    actionType: 1
+    type: 12
+    enemyPrefab: {fileID: 4199862694796594425, guid: e646d2413125cfc40a80ab1f31a72490,
+      type: 3}
+    lifeTime: 10
+  weaponData:
+  - weaponName: DefaultGun
+    baseDamage: 100
+    shootDeley: 2
+    type: 1
+  - weaponName: AutoGun
+    baseDamage: 50
+    shootDeley: 3
+    type: 3
+  - weaponName: RocketGun
+    baseDamage: 100
+    shootDeley: 1
+    type: 2
+  - weaponName: LaserGun
+    baseDamage: 300
+    shootDeley: 1
+    type: 4
+  - weaponName: MiniGun
+    baseDamage: 25
+    shootDeley: 5
+    type: 5
+  - weaponName: EnergyGun
+    baseDamage: 10
+    shootDeley: 1
+    type: 6
+  enemyWeaponData:
+  - weaponName: LongRangeWeapon
+    baseDamage: 30
+    shootDeley: 5
+    type: 10
+  playerData:
+    rotateSpeed: 1200
+    startedLevel: 1
+    startNeedXp: 75
+    StartDashTimeRecover: 10
+    StartDashDamage: 30
+    StartMaskRecoverTime: 80
+    StartMaskActiveTime: 3
+    StartRocketRecoverTime: 3
+    StartRocketCount: 3
+    StartRocketDamage: 300
+    StartHealthCountRestoreByTime: 1
+    StartHealthRestoreTime: 5
+    StartLaserShotSize: 4
+    StartLaserShotTime: 30
+    BombDamage: 800
+    StartRocketBlowSize: 1
+    StartDashTime: 0.1
+    DroneData:
+      prefab: {fileID: 33846994018246858, guid: 5309fbf4072fd874ba7d5d4e32b3ab32,
+        type: 3}
+      StartDroneSpeed: 100
+      StartDroneDamage: 10
+    playerPrefab: {fileID: 8081104321240397149, guid: 957e357570fd89c49ae9a3cf895ec2de,
+      type: 3}
+    StartWeaponType: 1
+  bulletData:
+  - BulletSpeed: 1000
+    bulletLifeTime: 5
+    bulletLife: 0
+    ButlletObject: {fileID: 5271754677532632859, guid: 9e64d4062dc713c468222ae9ad90a1f5,
+      type: 3}
+    type: 1
+    IsNotCustomise: 0
+    CustomisationType: 1
+  - BulletSpeed: 400
+    bulletLifeTime: 10
+    bulletLife: 0
+    ButlletObject: {fileID: 5271754677532632859, guid: 1c51f157b5981a644b932ca253a18634,
+      type: 3}
+    type: 3
+    IsNotCustomise: 0
+    CustomisationType: 2
+  - BulletSpeed: 400
+    bulletLifeTime: 10
+    bulletLife: 0
+    ButlletObject: {fileID: 5271754677532632859, guid: d6f2c4ae02fe1cf40b3d32c63b02c45c,
+      type: 3}
+    type: 2
+    IsNotCustomise: 0
+    CustomisationType: 4
+  - BulletSpeed: 0
+    bulletLifeTime: 0.5
+    bulletLife: 0
+    ButlletObject: {fileID: 5271754677532632859, guid: 8e8bf758df1682c42bca03bc998b2643,
+      type: 3}
+    type: 4
+    IsNotCustomise: 1
+    CustomisationType: 0
+  - BulletSpeed: 1000
+    bulletLifeTime: 4
+    bulletLife: 0
+    ButlletObject: {fileID: 5271754677532632859, guid: f545322775879f1479e98b2241c0b4d5,
+      type: 3}
+    type: 5
+    IsNotCustomise: 0
+    CustomisationType: 3
+  - BulletSpeed: 0
+    bulletLifeTime: 0
+    bulletLife: 0
+    ButlletObject: {fileID: 1568531837397642913, guid: 245577c0fcc8173498fb25c95dea7967,
+      type: 3}
+    type: 6
+    IsNotCustomise: 1
+    CustomisationType: 0
+  enemyBulletData:
+  - BulletSpeed: 1000
+    bulletLifeTime: 8
+    bulletLife: 1
+    ButlletObject: {fileID: 5271754677532632859, guid: 83265648c4ca9dc4e9ad69f0041944ae,
+      type: 3}
+    type: 10
+  itemDatas:
+  - itemId: 0
+    itemValueMin: 30
+    itemValueMax: 50
+    weight: 100
+    prefab: {fileID: 4128430794202135926, guid: 468842ff4bf545d478823e2a23bd1f46,
+      type: 3}
+    type: 0
+    isForBoss: 0
+    description: Add xp to player to increase level
+  - itemId: 1
+    itemValueMin: 20
+    itemValueMax: 50
+    weight: 7
+    prefab: {fileID: 8947561749939539597, guid: 790554051596edd4caa511669953aef4,
+      type: 3}
+    type: 4
+    isForBoss: 0
+    description: Add Health to player
+  - itemId: 2
+    itemValueMin: 10
+    itemValueMax: 50
+    weight: 4
+    prefab: {fileID: 4128430794202135926, guid: e76cb84303e34e24e8fdbe6629f63bc5,
+      type: 3}
+    type: 5
+    isForBoss: 0
+    description: Froze enemy
+  - itemId: 3
+    itemValueMin: 1
+    itemValueMax: 3
+    weight: 6
+    prefab: {fileID: 8947561749939539597, guid: 909f08de92aeb2d4da643f309377184d,
+      type: 3}
+    type: 6
+    isForBoss: 0
+    description: Add rocket to player
+  - itemId: 4
+    itemValueMin: 800
+    itemValueMax: 1000
+    weight: 2
+    prefab: {fileID: 8526928449357629870, guid: 142e7e299755ab94abb11183dac5b484,
+      type: 3}
+    type: 2
+    isForBoss: 1
+    description: Add Xp
+  - itemId: 5
+    itemValueMin: 1
+    itemValueMax: 5
+    weight: 2
+    prefab: {fileID: 8947561749939539597, guid: 5eb118c72e3bf604e9acf68b04d35a6f,
+      type: 3}
+    type: 7
+    isForBoss: 1
+    description: Chest
+  - itemId: 6
+    itemValueMin: 1
+    itemValueMax: 5
+    weight: 2
+    prefab: {fileID: 4128430794202135926, guid: fcdd10c069e78314b8767d7ceeb9d69a,
+      type: 3}
+    type: 8
+    isForBoss: 0
+    description: Bomb
+  - itemId: 7
+    itemValueMin: 1
+    itemValueMax: 5
+    weight: 1
+    prefab: {fileID: 8526928449357629870, guid: 43358ee5069ccb1439f134cd57b3ae10,
+      type: 3}
+    type: 9
+    isForBoss: 0
+    description: Magnet
+  - itemId: 8
+    itemValueMin: 2
+    itemValueMax: 10
+    weight: 25
+    prefab: {fileID: 4128430794202135926, guid: 5feb6de8284778745955fe031a9ebaf7,
+      type: 3}
+    type: 10
+    isForBoss: 0
+    description: Small Money
+  skillData:
+  - id: 0
+    name: KEY_SKILL_HEALTH_TITLE
+    nameForDev: Health
+    sprite: {fileID: 0}
+    MaxLevel: 10
+    Value: 25
+    type: 0
+    useType: 1
+    description: KEY_SKILL_HEALTH
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 1
+    name: KEY_SKILL_SPEED_TITLE
+    nameForDev: Move Increase
+    sprite: {fileID: 0}
+    MaxLevel: 10
+    Value: 10
+    type: 1
+    useType: 1
+    description: KEY_SKILL_SPEED
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 5
+  - id: 2
+    name: KEY_SKILL_SHIELD_TITLE
+    nameForDev: Shield
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 2
+    useType: 0
+    description: KEY_SKILL_SHIELD
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 3
+    name: KEY_SKILL_SHIELD_RECOVER_TITLE
+    nameForDev: Shield Recover
+    sprite: {fileID: 0}
+    MaxLevel: 4
+    Value: 0.5
+    type: 3
+    useType: 2
+    description: KEY_SKILL_SHIELD_RECOVER
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 10
+  - id: 4
+    name: KEY_SKILL_SHIELD_HEALTH_TITLE
+    nameForDev: Shield Health Increase
+    sprite: {fileID: 0}
+    MaxLevel: 3
+    Value: 0
+    type: 4
+    useType: 2
+    description: KEY_SKILL_SHIELD_HEALTH
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 5
+    name: KEY_SKILL_ARMOR_TITLE
+    nameForDev: Armor
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 5
+    type: 5
+    useType: 1
+    description: KEY_SKILL_ARMOR
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 5
+  - id: 6
+    name: KEY_SKILL_SHOT_AFTER_SHOT_TITLE
+    nameForDev: Shot after shot
+    sprite: {fileID: 0}
+    MaxLevel: 4
+    Value: 0
+    type: 6
+    useType: 0
+    description: KEY_SKILL_SHOT_AFTER_SHOT
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 7
+    name: KEY_SKILL_DOUBLE_SHOT_TITLE
+    nameForDev: Double Shot
+    sprite: {fileID: 0}
+    MaxLevel: 4
+    Value: 0
+    type: 7
+    useType: 0
+    description: KEY_SKILL_DOUBLE_SHOT
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 8
+    name: KEY_SKILL_RECOVER_TIME_TITLE
+    nameForDev: Recover Time Decrease
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 0.1
+    type: 11
+    useType: 1
+    description: KEY_SKILL_RECOVER_TIME
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 10
+  - id: 9
+    name: KEY_SKILL_DAMAGE_INCREASE_TITLE
+    nameForDev: Damage Increase
+    sprite: {fileID: 0}
+    MaxLevel: 10
+    Value: 0.2
+    type: 12
+    useType: 1
+    description: KEY_SKILL_DAMAGE_INCREASE
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 20
+  - id: 10
+    name: KEY_SKILL_AUTO_GUN_TITLE
+    nameForDev: Auto gun
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 17
+    useType: 0
+    description: KEY_SKILL_AUTO_GUN
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 11
+    name: KEY_SKILL_CRITICAL_DAMAGE_TITLE
+    nameForDev: Critical Damage Increase
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 2
+    type: 16
+    useType: 2
+    description: KEY_SKILL_CRITICAL_DAMAGE
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 2
+  - id: 12
+    name: KEY_SKILL_CRITICAL_CHANCE_TITLE
+    nameForDev: Critical Chance Increase
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 2
+    type: 15
+    useType: 1
+    description: KEY_SKILL_CRITICAL_CHANCE
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 2
+  - id: 13
+    name: KEY_SKILL_DASH_TITLE
+    nameForDev: Dash
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 19
+    useType: 0
+    description: KEY_SKILL_DASH
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 14
+    name: KEY_SKILL_MASK_TITLE
+    nameForDev: Mask
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 21
+    useType: 0
+    description: KEY_SKILL_MASK
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 15
+    name: KEY_SKILL_MASK_TIME_TITLE
+    nameForDev: Mask Active Time Increase
+    sprite: {fileID: 0}
+    MaxLevel: 3
+    Value: 1
+    type: 22
+    useType: 2
+    description: KEY_SKILL_MASK_TIME
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 16
+    name: KEY_SKILL_ROCKET_TITLE
+    nameForDev: Rocket
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 23
+    useType: 0
+    description: KEY_SKILL_ROCKET
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 17
+    name: KEY_SKILL_ROCKET_COUNT_TITLE
+    nameForDev: Rocket Max Count Upgrade
+    sprite: {fileID: 0}
+    MaxLevel: 7
+    Value: 1
+    type: 24
+    useType: 2
+    description: KEY_SKILL_ROCKET_COUNT
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 18
+    name: KEY_SKILL_ROCKET_EXPLOSION_TITLE
+    nameForDev: Rocket Explosion Size Increse
+    sprite: {fileID: 0}
+    MaxLevel: 10
+    Value: 0.2
+    type: 25
+    useType: 2
+    description: KEY_SKILL_ROCKET_EXPLOSION
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 20
+  - id: 19
+    name: KEY_SKILL_DRONE_TITLE
+    nameForDev: Drone Add
+    sprite: {fileID: 0}
+    MaxLevel: 4
+    Value: 0
+    type: 13
+    useType: 0
+    description: KEY_SKILL_DRONE
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 20
+    name: KEY_SKILL_DRONE_SPEED_TITLE
+    nameForDev: Increase Drone Speed
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 50
+    type: 14
+    useType: 2
+    description: KEY_SKILL_DRONE_SPEED
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 50
+  - id: 21
+    name: KEY_SKILL_XP_MULTIPLIER_TITLE
+    nameForDev: Increse Xp Multiplier
+    sprite: {fileID: 0}
+    MaxLevel: 15
+    Value: 0.25
+    type: 29
+    useType: 1
+    description: KEY_SKILL_XP_MULTIPLIER
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 25
+  - id: 22
+    name: KEY_SKILL_HEALTH_RESTORE_TITLE
+    nameForDev: Health Restore By TIme
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 26
+    useType: 1
+    description: KEY_SKILL_HEALTH_RESTORE
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 23
+    name: KEY_SKILL_HEALTH_RESTORE_TIME_TITLE
+    nameForDev: Decrease TIme Health Restore
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 0.5
+    type: 27
+    useType: 2
+    description: KEY_SKILL_HEALTH_RESTORE_TIME
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 10
+  - id: 24
+    name: KEY_SKILL_HEALTH_RESTORE_HEALTH_TITLE
+    nameForDev: Increase Health Count Restore
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 1
+    type: 28
+    useType: 2
+    description: KEY_SKILL_HEALTH_RESTORE_HEALTH
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 25
+    name: KEY_SKILL_LASER_TITLE
+    nameForDev: Laser Gun
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 30
+    useType: 0
+    description: KEY_SKILL_LASER
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 26
+    name: KEY_SKILL_LASER_SIZE_TITLE
+    nameForDev: Laser Gun Size Increse
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 1.5
+    type: 31
+    useType: 2
+    description: KEY_SKILL_LASER_SIZE
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 15
+  - id: 27
+    name: KEY_SKILL_MINIGUN_TITLE
+    nameForDev: Minigun
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 32
+    useType: 0
+    description: KEY_SKILL_MINIGUN
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 28
+    name: KEY_SKILL_MINIGUN_COUNT_TITLE
+    nameForDev: Minigun Shot Count Increase
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 3
+    type: 33
+    useType: 2
+    description: KEY_SKILL_MINIGUN_COUNT
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 29
+    name: KEY_SKILL_MINIGUN_ANGLE_INCREASE_TITLE
+    nameForDev: Minigun Size Angle Increase
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 5
+    type: 34
+    useType: 2
+    description: KEY_SKILL_MINIGUN_ANGLE_INCREASE
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 8
+  - id: 30
+    name: KEY_SKILL_MINIGUN_ANGLE_DECREASE_TITLE
+    nameForDev: Minigun Size Angle Decrease
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 5
+    type: 35
+    useType: 2
+    description: KEY_SKILL_MINIGUN_ANGLE_DECREASE
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 8
+  - id: 31
+    name: KEY_SKILL_AUTO_GUN_BULLET_TITLE
+    nameForDev: AutoGunBulletLifeAdd
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 1
+    type: 18
+    useType: 2
+    description: KEY_SKILL_AUTO_GUN_BULLET
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 32
+    name: KEY_SKILL_DASH_DISTANCE_TITLE
+    nameForDev: Dash Distance Increase
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 0.05
+    type: 20
+    useType: 2
+    description: KEY_SKILL_DASH_DISTANCE
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 20
+  - id: 33
+    name: KEY_SKILL_ENERGY_GUN_TITLE
+    nameForDev: EnergyGun
+    sprite: {fileID: 0}
+    MaxLevel: 1
+    Value: 0
+    type: 36
+    useType: 0
+    description: KEY_SKILL_ENERGY_GUN
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 34
+    name: KEY_SKILL_ENERGY_GUN_COUNT_TITLE
+    nameForDev: Energy Gun Shot Count
+    sprite: {fileID: 0}
+    MaxLevel: 4
+    Value: 1
+    type: 37
+    useType: 2
+    description: KEY_SKILL_ENERGY_GUN_COUNT
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 0
+  - id: 35
+    name: KEY_SKILL_ENERGY_GUN_HIT_TITLE
+    nameForDev: Energy Gun Faster Hit
+    sprite: {fileID: 0}
+    MaxLevel: 5
+    Value: 0.1
+    type: 38
+    useType: 2
+    description: KEY_SKILL_ENERGY_GUN_HIT
+    isIncrease: 0
+    isProcent: 1
+    procentIncrease: 10
+  - id: 36
+    name: KEY_SKILL_PICK_UP_TITLE
+    nameForDev: Increase Pick Up Radius
+    sprite: {fileID: 0}
+    MaxLevel: 10
+    Value: 4
+    type: 41
+    useType: 1
+    description: KEY_SKILL_PICK_UP
+    isIncrease: 0
+    isProcent: 0
+    procentIncrease: 20
+  miniBosses:
+  - enemyData:
+      enemyId: 0
+      health: 1000
+      damage: 40
+      experience: 10
+      movementSpeed: 100
+      movementType: 1
+      actionType: 1
+      type: 8
+      enemyPrefab: {fileID: 218965217888290087, guid: 084cac8e2c0ad304e86980b674c337cd,
+        type: 3}
+      lifeTime: 40
+    PhaseID: 01000000
+  - enemyData:
+      enemyId: 1
+      health: 2000
+      damage: 50
+      experience: 10
+      movementSpeed: 40
+      movementType: 1
+      actionType: 0
+      type: 1
+      enemyPrefab: {fileID: 4263599856279568614, guid: d413874bd8b07a34db73502831be567a,
+        type: 3}
+      lifeTime: 40
+    PhaseID: 08000000
+  - enemyData:
+      enemyId: 2
+      health: 1000
+      damage: 50
+      experience: 10
+      movementSpeed: 50
+      movementType: 1
+      actionType: 0
+      type: 2
+      enemyPrefab: {fileID: 1496550595615945662, guid: 4a777b360b974d1428cf85f4f4566a16,
+        type: 3}
+      lifeTime: 40
+    PhaseID: 0b000000
+  StartenSkills: 0000000001000000020000000500000006000000070000000b0000000c0000000d0000000f000000110000001300000015000000170000001a0000001d0000001e000000200000002400000029000000
+  StartenSkills2: 1700000002000000050000000b0000000c000000
+  DropChance:
+    StandartShotChance: 70
+    LaserShotChance: 50
+    RocketBlowChance: 45
+    BombBlowChance: 40
+    DashChance: 65
+    DronChance: 70
+  bonusTypes:
+  - type: 0
+    sprite: {fileID: 0}
+  - type: 1
+    sprite: {fileID: 21300000, guid: b643f07f2158dba43b084cefa5838c56, type: 3}
+  - type: 2
+    sprite: {fileID: 0}
+  gamePhases:
+  - PhaseId: 0
+    spawnTime: 3
+    enemyInPhase:
+    - enemyType: 0
+      spawnType: 0
+      EnemyCount: 15
+    timeBeforePhase: 0
+    IsRandomEnemySpawn: 0
+  - PhaseId: 1
+    spawnTime: 3
+    enemyInPhase:
+    - enemyType: 9
+      spawnType: 0
+      EnemyCount: 1
+    - enemyType: 9
+      spawnType: 16
+      EnemyCount: 1
+    timeBeforePhase: 2
+    IsRandomEnemySpawn: 0
+  - PhaseId: 2
+    spawnTime: 3
+    enemyInPhase:
+    - enemyType: 4
+      spawnType: 0
+      EnemyCount: 2
+    timeBeforePhase: 4
+    IsRandomEnemySpawn: 0
+  - PhaseId: 3
+    spawnTime: 1.5
+    enemyInPhase:
+    - enemyType: 0
+      spawnType: 0
+      EnemyCount: 10
+    - enemyType: 9
+      spawnType: 0
+      EnemyCount: 10
+    - enemyType: 1
+      spawnType: 0
+      EnemyCount: 10
+    - enemyType: 2
+      spawnType: 2
+      EnemyCount: 2
+    - enemyType: 4
+      spawnType: 2
+      EnemyCount: 1
+    timeBeforePhase: 4
+    IsRandomEnemySpawn: 1
+  - PhaseId: 4
+    spawnTime: 4
+    enemyInPhase:
+    - enemyType: 0
+      spawnType: 15
+      EnemyCount: 1
+    - enemyType: 9
+      spawnType: 17
+      EnemyCount: 1
+    - enemyType: 1
+      spawnType: 16
+      EnemyCount: 1
+    - enemyType: 1
+      spawnType: 18
+      EnemyCount: 1
+    timeBeforePhase: 4
+    IsRandomEnemySpawn: 0
+  - PhaseId: 5
+    spawnTime: 3
+    enemyInPhase:
+    - enemyType: 0
+      spawnType: 15
+      EnemyCount: 10
+    - enemyType: 5
+      spawnType: 0
+      EnemyCount: 1
+    - enemyType: 6
+      spawnType: 0
+      EnemyCount: 2
+    - enemyType: 7
+      spawnType: 0
+      EnemyCount: 3
+    - enemyType: 7
+      spawnType: 0
+      EnemyCount: 3
+    - enemyType: 11
+      spawnType: 0
+      EnemyCount: 1
+    - enemyType: 12
+      spawnType: 0
+      EnemyCount: 4
+    - enemyType: 4
+      spawnType: 0
+      EnemyCount: 2
+    timeBeforePhase: 4
+    IsRandomEnemySpawn: 1
+  - PhaseId: 6
+    spawnTime: 10
+    enemyInPhase:
+    - enemyType: 10
+      spawnType: 0
+      EnemyCount: 2
+    - enemyType: 5
+      spawnType: 17
+      EnemyCount: 2
+    timeBeforePhase: 4
+    IsRandomEnemySpawn: 1
+  - PhaseId: 7
+    spawnTime: 4
+    enemyInPhase:
+    - enemyType: 0
+      spawnType: 1
+      EnemyCount: 1
+    - enemyType: 5
+      spawnType: 17
+      EnemyCount: 2
+    timeBeforePhase: 4
+    IsRandomEnemySpawn: 1
+  - PhaseId: 8
+    spawnTime: 3
+    enemyInPhase:
+    - enemyType: 4
+      spawnType: 15
+      EnemyCount: 1
+    - enemyType: 4
+      spawnType: 16
+      EnemyCount: 1
+    - enemyType: 4
+      spawnType: 17
+      EnemyCount: 1
+    - enemyType: 4
+      spawnType: 18
+      EnemyCount: 1
+    - enemyType: 4
+      spawnType: 1
+      EnemyCount: 1
+    - enemyType: 10
+      spawnType: 3
+      EnemyCount: 1
+    - enemyType: 10
+      spawnType: 10
+      EnemyCount: 1
+    timeBeforePhase: 4
+    IsRandomEnemySpawn: 0
+  materials:
+  - type: 0
+    material: {fileID: 2100000, guid: f521a23a080ca494da48ccf12275dddf, type: 2}
+  - type: 1
+    material: {fileID: 2100000, guid: f07f0fcf3aca3c3428b54b4cf5b12bd9, type: 2}

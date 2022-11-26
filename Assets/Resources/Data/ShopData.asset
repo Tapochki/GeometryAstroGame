@@ -1,0 +1,365 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 614a31f7965b8304b96778d48c2a0768, type: 3}
+  m_Name: ShopData
+  m_EditorClassIdentifier: 
+  UpgradeDataList:
+  - UpgradeList:
+    - 100
+    - 120
+    - 140
+    - 160
+    - 180
+    - 200
+    - 220
+    - 240
+    - 260
+    - 280
+    - 300
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_HEALTH_TITLE
+    DescriptionKey: KEY_UPGRADE_HEALTH
+    DescriptionForDev: Upgrade Player Health
+    Cost: 000000006400000096000000c800000090010000f4010000ee020000e8030000e2040000dc050000d0070000
+    UpgradeType: 0
+    IsProcent: 0
+    CurrentLevel: 0
+  - UpgradeList:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_ARMOR_TITLE
+    DescriptionKey: KEY_UPGRADE_ARMOR
+    DescriptionForDev: Upgrade Player Armor
+    Cost: 00000000c80000002c01000090010000f4010000ee020000e8030000e2040000dc050000d0070000b80b0000
+    UpgradeType: 1
+    IsProcent: 1
+    CurrentLevel: 10
+  - UpgradeList:
+    - 150
+    - 157.5
+    - 165
+    - 172.5
+    - 180
+    - 187.5
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_SPEED_TITLE
+    DescriptionKey: KEY_UPGRADE_SPEED
+    DescriptionForDev: Upgrade Player Armor
+    Cost: 00000000fa000000f4010000e8030000dc050000d0070000
+    UpgradeType: 2
+    IsProcent: 0
+    CurrentLevel: 0
+  - UpgradeList:
+    - 1
+    - 1.2
+    - 1.4
+    - 1.6
+    - 1.8
+    - 2
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_DAMAGE_MULTIPLIER_TITLE
+    DescriptionKey: KEY_UPGRADE_DAMAGE_MULTIPLIER
+    DescriptionForDev: Upgrade Player Damage Multiplier
+    Cost: 000000002c010000f401000020030000dc050000d0070000
+    UpgradeType: 3
+    IsProcent: 0
+    CurrentLevel: 0
+  - UpgradeList:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_CRITICAL_CHANCE_TITLE
+    DescriptionKey: KEY_UPGRADE_CRITICAL_CHANCE
+    DescriptionForDev: Upgrade Player Critical Chance
+    Cost: 00000000c8000000900100005802000020030000e8030000dc050000d0070000c409000088130000
+    UpgradeType: 4
+    IsProcent: 1
+    CurrentLevel: 9
+  - UpgradeList:
+    - 1.25
+    - 1.5
+    - 1.75
+    - 2
+    - 2.25
+    - 2.5
+    - 2.75
+    - 3
+    - 3.25
+    - 3.5
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_CRITICAL_DAMAGE_TITLE
+    DescriptionKey: KEY_UPGRADE_CRITICAL_DAMAGE
+    DescriptionForDev: Upgrade Player Critical Damage Multiplier
+    Cost: 00000000fa000000f4010000ee020000e8030000dc050000d0070000b80b00008813000010270000
+    UpgradeType: 5
+    IsProcent: 0
+    CurrentLevel: 9
+  - UpgradeList:
+    - 1
+    - 1.25
+    - 1.5
+    - 1.75
+    - 2
+    - 2.25
+    - 2.5
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_MONEY_MULTIPLIER_TITLE
+    DescriptionKey: KEY_UPGRADE_MONEY_MULTIPLIER
+    DescriptionForDev: Earned money multiplier
+    Cost: 00000000ee020000dc050000c4090000a00f00004c1d000010270000
+    UpgradeType: 7
+    IsProcent: 0
+    CurrentLevel: 0
+  - UpgradeList:
+    - 1
+    - 0.975
+    - 0.95
+    - 0.925
+    - 0.9
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_RECOVER_TIME_TITLE
+    DescriptionKey: KEY_UPGRADE_RECOVER_TIME
+    DescriptionForDev: Reload Gun Time decrease
+    Cost: 00000000f4010000e8030000c409000088130000
+    UpgradeType: 6
+    IsProcent: 0
+    CurrentLevel: 0
+  - UpgradeList:
+    - 18
+    - 19.8
+    - 21.6
+    - 23.4
+    - 25.2
+    - 27
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_UPGRADE_PICK_UP_RADIUS_TITLE
+    DescriptionKey: KEY_UPGRADE_PICK_UP_RADIUS
+    DescriptionForDev: Pick up radius
+    Cost: 0000000064000000c800000090010000ee0200004c040000
+    UpgradeType: 8
+    IsProcent: 0
+    CurrentLevel: 0
+  - UpgradeList:
+    - 0
+    - 1
+    UpgradeSprite: {fileID: 0}
+    Title: KEY_STARTER_SKILL_TITLE
+    DescriptionKey: KEY_STARTER_SKILL
+    DescriptionForDev: Earned money multiplier
+    Cost: 0000000010270000
+    UpgradeType: 9
+    IsProcent: 0
+    CurrentLevel: 0
+  ShopDataList:
+  - CustomisationType: 0
+    Products:
+    - Id: 0
+      Sprite: {fileID: 21300000, guid: 2b8a0e506052e1e4b8469ba9ccf80dbf, type: 3}
+      CostValue: 0
+      IsHideForShop: 0
+      Prefab: {fileID: 4629979209981781747, guid: 6a709b6309854b34daac7162992534a0,
+        type: 3}
+    - Id: 1
+      Sprite: {fileID: 21300000, guid: 1891f8c57b2300549adead0b6e2758ef, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 4313364309013566573, guid: 6bd5156bc4342ce4bba83d39d8dbaa2e,
+        type: 3}
+    - Id: 2
+      Sprite: {fileID: 21300000, guid: 126f2c8df18d5194e8c821581404e350, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 4934471757549376217, guid: a3c3042bf0fb2d542b64377a2243086c,
+        type: 3}
+    - Id: 3
+      Sprite: {fileID: 21300000, guid: 9d1502e6c6ecaa84e8e8f79d30fed425, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 2239305262624250296, guid: 0f1a1c29b515a2a4f919ba717f659a85,
+        type: 3}
+    - Id: 4
+      Sprite: {fileID: 21300000, guid: f44b86c97b4ae3b4a9de341e1398ec55, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 6512253114352836793, guid: d2d4b343dad8b194496a3866980572ba,
+        type: 3}
+    - Id: 5
+      Sprite: {fileID: 21300000, guid: 9eb40e630e08c69419424b2bc8a743dd, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 8107648202239438341, guid: e99bb42943617ec4aa6637f070b53c5d,
+        type: 3}
+    - Id: 6
+      Sprite: {fileID: 21300000, guid: b8cb039de35b9a545ac27a140bec833b, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 9004484986007969740, guid: e183c5ab7185db245be7c2bab72fb34a,
+        type: 3}
+    - Id: 7
+      Sprite: {fileID: 21300000, guid: f3e856902d787fa4dae14b1376996c3f, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 4334488492215719, guid: 61532eedc1525cb42b2353a305169de3, type: 3}
+    - Id: 8
+      Sprite: {fileID: 21300000, guid: 0bebe37c60f60f1438e710b9f11522aa, type: 3}
+      CostValue: 7
+      IsHideForShop: 0
+      Prefab: {fileID: 4313364309013566573, guid: 3ac4bbb7cb1083e4982a91666a02334e,
+        type: 3}
+  - CustomisationType: 1
+    Products:
+    - Id: 0
+      Sprite: {fileID: 21300000, guid: 2ec56222747ec684988e82928f49924c, type: 3}
+      CostValue: 0
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: 9e64d4062dc713c468222ae9ad90a1f5,
+        type: 3}
+    - Id: 1
+      Sprite: {fileID: 21300000, guid: 61641ac8ec718c94681d6cbc72375012, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: 83265648c4ca9dc4e9ad69f0041944ae,
+        type: 3}
+    - Id: 2
+      Sprite: {fileID: 21300000, guid: 977246ead8d2a8944b750cf3511b871b, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: 4df33376d2917e04db488ca2602f4e60,
+        type: 3}
+    - Id: 3
+      Sprite: {fileID: 21300000, guid: 91d1c0e83541f6d448b1c604801a34bd, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: f3bd3e0b30fb66a4c9025ab611850c95,
+        type: 3}
+  - CustomisationType: 2
+    Products:
+    - Id: 0
+      Sprite: {fileID: 21300000, guid: e9258e3e8830d774dbbf43ba321d4bd2, type: 3}
+      CostValue: 0
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: 1c51f157b5981a644b932ca253a18634,
+        type: 3}
+    - Id: 1
+      Sprite: {fileID: 21300000, guid: ee72ee357485b4d4db710930d1bb62ca, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: 2dbf80b8401284a46a2f04a8e95d1272,
+        type: 3}
+    - Id: 2
+      Sprite: {fileID: 21300000, guid: 84872e6f50684964b8d9c941d8001bd2, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: 94aa6307c0729434fa0a01cc0ab15678,
+        type: 3}
+    - Id: 3
+      Sprite: {fileID: 21300000, guid: 4bee5c51b8673704ebe5e7953b80d0f2, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: e4c4f9ef6e2c6614d92855d1768f6bc4,
+        type: 3}
+  - CustomisationType: 3
+    Products:
+    - Id: 0
+      Sprite: {fileID: 21300000, guid: f7e6b3204bb829d4cabb80c4f6fdb5dc, type: 3}
+      CostValue: 0
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: f545322775879f1479e98b2241c0b4d5,
+        type: 3}
+    - Id: 1
+      Sprite: {fileID: 21300000, guid: 00c09f3d95723aa4cb2b52c01dd13adf, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: c4cc196afe4e3944490661a1c7e3731d,
+        type: 3}
+    - Id: 2
+      Sprite: {fileID: 21300000, guid: d5eed767b845eb14f8acbc918420a981, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: fc0e8021fe28592439986c02477d3765,
+        type: 3}
+    - Id: 3
+      Sprite: {fileID: 21300000, guid: f449604ca1ad6e54596c8a3c100d1abf, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: 5c271d00737ab8040b06108b9b2e1d9d,
+        type: 3}
+  - CustomisationType: 4
+    Products:
+    - Id: 0
+      Sprite: {fileID: 21300000, guid: 616a84b4e84c6c8499cc11b5ed6a4a2f, type: 3}
+      CostValue: 0
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: d6f2c4ae02fe1cf40b3d32c63b02c45c,
+        type: 3}
+    - Id: 1
+      Sprite: {fileID: 21300000, guid: 84846f77f33c14e49a86115f405cd835, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: 116fe2317318bb14e9243e096862fed1,
+        type: 3}
+    - Id: 2
+      Sprite: {fileID: 21300000, guid: 73e7e76d646561e40a76d4e219532a95, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: b95a6475da6d57f45860d61f98a931cf,
+        type: 3}
+    - Id: 3
+      Sprite: {fileID: 21300000, guid: 63394b490379428409e928b84d7b81f7, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 5271754677532632859, guid: fba6fb7605eca264c8f8d855332bbe60,
+        type: 3}
+  - CustomisationType: 5
+    Products:
+    - Id: 0
+      Sprite: {fileID: 21300000, guid: e97e809e26e324f45b3878c4069e34ee, type: 3}
+      CostValue: 0
+      IsHideForShop: 0
+      Prefab: {fileID: 2431657971425446526, guid: 81055cfb0ae78c249813eb2bcd703d64,
+        type: 3}
+    - Id: 1
+      Sprite: {fileID: 21300000, guid: 441767b7f4a615b4cb65001219e602ca, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 2431657971425446526, guid: 76f50470ca8aff142a026ae2bbaf1122,
+        type: 3}
+    - Id: 2
+      Sprite: {fileID: 21300000, guid: 2beecd2f2d7622d4d827302b81fe70a4, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 2431657971425446526, guid: 1e2e61c5a8b2f094b8e0257aeee59484,
+        type: 3}
+    - Id: 3
+      Sprite: {fileID: 21300000, guid: ec48a070cd6a8bb4c88371ab6c052cee, type: 3}
+      CostValue: 5
+      IsHideForShop: 0
+      Prefab: {fileID: 2431657971425446526, guid: 8fecbdbf93e4ec84cb5d6357bd52b03d,
+        type: 3}
