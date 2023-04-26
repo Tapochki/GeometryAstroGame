@@ -142,7 +142,7 @@ namespace TandC.RunIfYouWantToLive
             AllAviableSkills = new List<Skill>();
             ActiveSkills = new List<Skill>();
             PassiveSkills = new List<Skill>();
-            foreach (var skill in _gameplayData.StartenSkills) 
+            foreach (var skill in _gameplayData.StartenSkills2) 
             {
                 AddSkill(skill);
             }
@@ -194,14 +194,14 @@ namespace TandC.RunIfYouWantToLive
                 case SkillType.DoubleShot:
                     _playerController.UpgradeWeaponDoubleShot();
                     break;
-                case SkillType.BlowMina:
-                    RemoveSkill(SkillType.BlowMina);
-                    AddSkill(SkillType.BlowMinaDamage);
-                    //Upgrade Start Mina
-                    break;
-                case SkillType.BlowMinaDamage:
-                    //Upgrade Blow Mina Damage
-                    break;
+                //case SkillType.BlowMina:
+                //    RemoveSkill(SkillType.BlowMina);
+                //    AddSkill(SkillType.BlowMinaDamage);
+                //    //Upgrade Start Mina
+                //    break;
+                //case SkillType.BlowMinaDamage:
+                //    //Upgrade Blow Mina Damage
+                //    break;
                 case SkillType.ShieldRecoverTime:
                     _playerController.Player.DecreaseShieldCooldownHandler(_vfxController.GetSkillVFXByType(SkillType.Shield) as ShieldSkillVFX, skill.Value);
                     //Upgrade Shield Recover Time

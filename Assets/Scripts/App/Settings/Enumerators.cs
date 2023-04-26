@@ -66,12 +66,18 @@
             MESSAGE
         }
 
+        public enum SpreadsheetDataType
+        {
+            Localization
+        }
+
         public enum Language
         {
-            NONE,
-            EN,
-            RU,
-            UK
+            Unknown,
+
+            English,
+            Russian,
+            Ukrainian
         }
 
         public enum ScreenOrientationMode

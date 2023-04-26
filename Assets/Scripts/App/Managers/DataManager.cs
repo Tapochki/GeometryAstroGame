@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System.Threading.Tasks;
 
 namespace TandC.RunIfYouWantToLive
 {
@@ -18,6 +19,8 @@ namespace TandC.RunIfYouWantToLive
         private Dictionary<Enumerators.CacheDataType, string> _cacheDataPathes;
 
         public UserLocalData CachedUserLocalData { get; set; }
+
+        private Dictionary<Enumerators.SpreadsheetDataType, SpreadsheetInfo> _spreadsheetsInfo;
 
         public List<RecordItem> UserLocalRecords { get; set; }
         public List<RecordItem> GlobalRecords { get; set; }
@@ -38,17 +41,18 @@ namespace TandC.RunIfYouWantToLive
         {
             _appStateManager = GameClient.Get<IAppStateManager>();
             _localizationManager = GameClient.Get<ILocalizationManager>();
+            FillSpreadsheetsInfo();
             FillCacheDataPathes();
         }
 
-        public void StartLoadCache()
+        public async void StartLoadCache()
         {
 
             int count = Enum.GetNames(typeof(Enumerators.CacheDataType)).Length;
             for (int i = 0; i < count; i++)
                 LoadCachedData((Enumerators.CacheDataType)i);
 
-            _localizationManager.ApplyLocalization();
+            await StartLoadSpreadsheetsData();
 
             _appStateManager.ChangeAppState(Enumerators.AppState.MAIN_MENU);
 
@@ -72,7 +76,12 @@ namespace TandC.RunIfYouWantToLive
         {
             return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one / 2f);
         }
-        
+
+
+        public SpreadsheetInfo GetSpreadsheetByType(Enumerators.SpreadsheetDataType type)
+        {
+            return _spreadsheetsInfo[type];
+        }
 
         public void SaveCache(Enumerators.CacheDataType type)
         {
@@ -80,6 +89,7 @@ namespace TandC.RunIfYouWantToLive
             {
                 case Enumerators.CacheDataType.USER_LOCAL_DATA:
                     {
+                        Debug.LogError(File.Exists(_cacheDataPathes[type]));
                         if (!File.Exists(_cacheDataPathes[type]))
                             File.Create(_cacheDataPathes[type]).Close();
 
@@ -160,6 +170,22 @@ namespace TandC.RunIfYouWantToLive
         public T DeserializeObjectFromPath<T>(string path)
         {
            return JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
+        }
+
+        private async Task StartLoadSpreadsheetsData()
+        {
+            foreach (var item in _spreadsheetsInfo)
+            {
+                await item.Value.LoadData();
+            }
+        }
+
+        private void FillSpreadsheetsInfo()
+        {
+            _spreadsheetsInfo = new Dictionary<Enumerators.SpreadsheetDataType, SpreadsheetInfo>();
+
+            if (_localizationManager.LocalizationData.refreshLocalizationAtStart)
+                _spreadsheetsInfo.Add(Enumerators.SpreadsheetDataType.Localization, new SpreadsheetInfo(_localizationManager.LocalizationData.localizationGoogleSpreadsheet));
         }
     }
 }

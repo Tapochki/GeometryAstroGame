@@ -179,10 +179,10 @@ namespace TandC.RunIfYouWantToLive
                 Score = _scoreValue,
                 EndTime = DateTime.Now.ToString()
             };
-            if (_networkManager.IsHasInternetConnection()) 
-            {
-                _networkManager.StartSend(recordItem.Name, recordItem.Score, recordItem.EndTime);
-            }
+            //if (_networkManager.IsHasInternetConnection()) 
+            //{
+            //    _networkManager.StartSend(recordItem.Name, recordItem.Score, recordItem.EndTime);
+            //}
             _dataManager.AddRecord(recordItem);
             _dataManager.SaveAllCache();
         }

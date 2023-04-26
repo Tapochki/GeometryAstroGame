@@ -1,4 +1,4 @@
-using System;
+Ôªøusing System;
 using System.Collections;
 using System.Collections.Generic;
 using TandC.RunIfYouWantToLive.Common;
@@ -61,9 +61,9 @@ namespace TandC.RunIfYouWantToLive
             _selectLanguageHideButtonShadowText = _hideSelectLanhuageButton.transform.Find("Text_SelectedLanguageShadow").GetComponent<TextMeshProUGUI>();
             _languagesElements = new List<LanguageElement>() 
             {
-                new LanguageElement(MonoBehaviour.Instantiate(_languagePrefab, _languageContent), Enumerators.Language.EN, "English"),
-                new LanguageElement(MonoBehaviour.Instantiate(_languagePrefab, _languageContent), Enumerators.Language.UK, "”Í‡øÌÒ¸Í‡"),
-                new LanguageElement(MonoBehaviour.Instantiate(_languagePrefab, _languageContent), Enumerators.Language.RU, "–ÛÒÒÍËÈ"),
+                new LanguageElement(MonoBehaviour.Instantiate(_languagePrefab, _languageContent), Enumerators.Language.English, "English"),
+                new LanguageElement(MonoBehaviour.Instantiate(_languagePrefab, _languageContent), Enumerators.Language.Ukrainian, "–£–∫—Ä–∞—ó–Ω—Å—å–∫–∞"),
+                new LanguageElement(MonoBehaviour.Instantiate(_languagePrefab, _languageContent), Enumerators.Language.Russian, "–†—É—Å—Å–∫–∏–π"),
             };
 
             _isStaticJoyStickToggle = _selfObject.transform.Find("Container/Image_Background/Container_Settings/Container_Joystick/Toggle_JoyStick").GetComponent<Toggle>();

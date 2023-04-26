@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+using TandC.RunIfYouWantToLive.Helpers;
 
 namespace TandC.RunIfYouWantToLive
 {
@@ -14,51 +14,41 @@ namespace TandC.RunIfYouWantToLive
 
         private IDataManager _dataManager;
 
-        private Enumerators.Language _defaultLanguage = Enumerators.Language.EN,
-                                     _currentLanguage = Enumerators.Language.NONE;
+        private ILoadObjectsManager _loadObjectsManager;
 
+        private LocalizationData.LocalizationLanguageData _currentLocalizationLanguageData;
 
-        private Dictionary<SystemLanguage, Enumerators.Language> _languages;
+        private Dictionary<string, string> _localizationTexts;
 
-        public Dictionary<SystemLanguage, Enumerators.Language> SupportedLanguages { get { return _languages; } }
-
-        public Enumerators.Language CurrentLanguage { get { return _currentLanguage; } }
-
+        public Dictionary<SystemLanguage, Enumerators.Language> SupportedLanguages { get; private set; }
+        public Enumerators.Language CurrentLanguage { get; private set; }
+        public Enumerators.Language DefaultLanguage { get; private set; }
+        public LocalizationData LocalizationData { get; private set; }
 
         public void Dispose()
+        {
+            _dataManager.EndLoadCache -= DataLoadedEventHandler;
+        }
+
+        public void Update()
         {
         }
 
         public void Init()
         {
             _dataManager = GameClient.Get<IDataManager>();
+            _loadObjectsManager = GameClient.Get<ILoadObjectsManager>();
+
+            LocalizationData = _loadObjectsManager.GetObjectByPath<LocalizationData>("Data/LocalizationData");
+
+            DefaultLanguage = LocalizationData.defaultLanguage;
+            CurrentLanguage = Enumerators.Language.Unknown;
+
+            _localizationTexts = new Dictionary<string, string>();
+
+            _dataManager.EndLoadCache += DataLoadedEventHandler;
 
             FillLanguages();
-        }
-
-        public void ApplyLocalization()
-        {
-            if (!_languages.ContainsKey(Application.systemLanguage))
-            {
-                if (_dataManager.CachedUserLocalData.appLanguage == Enumerators.Language.NONE)
-                    SetLanguage(_defaultLanguage);
-                else
-                {
-                    SetLanguage(_dataManager.CachedUserLocalData.appLanguage);
-                }
-            }
-            else
-            {
-                if (_dataManager.CachedUserLocalData.appLanguage == Enumerators.Language.NONE)
-                    SetLanguage(_languages[Application.systemLanguage]);
-                else
-                    SetLanguage(_dataManager.CachedUserLocalData.appLanguage);
-            }
-        }
-
-
-        public void Update()
-        {
         }
 
         public void SetLanguage(Enumerators.Language language, bool forceUpdate = false)
@@ -66,34 +56,130 @@ namespace TandC.RunIfYouWantToLive
             if (language == CurrentLanguage && !forceUpdate)
                 return;
 
-            string languageCode = language.ToString().ToLower();
+            if (SupportedLanguages.ContainsValue(language))
+            {
+                CurrentLanguage = language;
+                _currentLocalizationLanguageData = LocalizationData.languages.Find(item => item.language == CurrentLanguage);
+            }
 
-            I2.Loc.LocalizationManager.SetLanguageAndCode(I2.Loc.LocalizationManager.GetLanguageFromCode(languageCode), languageCode);
-
-            _currentLanguage = language;
-            _dataManager.CachedUserLocalData.appLanguage = language;
-            if (LanguageWasChangedEvent != null)
-                LanguageWasChangedEvent(_currentLanguage);
+            LanguageWasChangedEvent?.Invoke(CurrentLanguage);
         }
 
         public string GetUITranslation(string key)
         {
-            string value = I2.Loc.LocalizationManager.GetTermTranslation(key);
-            if(value == string.Empty) 
-            {
+            if (_currentLocalizationLanguageData == null)
                 return key;
-            }
-            return value;
+
+            var localizedText = _currentLocalizationLanguageData.localizedTexts.
+                Find(item => InternalTools.ReplaceLineBreaks(item.key) == InternalTools.ReplaceLineBreaks(key));
+
+            if (localizedText == null)
+                return key;
+
+            return localizedText.value;
         }
 
+        private void DataLoadedEventHandler()
+        {
+            if (LocalizationData.refreshLocalizationAtStart)
+                RefreshLocalizations();
+            ApplyLocalization();
+        }
+
+        private void ApplyLocalization()
+        {
+            Debug.LogError(_dataManager.CachedUserLocalData.appLanguage);
+            if (!SupportedLanguages.ContainsKey(Application.systemLanguage))
+            {
+                if (_dataManager.CachedUserLocalData.appLanguage == Enumerators.Language.Unknown)
+                    SetLanguage(DefaultLanguage, true);
+                else
+                    SetLanguage(_dataManager.CachedUserLocalData.appLanguage, true);
+            }
+            else
+            {
+                if (_dataManager.CachedUserLocalData.appLanguage == Enumerators.Language.Unknown)
+                    SetLanguage(SupportedLanguages[Application.systemLanguage], true);
+                else
+                    SetLanguage(_dataManager.CachedUserLocalData.appLanguage, true);
+            }
+        }
 
         private void FillLanguages()
         {
-            _languages = new Dictionary<SystemLanguage, Enumerators.Language>();
+            SupportedLanguages = new Dictionary<SystemLanguage, Enumerators.Language>();
 
-            _languages.Add(SystemLanguage.English, Enumerators.Language.EN);
-            _languages.Add(SystemLanguage.Russian, Enumerators.Language.RU);
-            _languages.Add(SystemLanguage.Ukrainian, Enumerators.Language.UK);
+            var supportedLanguages = LocalizationData.languages.Select(item => item.language).ToArray();
+
+            foreach (var item in supportedLanguages)
+            {
+                if (Enum.TryParse(item.ToString(), out SystemLanguage result))
+                {
+                    SupportedLanguages.Add(result, item);
+                }
+                else
+                {
+                    Debug.Log($"Cannot parse unsupported localziation language: {item}");
+                }
+            }
+        }
+
+
+        private void RefreshLocalizations()
+        {
+            var spreadsheet = _dataManager.GetSpreadsheetByType(Enumerators.SpreadsheetDataType.Localization);
+
+            if (spreadsheet == null)
+            {
+                Debug.Log("Failed to refresh localization. Spreadsheet is null.");
+                return;
+            }
+            else if (!spreadsheet.IsLoaded)
+            {
+                Debug.Log("Failed to refresh localization. Spreadsheet is not loaded.");
+                return;
+            }
+
+            var localizationSheetData = spreadsheet.GetObject<LocalizationSheetData>();
+
+            LocalizationData.languages = new List<LocalizationData.LocalizationLanguageData>();
+
+            LocalizationData.LocalizationLanguageData languageData;
+            LocalizationData.LocalizationDataInfo dataInfo;
+            for (int i = 1; i < Enum.GetNames(typeof(Common.Enumerators.Language)).Length; i++)
+            {
+                languageData = new LocalizationData.LocalizationLanguageData()
+                {
+                    language = (Common.Enumerators.Language)i,
+                    localizedTexts = new List<LocalizationData.LocalizationDataInfo>()
+                };
+
+                foreach (var element in localizationSheetData)
+                {
+                    dataInfo = new LocalizationData.LocalizationDataInfo()
+                    {
+                        key = element.Keys
+                    };
+
+                    switch (languageData.language)
+                    {
+                        case Common.Enumerators.Language.Russian:
+                            dataInfo.value = element.Russian;
+                            break;
+                        case Common.Enumerators.Language.Ukrainian:
+                            dataInfo.value = element.Ukrainian;
+                            break;
+                        case Common.Enumerators.Language.English:
+                        default:
+                            dataInfo.value = element.English;
+                            break;
+                    }
+
+                    languageData.localizedTexts.Add(dataInfo);
+                }
+
+                LocalizationData.languages.Add(languageData);
+            }
         }
     }
 }

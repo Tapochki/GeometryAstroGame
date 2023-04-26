@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +11,7 @@ namespace TandC.RunIfYouWantToLive.Helpers
 {
     public static class InternalTools
     {
+        private static string LINE_BREAK = "%line%";
         public static void ShuffleList<T>(this IList<T> list)
         {
             System.Random rnd = new System.Random();
@@ -36,6 +41,14 @@ namespace TandC.RunIfYouWantToLive.Helpers
         public static int GetRandomNumberInteger(int firstNumber, int secondNumber)
         {
             return UnityEngine.Random.Range(firstNumber, secondNumber + 1);
+        }
+
+        public static string ReplaceLineBreaks(string data)
+        {
+            if (data == null)
+                return "";
+
+            return data.Replace(LINE_BREAK, "\n");
         }
 
         public static float GetFloatSquaredNumber(float num, int n)
@@ -105,6 +118,25 @@ namespace TandC.RunIfYouWantToLive.Helpers
             group.enabled = true;
         }
 
+        public static Rect GetScreenCoordinates(RectTransform uiElement, GameObject canvas)
+        {
+            RectTransform canvasTransf = canvas.GetComponent<RectTransform>();
+
+            Vector2 canvasSize = new Vector2(canvasTransf.rect.width, canvasTransf.rect.height);
+            float koefX = Screen.width / canvasSize.x;
+            float koefY = Screen.height / canvasSize.y;
+            Vector2 position = Vector2.Scale(uiElement.anchorMin, canvasSize);
+            float directionX = uiElement.pivot.x * -1;
+            float directionY = uiElement.pivot.y * -1;
+
+            var result = new Rect();
+            result.width = uiElement.sizeDelta.x * koefX;
+            result.height = uiElement.sizeDelta.y * koefX;
+            result.x = position.x * koefX + uiElement.anchoredPosition.x * koefX + result.width * directionX;
+            result.y = position.y * koefY + uiElement.anchoredPosition.y * koefX + result.height * directionY;
+            return result;
+        }
+
         public static DateTime ConvertFromUnixTimestamp(double timestamp)
         {
             DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
@@ -116,6 +148,59 @@ namespace TandC.RunIfYouWantToLive.Helpers
         public static void CallPhoneNumber(string phone)
         {
             Application.OpenURL("tel://" + phone);
+        }
+
+        public static List<T> ParseCSV<T>(string data)
+        {
+            CSVMap myMap = new CSVMap();
+            myMap.defineColumns(typeof(T));
+            ArrayList itemList = myMap.loadCsvFromString(data);
+            return itemList.Cast<T>().ToList();
+        }
+
+        public static List<T> ParseCSVFromResources<T>(string path)
+        {
+            CSVMap myMap = new CSVMap();
+            myMap.defineColumns(typeof(T));
+            ArrayList itemList = myMap.loadCsvFromFile(path);
+            return itemList.Cast<T>().ToList();
+        }
+
+        public static void ExportCSV<T>(List<T> genericList, string finalPath)
+        {
+            var sb = new StringBuilder();
+            var header = string.Empty;
+            var info = typeof(T).GetFields();
+
+            if (!File.Exists(finalPath))
+            {
+                var file = File.Create(finalPath);
+                file.Close();
+                foreach (var prop in info)
+                {
+                    header += prop.Name + "; ";
+                }
+                header = header.Substring(0, header.Length - 2);
+                sb.AppendLine(header);
+                TextWriter sw = new StreamWriter(finalPath, true);
+                sw.Write(sb.ToString());
+                sw.Close();
+            }
+
+            foreach (var obj in genericList)
+            {
+                sb = new StringBuilder();
+                var line = string.Empty;
+                foreach (var prop in info)
+                {
+                    line += prop.GetValue(obj) + "; ";
+                }
+                line = line.Substring(0, line.Length - 2);
+                sb.AppendLine(line);
+                TextWriter sw = new StreamWriter(finalPath, true);
+                sw.Write(sb.ToString());
+                sw.Close();
+            }
         }
     }
 }

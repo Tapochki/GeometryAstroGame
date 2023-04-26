@@ -12,6 +12,8 @@ namespace TandC.RunIfYouWantToLive
         void StartLoadCache();
         void SaveAllCache();
         void SaveCache(Enumerators.CacheDataType type);
+
+        SpreadsheetInfo GetSpreadsheetByType(Enumerators.SpreadsheetDataType type);
         void AddRecord(RecordItem item);
         Sprite GetSpriteFromTexture(Texture2D texture);
         event Action EndLoadCache;

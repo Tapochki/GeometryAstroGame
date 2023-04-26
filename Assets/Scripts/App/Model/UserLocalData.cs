@@ -24,7 +24,7 @@ namespace TandC.RunIfYouWantToLive
 
         public void Reset()
         {
-            appLanguage = Enumerators.Language.NONE;
+            appLanguage = Enumerators.Language.Unknown;
             IstutorialComplete = false;
             MoneyCount = 0;
             IsStaticJoyStick = false;

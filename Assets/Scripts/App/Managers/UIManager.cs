@@ -61,7 +61,6 @@ namespace TandC.RunIfYouWantToLive
                 new DoubleMoneyPopup(),
             };
 
-            GameClient.Get<ILocalizationManager>().ApplyLocalization();
             foreach (var popup in _uiPopups)
                 popup.Init();
         }

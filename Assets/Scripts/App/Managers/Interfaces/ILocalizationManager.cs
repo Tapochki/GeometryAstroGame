@@ -9,12 +9,10 @@ namespace TandC.RunIfYouWantToLive
     {
         event Action<Enumerators.Language> LanguageWasChangedEvent;
 
-
         Dictionary<SystemLanguage, Enumerators.Language> SupportedLanguages { get; }
         Enumerators.Language CurrentLanguage { get; }
-
-
-        void ApplyLocalization();
+        Enumerators.Language DefaultLanguage { get; }
+        LocalizationData LocalizationData { get; }
 
         void SetLanguage(Enumerators.Language language, bool forceUpdate = false);
 

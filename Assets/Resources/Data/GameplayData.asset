@@ -332,7 +332,7 @@ MonoBehaviour:
   - id: 0
     name: KEY_SKILL_HEALTH_TITLE
     nameForDev: Health
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 92b92c8df3f18d4498490a29e8c5642f, type: 3}
     MaxLevel: 10
     Value: 25
     type: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   - id: 1
     name: KEY_SKILL_SPEED_TITLE
     nameForDev: Move Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 375fa44e98b3b4e43b6736913fed1f4c, type: 3}
     MaxLevel: 10
     Value: 10
     type: 1
@@ -356,7 +356,7 @@ MonoBehaviour:
   - id: 2
     name: KEY_SKILL_SHIELD_TITLE
     nameForDev: Shield
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 6db0794b57f7e9a409d3f65fa006386f, type: 3}
     MaxLevel: 1
     Value: 0
     type: 2
@@ -814,7 +814,7 @@ MonoBehaviour:
       lifeTime: 40
     PhaseID: 0b000000
   StartenSkills: 0000000001000000020000000500000006000000070000000b0000000c0000000d0000000f000000110000001300000015000000170000001a0000001d0000001e000000200000002400000029000000
-  StartenSkills2: 1700000002000000050000000b0000000c000000
+  StartenSkills2: 0000000001000000020000000b0000000c000000
   DropChance:
     StandartShotChance: 70
     LaserShotChance: 50
