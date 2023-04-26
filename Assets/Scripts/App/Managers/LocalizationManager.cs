@@ -56,6 +56,8 @@ namespace TandC.RunIfYouWantToLive
             if (language == CurrentLanguage && !forceUpdate)
                 return;
 
+            _dataManager.CachedUserLocalData.appLanguage = language;
+
             if (SupportedLanguages.ContainsValue(language))
             {
                 CurrentLanguage = language;

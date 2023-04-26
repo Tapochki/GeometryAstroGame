@@ -12,7 +12,1337 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c40adf26dd76b84f84a2ad76dcc960f, type: 3}
   m_Name: LocalizationData
   m_EditorClassIdentifier: 
-  languages: []
+  languages:
+  - language: 1
+    localizedTexts:
+    - key: KEY_MAIN_MENU_START
+      value: Start
+    - key: KEY_MAIN_MENU_SHOP
+      value: Shop
+    - key: KEY_MAIN_MENU_LEADERBOARD
+      value: Leaderboard
+    - key: KEY_MAIN_MENU_INFO_NO_SIGNAL
+      value: No signal...
+    - key: KEY_DOUBLE_MONEY
+      value: Double money!
+    - key: KEY_LEADERBOARD_PLACE
+      value: Place
+    - key: KEY_LEADERBOARD_NICKNAME
+      value: Name
+    - key: KEY_LEADERBOARD_TIME
+      value: Registration time
+    - key: KEY_LEADERBOARD_SWITCH_TO_LOCAL
+      value: Switch to local
+    - key: KEY_LEADERBOARD_SWITCH_TO_GLOBAL
+      value: Switch to global
+    - key: KEY_ABOUT_US_TITLE
+      value: About US
+    - key: KEY_ABOUT_US_LEAD_PROGRAMME
+      value: Lead programmer, game designer
+    - key: KEY_ABOUT_US_LEAD_ARTIST
+      value: Lead artist, programmer
+    - key: KEY_ABOUT_US_PATREON
+      value: Patreon
+    - key: KEY_ABOUT_US_INSTAGRAMM
+      value: Instagram
+    - key: KEY_ABOUT_US_LINK
+      value: link
+    - key: KEY_GAMEOVER_TITLE
+      value: Gameover
+    - key: KEY_GAMEOVER_ENTER_NICKNAME
+      value: Enter nickname
+    - key: KEY_SCORE
+      value: Score
+    - key: KEY_GAMEOVER_ONE_MORE_CHANCE
+      value: One more chance
+    - key: KEY_CONTINUE
+      value: Continue
+    - key: KEY_PAUSE_TITLE
+      value: Pause
+    - key: KEY_EXIT
+      value: Exit
+    - key: KEY_SETTINGS_TITLE
+      value: Settings
+    - key: KEY_SETTINGS_SOUNDS
+      value: Sounds
+    - key: KEY_SETTINGS_MUSIC
+      value: Music
+    - key: KEY_SETTINGS_LANGUAGE
+      value: Language
+    - key: KEY_SETTINGS_JOYSTICK
+      value: Joystick Static
+    - key: KEY_TUTORIAL_TITLE
+      value: Tutorial
+    - key: KEY_TUTORIAL_PAGE_0
+      value: 'This is your character. '
+    - key: KEY_TUTORIAL_PAGE_1
+      value: The right joystick is used to control your character by moving him in
+        space and rotating him. With the left joystick you can rotate the player
+        to aim without changing the direction of movement.
+    - key: KEY_TUTORIAL_PAGE_2
+      value: This is the health of the character, if it is over, the game will be
+        over.
+    - key: KEY_TUTORIAL_PAGE_3
+      value: All that moves and pursues your character is your enemies, you can destroy
+        them with different types of weapons, the main weapon is triggered when the
+        player pointed at the enemy. After destroying the enemy, the player gets
+        points and an item can fall out of the enemy.
+    - key: KEY_TUTORIAL_PAGE_4
+      value: After the destruction of the enemy drop the item. The most common item
+        is an experience crystal, which will fill up the experience bar when the
+        player fills it, after which the player gets a new level. Also, there are
+        other items, but their action you have to find out for yourself.
+    - key: KEY_TUTORIAL_PAGE_5
+      value: When you get a new level a window opens in which you can choose an ability.
+        There are 2 types of abilities are passive, those with pumping will increase
+        the player's parameters and active, which will give the player a new type
+        of weapon or defense.
+    - key: KEY_TUTORIAL_PAGE_6
+      value: When you get a new level a window opens in which you can choose an ability.
+        Abilities come in 2 types are passive, those with pumping will increase the
+        player's parameters and active, which will give the player new types of weapons
+        or protection.
+    - key: KEY_TUTORIAL_PAGE_7
+      value: After you lose you can add your records to the table. Good luck, try
+        to last as long as possible and score more points than the other players!
+    - key: KEY_SETTINGS_SELECTED_LANGUAGE
+      value: English
+    - key: KEY_MAIN_MENU_INFO_TITLE
+      value: Did you know?
+    - key: KEY_MAIN_MENU_INFO_VALUE_0
+      value: Red crystal give much more experiance
+    - key: KEY_MAIN_MENU_INFO_VALUE_1
+      value: Bosses can drop chest with few skills
+    - key: KEY_MAIN_MENU_INFO_VALUE_2
+      value: If you run out of health, the game is over
+    - key: KEY_MAIN_MENU_INFO_VALUE_3
+      value: test
+    - key: KEY_MAIN_MENU_INFO_VALUE_4
+      value: test
+    - key: KEY_GAME_LEVEL
+      value: 'Level:'
+    - key: KEY_CONFIRM
+      value: Confirm
+    - key: KEY_TAP_TO_OPEN_CHEST
+      value: Tap to open chest
+    - key: KEY_SUPPORT_US_TITLE
+      value: Support us
+    - key: KEY_LEVEL_UP_TITLE
+      value: Level up
+    - key: KEY_REACHED_LEVEL
+      value: Congratulation! You reached level
+    - key: KEY_RESET_SKILLS
+      value: Reset Skills
+    - key: KEY_WARNING
+      value: WARNING
+    - key: KEY_BACK_TO_GAME_ZONE
+      value: Back to game zone
+    - key: KEY_LOADING
+      value: Loading...
+    - key: KEY_RELOAD
+      value: Reload
+    - key: KEY_UPGRADE
+      value: Upgrade
+    - key: KEY_CUSTOMISATION
+      value: Customisation
+    - key: KEY_REMOVE_ADS
+      value: Remove ads, and get all bonuses at once as well as an exclusive player
+        view.
+    - key: KEY_COST
+      value: 'Cost:'
+    - key: KEY_SELECTED
+      value: Selected
+    - key: KEY_SELECT
+      value: Select
+    - key: KEY_MAX_VALUE
+      value: Max
+    - key: KEY_BONUS_DAMAGE
+      value: Increase damage
+    - key: KEY_BONUS_FREEZE
+      value: Freeze all
+    - key: KEY_BONUS_MONEY
+      value: Bonus money
+    - key: KEY_BONUS_BLOWUP
+      value: Blowup all
+    - key: KEY_UPGRADE_HEALTH_TITLE
+      value: Max HP increased
+    - key: KEY_UPGRADE_HEALTH
+      value: Increases HP by %n% of base max HP
+    - key: KEY_UPGRADE_ARMOR
+      value: Increases armour that absorbs %n% damage
+    - key: KEY_UPGRADE_SPEED
+      value: Increases the player's movement speed by %n%
+    - key: KEY_UPGRADE_DAMAGE_MULTIPLIER
+      value: Increases player damage by %n%
+    - key: KEY_UPGRADE_CRITICAL_CHANCE
+      value: Increases the chance of critical damage by %n%
+    - key: KEY_UPGRADE_CRITICAL_DAMAGE
+      value: Increases critical damage by %n%
+    - key: KEY_UPGRADE_RECOVER_TIME
+      value: Reduces the reload speed of all guns by %n%
+    - key: KEY_UPGRADE_MONEY_MULTIPLIER
+      value: Increases the number of coins to be picked up by %n%
+    - key: KEY_UPGRADE_PICK_UP_RADIUS
+      value: Increases the picking radius of items by %n%
+    - key: KEY_STARTER_SKILL
+      value: At the start of the game you can choose one starting ability
+    - key: KEY_SELECTION_PLAYER
+      value: Ship
+    - key: KEY_SELECTION_DEFAULTBULLET
+      value: Laser
+    - key: KEY_SELECTION_AUTOBULLET
+      value: Proton laser
+    - key: KEY_SELECTION_MINIGUNBULLET
+      value: Minigun bullet
+    - key: KEY_SELECTION_ROCKETBULLET
+      value: Rocket
+    - key: KEY_SELECTION_DRONES
+      value: Drone
+    - key: KEY_SKILL_HEALTH_TITLE
+      value: HP+
+    - key: KEY_SKILL_HEALTH
+      value: Increases HP by %n% units
+    - key: KEY_SKILL_SPEED_TITLE
+      value: Speed+
+    - key: KEY_SKILL_SPEED
+      value: Increases the player's movement speed by %n%
+    - key: KEY_SKILL_SHIELD_TITLE
+      value: Shield
+    - key: KEY_SKILL_SHIELD
+      value: Adds a shield that fully absorbs damage
+    - key: KEY_SKILL_SHIELD_RECOVER_TITLE
+      value: Shield acceleration
+    - key: KEY_SKILL_SHIELD_RECOVER
+      value: Reduces reload time by %n%
+    - key: KEY_SKILL_SHIELD_HEALTH_TITLE
+      value: Shield reinforcement
+    - key: KEY_SKILL_SHIELD_HEALTH
+      value: "Shield absorbs more damage\uFEFF"
+    - key: KEY_SKILL_ARMOR_TITLE
+      value: Armor
+    - key: KEY_SKILL_ARMOR
+      value: Absorbs %n% of damage
+    - key: KEY_SKILL_SHOT_AFTER_SHOT_TITLE
+      value: Shot after shot
+    - key: KEY_SKILL_SHOT_AFTER_SHOT
+      value: Each time takes another shot
+    - key: KEY_SKILL_DOUBLE_SHOT_TITLE
+      value: Multishot
+    - key: KEY_SKILL_DOUBLE_SHOT
+      value: You fire 1 additional shot diagonally.
+    - key: KEY_SKILL_RECOVER_TIME_TITLE
+      value: Reloading-
+    - key: KEY_SKILL_RECOVER_TIME
+      value: Reduces the reload time of all guns by %n%
+    - key: KEY_SKILL_DAMAGE_INCREASE_TITLE
+      value: Damage+
+    - key: KEY_SKILL_DAMAGE_INCREASE
+      value: Increases damage from all guns by %n%
+    - key: KEY_SKILL_AUTO_GUN_TITLE
+      value: Proton gun
+    - key: KEY_SKILL_AUTO_GUN
+      value: Gives a proton homing gun
+    - key: KEY_SKILL_CRITICAL_DAMAGE_TITLE
+      value: Critical Damage+
+    - key: KEY_SKILL_CRITICAL_DAMAGE
+      value: Increases critical damage by %n%
+    - key: KEY_SKILL_CRITICAL_CHANCE_TITLE
+      value: Critical Damage Chance+
+    - key: KEY_SKILL_CRITICAL_CHANCE
+      value: Increases the chance of critical damage by %n%
+    - key: KEY_SKILL_DASH_TITLE
+      value: Dash
+    - key: KEY_SKILL_DASH
+      value: Gives you the opportunity to take a dash forward
+    - key: KEY_SKILL_MASK_TITLE
+      value: Masking
+    - key: KEY_SKILL_MASK
+      value: Gives full invulnerability and masking for a while, but prevents you
+        from shooting or picking up items.
+    - key: KEY_SKILL_MASK_TIME_TITLE
+      value: Masking Time+
+    - key: KEY_SKILL_MASK_TIME
+      value: Increases masking time by %n% <color=#FFBF00>seconds</color>
+    - key: KEY_SKILL_ROCKET_TITLE
+      value: Rocket launcher
+    - key: KEY_SKILL_ROCKET
+      value: Adds a rocket launcher.
+    - key: KEY_SKILL_ROCKET_COUNT_TITLE
+      value: Rocket ammunition+
+    - key: KEY_SKILL_ROCKET_COUNT
+      value: Increases by 1 the maximum number of missiles carried
+    - key: KEY_SKILL_ROCKET_EXPLOSION_TITLE
+      value: Rocket power+
+    - key: KEY_SKILL_ROCKET_EXPLOSION
+      value: Increases the blast radius from the rocket by %n%
+    - key: KEY_SKILL_DRONE_TITLE
+      value: Drone
+    - key: KEY_SKILL_DRONE
+      value: Adds a drone that circles around the ship
+    - key: KEY_SKILL_DRONE_SPEED_TITLE
+      value: Drone acceleration
+    - key: KEY_SKILL_DRONE_SPEED
+      value: Increases the rotation speed of the drone by %n%
+    - key: KEY_SKILL_XP_MULTIPLIER_TITLE
+      value: Exp multiplier
+    - key: KEY_SKILL_XP_MULTIPLIER
+      value: Multiplies the experience gained by %n%
+    - key: KEY_SKILL_HEALTH_RESTORE_TITLE
+      value: Regeneration
+    - key: KEY_SKILL_HEALTH_RESTORE
+      value: 'HP is slow to recover '
+    - key: KEY_SKILL_HEALTH_RESTORE_TIME_TITLE
+      value: Regeneration+
+    - key: KEY_SKILL_HEALTH_RESTORE_TIME
+      value: Reduces the time to regenerate by %n%
+    - key: KEY_SKILL_HEALTH_RESTORE_HEALTH_TITLE
+      value: Regeneration+
+    - key: KEY_SKILL_HEALTH_RESTORE_HEALTH
+      value: Enhances regeneration by %n%
+    - key: KEY_SKILL_LASER_TITLE
+      value: Beam gun
+    - key: KEY_SKILL_LASER
+      value: Deals huge amounts of damage in a straight line. Takes a long time to
+        reload.
+    - key: KEY_SKILL_LASER_SIZE_TITLE
+      value: Beam size+
+    - key: KEY_SKILL_LASER_SIZE
+      value: Increases the size of the beam by %n%
+    - key: KEY_SKILL_MINIGUN_TITLE
+      value: Machine gun
+    - key: KEY_SKILL_MINIGUN
+      value: Adds a cannon that takes a lot of shots and has a large spread.
+    - key: KEY_SKILL_MINIGUN_COUNT_TITLE
+      value: Reinforcing the machine gun
+    - key: KEY_SKILL_MINIGUN_COUNT
+      value: The machine gun fires more shots
+    - key: KEY_SKILL_MINIGUN_ANGLE_INCREASE_TITLE
+      value: Increase the spread
+    - key: KEY_SKILL_MINIGUN_ANGLE_INCREASE
+      value: Increases the dispersion of machine gun shots by %n% (replaces the improvement
+        in accuracy of the machine gun)
+    - key: KEY_SKILL_MINIGUN_ANGLE_DECREASE_TITLE
+      value: Machine Gun Accuracy
+    - key: KEY_SKILL_MINIGUN_ANGLE_DECREASE
+      value: Reduces the dispersion of machine gun shots by %n% (replaces the increase
+        in dispersion)
+    - key: KEY_SKILL_AUTO_GUN_BULLET_TITLE
+      value: Proton Shot Improvement
+    - key: KEY_SKILL_AUTO_GUN_BULLET
+      value: Proton shot goes through another enemy
+    - key: KEY_SKILL_DASH_DISTANCE_TITLE
+      value: Strengthening the dash
+    - key: KEY_SKILL_DASH_DISTANCE
+      value: Increases dash range by %n%
+    - key: KEY_SKILL_ENERGY_GUN_TITLE
+      value: Energy gun
+    - key: KEY_SKILL_ENERGY_GUN
+      value: Adds an energy cannon. Which targets the nearest enemy and deals cooldown
+        damage.
+    - key: KEY_SKILL_ENERGY_GUN_COUNT_TITLE
+      value: Energy gun+
+    - key: KEY_SKILL_ENERGY_GUN_COUNT
+      value: Adds another energy cannon
+    - key: KEY_SKILL_ENERGY_GUN_HIT_TITLE
+      value: Reinforcing the energy cannon
+    - key: KEY_SKILL_ENERGY_GUN_HIT
+      value: The cannon deals damage faster by %n%
+    - key: KEY_SKILL_PICK_UP_TITLE
+      value: Magnet+
+    - key: KEY_SKILL_PICK_UP
+      value: Increases the picking radius of items by %n%
+  - language: 2
+    localizedTexts:
+    - key: KEY_MAIN_MENU_START
+      value: "\u0421\u0442\u0430\u0440\u0442"
+    - key: KEY_MAIN_MENU_SHOP
+      value: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
+    - key: KEY_MAIN_MENU_LEADERBOARD
+      value: "\u0420\u0435\u043A\u043E\u0440\u0434\u044B"
+    - key: KEY_MAIN_MENU_INFO_NO_SIGNAL
+      value: "\u041D\u0435\u0442 \u0441\u0438\u0433\u043D\u0430\u043B\u0430..."
+    - key: KEY_DOUBLE_MONEY
+      value: "\u0423\u0434\u0432\u043E\u0438\u0442\u044C \u043C\u043E\u043D\u0435\u0442\u043A\u0438!"
+    - key: KEY_LEADERBOARD_PLACE
+      value: "\u041C\u0435\u0441\u0442\u043E"
+    - key: KEY_LEADERBOARD_NICKNAME
+      value: "\u0418\u043C\u044F"
+    - key: KEY_LEADERBOARD_TIME
+      value: "\u0412\u0440\u0435\u043C\u044F \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438"
+    - key: KEY_LEADERBOARD_SWITCH_TO_LOCAL
+      value: "\u041B\u043E\u043A\u0430\u043B\u044C\u043D\u044B\u0435"
+    - key: KEY_LEADERBOARD_SWITCH_TO_GLOBAL
+      value: "\u0413\u043B\u043E\u0431\u0430\u043B\u044C\u043D\u044B\u0435"
+    - key: KEY_ABOUT_US_TITLE
+      value: "\u041E \u043D\u0430\u0441"
+    - key: KEY_ABOUT_US_LEAD_PROGRAMME
+      value: "\u0412\u0435\u0434\u0443\u0449\u0438\u0439 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442,
+        \u0438\u0433\u0440\u043E\u0432\u043E\u0439 \u0434\u0438\u0437\u0430\u0439\u043D\u0435\u0440"
+    - key: KEY_ABOUT_US_LEAD_ARTIST
+      value: "\u0412\u0435\u0434\u0443\u0449\u0438\u0439 \u0445\u0443\u0434\u043E\u0436\u043D\u0438\u043A,
+        \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0438\u0441\u0442"
+    - key: KEY_ABOUT_US_PATREON
+      value: Patreon
+    - key: KEY_ABOUT_US_INSTAGRAMM
+      value: Instagram
+    - key: KEY_ABOUT_US_LINK
+      value: "\u0441\u0432\u044F\u0437\u044C"
+    - key: KEY_GAMEOVER_TITLE
+      value: "\u0418\u0433\u0440\u0430 \u0437\u0430\u043A\u043E\u043D\u0447\u0435\u043D\u0430"
+    - key: KEY_GAMEOVER_ENTER_NICKNAME
+      value: "\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0438\u043C\u044F"
+    - key: KEY_SCORE
+      value: "\u0421\u0447\u0435\u0442"
+    - key: KEY_GAMEOVER_ONE_MORE_CHANCE
+      value: "\u0415\u0449\u0435 \u043E\u0434\u0438\u043D \u0448\u0430\u043D\u0441"
+    - key: KEY_CONTINUE
+      value: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+    - key: KEY_PAUSE_TITLE
+      value: "\u041F\u0430\u0443\u0437\u0430"
+    - key: KEY_EXIT
+      value: "\u0412\u044B\u0445\u043E\u0434"
+    - key: KEY_SETTINGS_TITLE
+      value: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
+    - key: KEY_SETTINGS_SOUNDS
+      value: "\u0417\u0432\u0443\u043A\u0438"
+    - key: KEY_SETTINGS_MUSIC
+      value: "\u041C\u0443\u0437\u044B\u043A\u0430"
+    - key: KEY_SETTINGS_LANGUAGE
+      value: "\u042F\u0437\u044B\u043A"
+    - key: KEY_SETTINGS_JOYSTICK
+      value: "\u0414\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0441\u0442\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439"
+    - key: KEY_TUTORIAL_TITLE
+      value: "\u0420\u0443\u043A\u043E\u0432\u043E\u0434\u0441\u0442\u0432\u043E"
+    - key: KEY_TUTORIAL_PAGE_0
+      value: "\u042D\u0442\u043E \u0432\u0430\u0448 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436."
+    - key: KEY_TUTORIAL_PAGE_1
+      value: "\u041F\u0440\u0430\u0432\u044B\u0439 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A
+        \u043D\u0443\u0436\u0435\u043D \u0434\u043B\u044F \u0442\u043E\u0433\u043E
+        \u0447\u0442\u043E\u0431\u044B \u0443\u043F\u0440\u0430\u0432\u043B\u044F\u0442\u044C
+        \u0432\u0430\u0448\u0438\u043C \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0435\u043C
+        \u0434\u0432\u0438\u0433\u0430\u044F \u0435\u0433\u043E \u0432 \u043F\u0440\u043E\u0441\u0442\u0440\u0430\u043D\u0441\u0442\u0432\u0435
+        \u0438 \u043F\u043E\u0432\u043E\u0440\u0430\u0447\u0438\u0432\u0430\u044F.
+        \u0410 \u043B\u0435\u0432\u044B\u043C \u0432\u044B \u043C\u043E\u0436\u0435\u0442\u0435
+        \u0432\u0440\u0430\u0449\u0430\u0442\u044C \u0438\u0433\u0440\u043E\u043A\u0430
+        \u0434\u043B\u044F \u043F\u0440\u0438\u0446\u0435\u043B\u0438\u0432\u0430\u043D\u0438\u044F
+        \u043D\u0435 \u043C\u0435\u043D\u044F\u044F \u043D\u0430\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435
+        \u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F."
+    - key: KEY_TUTORIAL_PAGE_2
+      value: "\u042D\u0442\u043E \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435
+        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u0435\u0441\u043B\u0438
+        \u043E\u043D\u043E \u0437\u0430\u043A\u043E\u043D\u0447\u0435\u043D\u043E
+        \u0438\u0433\u0440\u0443 \u0431\u0443\u0434\u0435\u0442 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E."
+    - key: KEY_TUTORIAL_PAGE_3
+      value: "\u0412\u0441\u0435 \u0447\u0442\u043E \u0434\u0432\u0438\u0436\u0435\u0442\u0441\u044F
+        \u0438 \u043F\u0440\u0435\u0441\u043B\u0435\u0434\u0443\u0435\u0442 \u0432\u0430\u0448\u0435\u0433\u043E
+        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430 \u044D\u0442\u043E
+        \u0432\u0430\u0448\u0438 \u0432\u0440\u0430\u0433\u0438, \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0430\u0442\u044C
+        \u0438\u0445 \u043C\u043E\u0436\u043D\u043E \u0440\u0430\u0437\u043D\u044B\u043C\u0438
+        \u0432\u0438\u0434\u0430\u043C\u0438 \u043E\u0440\u0443\u0436\u0438\u044F,
+        \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435
+        \u0441\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u0435\u0442 \u043F\u0440\u0438
+        \u043D\u0430\u0432\u0435\u0434\u0435\u043D\u0438\u0438 \u0438\u0433\u0440\u043E\u043A\u0430
+        \u043D\u0430 \u0432\u0440\u0430\u0433\u0430. \u041F\u043E\u0441\u043B\u0435
+        \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0435\u043D\u0438\u0435 \u0432\u0440\u0430\u0433\u0430
+        \u0438\u0433\u0440\u043E\u043A\u0443 \u043D\u0430\u0447\u0438\u0441\u043B\u044F\u044E\u0442
+        \u043E\u0447\u043A\u0438 \u0438 \u0438\u0437 \u0432\u0440\u0430\u0433\u0430
+        \u043C\u043E\u0436\u0435\u0442 \u0432\u044B\u043F\u0430\u0441\u0442\u044C
+        \u043F\u0440\u0435\u0434\u043C\u0435\u0442."
+    - key: KEY_TUTORIAL_PAGE_4
+      value: "\u041F\u043E\u0441\u043B\u0435 \u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0435\u043D\u0438\u0435
+        \u0432\u0440\u0430\u0433\u0430 \u043F\u0430\u0434\u0430\u044E\u0442 \u043F\u0440\u0435\u0434\u043C\u0435\u0442.
+        \u0421\u0430\u043C\u044B\u0439 \u0447\u0430\u0441\u0442\u044B\u0439 \u043F\u0440\u0435\u0434\u043C\u0435\u0442
+        \u044D\u0442\u043E \u043A\u0440\u0438\u0441\u0442\u0430\u043B\u043B \u043E\u043F\u044B\u0442\u0430
+        \u043F\u0440\u0438 \u043F\u043E\u0434\u0431\u043E\u0440\u0435 \u043A\u043E\u0442\u043E\u0440\u043E\u0433\u043E
+        \u0443 \u0438\u0433\u0440\u043E\u043A\u0430 \u0431\u0443\u0434\u0435\u0442
+        \u0437\u0430\u043F\u043E\u043B\u043D\u044F\u0442\u0441\u044F \u043F\u043E\u043B\u043E\u0441\u043A\u0430
+        \u043E\u043F\u044B\u0442\u0430 \u043F\u043E\u0441\u043B\u0435 \u0437\u0430\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F
+        \u043A\u043E\u0442\u043E\u0440\u043E\u0439 \u0438\u0433\u0440\u043E\u043A
+        \u043F\u043E\u043B\u0443\u0447\u0438\u0442 \u043D\u043E\u0432\u044B\u0439
+        \u0443\u0440\u043E\u0432\u0435\u043D\u044C. \u0422\u0430\u043A \u0436\u0435
+        \u0435\u0441\u0442\u044C \u0434\u0440\u0443\u0433\u0438\u0435 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B
+        \u043D\u043E \u0438\u0445 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435
+        \u0432\u0430\u043C \u043F\u0440\u0435\u0434\u0441\u0442\u043E\u0438\u0442
+        \u0443\u0437\u043D\u0430\u0442\u044C \u0441\u0430\u043C\u043E\u043C\u0443."
+    - key: KEY_TUTORIAL_PAGE_5
+      value: "\u041F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438
+        \u043D\u043E\u0432\u043E\u0433\u043E \u0443\u0440\u043E\u0432\u043D\u044F
+        \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442\u0441\u044F \u043E\u043A\u043D\u043E
+        \u0432 \u043A\u043E\u0442\u043E\u0440\u043E\u043C \u043C\u043E\u0436\u043D\u043E
+        \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044C.
+        \u0421\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438 \u0431\u044B\u0432\u0430\u044E\u0442
+        2 \u0432\u0438\u0434\u043E\u0432 \u044D\u0442\u043E \u043F\u0430\u0441\u0441\u0438\u0432\u043D\u044B\u0435
+        \u0442\u0435 \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0441 \u043F\u0440\u043E\u043A\u0430\u0447\u043A\u043E\u0439
+        \u0431\u0443\u0434\u0443\u0442 \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0442\u044C
+        \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u0438\u0433\u0440\u043E\u043A\u0430
+        \u0438 \u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0435 \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+        \u0431\u0443\u0434\u0443\u0442 \u0434\u0430\u0432\u0430\u0442\u044C \u0438\u0433\u0440\u043E\u043A\u0443
+        \u043D\u043E\u0432\u044B\u0435 \u0432\u0438\u0434\u044B \u0432\u043E\u043E\u0440\u0443\u0436\u0435\u043D\u0438\u044F
+        \u0438\u043B\u0438 \u0437\u0430\u0449\u0438\u0442\u044B."
+    - key: KEY_TUTORIAL_PAGE_6
+      value: "\u0422\u0430\u043A \u0436\u0435 \u043E\u0434\u0438\u043D \u0438\u0437
+        \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432 \u0441 \u043A\u043E\u0442\u043E\u0440\u043E\u0433
+        \u0442\u043E\u0436\u0435 \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C
+        \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438 \u044D\u0442\u043E
+        \u0441\u0443\u043D\u0434\u0443\u043A \u043A\u043E\u0442\u043E\u0440\u044B\u0439
+        \u043F\u0430\u0434\u0430\u0435\u0442 \u0442\u043E\u043B\u044C\u043A\u043E
+        \u0438\u0437 \u0431\u043E\u0441\u0441\u043E\u0432. \u0418\u0437 \u0441\u0443\u043D\u0434\u0443\u043A\u0430
+        \u043C\u043E\u0436\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C
+        \u043E\u0442 1 \u0434\u043E 5 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F
+        \u0432\u0430\u0448\u0438\u0445 \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0435\u0439."
+    - key: KEY_TUTORIAL_PAGE_7
+      value: "\u041F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E \u043A\u0430\u043A
+        \u0432\u044B \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u0435\u0442\u0435
+        \u0432\u044B \u0441\u043C\u043E\u0436\u0435\u0442\u0435 \u0432\u043D\u0435\u0441\u0442\u0438
+        \u0441\u0432\u043E\u0438 \u0440\u0435\u043A\u043E\u0440\u0434\u044B \u0432
+        \u0442\u0430\u0431\u043B\u0438\u0446\u0443. \u0423\u0434\u0430\u0447\u0438,
+        \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u043F\u0440\u043E\u0434\u0435\u0440\u0436\u0430\u0442\u0441\u044F
+        \u043A\u0430\u043A \u043C\u043E\u0436\u043D\u043E \u0434\u043E\u043B\u044C\u0448\u0435
+        \u0438 \u043D\u0430\u0431\u0440\u0430\u0442\u044C \u043E\u0447\u043A\u043E\u0432
+        \u0431\u043E\u043B\u044C\u0448\u0435 \u0447\u0435\u043C \u0434\u0440\u0443\u0433\u0438\u0435
+        \u0438\u0433\u0440\u043E\u043A\u0438!"
+    - key: KEY_SETTINGS_SELECTED_LANGUAGE
+      value: "\u042F\u0437\u044B\u043A"
+    - key: KEY_MAIN_MENU_INFO_TITLE
+      value: "\u0412\u044B \u0437\u043D\u0430\u043B\u0438?"
+    - key: KEY_MAIN_MENU_INFO_VALUE_0
+      value: "\u041A\u0440\u0430\u0441\u043D\u044B\u0439 \u043A\u0440\u0438\u0441\u0442\u0430\u043B\u043B
+        \u0434\u0430\u0435\u0442 \u0433\u043E\u0440\u0430\u0437\u0434\u043E \u0431\u043E\u043B\u044C\u0448\u0435
+        \u043E\u043F\u044B\u0442\u0430"
+    - key: KEY_MAIN_MENU_INFO_VALUE_1
+      value: "\u0411\u043E\u0441\u0441\u044B \u043C\u043E\u0433\u0443\u0442 \u0441\u0431\u0440\u043E\u0441\u0438\u0442\u044C
+        \u0441\u0443\u043D\u0434\u0443\u043A \u0441 \u043D\u0435\u0431\u043E\u043B\u044C\u0448\u0438\u043C
+        \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E\u043C \u043D\u0430\u0432\u044B\u043A\u043E\u0432"
+    - key: KEY_MAIN_MENU_INFO_VALUE_2
+      value: "\u0415\u0441\u043B\u0438 \u0443 \u0432\u0430\u0441 \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u0441\u044F
+        \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435, \u0438\u0433\u0440\u0430
+        \u0437\u0430\u043A\u043E\u043D\u0447\u0438\u0442\u0441\u044F"
+    - key: KEY_MAIN_MENU_INFO_VALUE_3
+      value: "\u0442\u0435\u0441\u0442"
+    - key: KEY_MAIN_MENU_INFO_VALUE_4
+      value: "\u0442\u0435\u0441\u0442"
+    - key: KEY_GAME_LEVEL
+      value: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C:"
+    - key: KEY_CONFIRM
+      value: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u044C"
+    - key: KEY_TAP_TO_OPEN_CHEST
+      value: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u0447\u0442\u043E\u0431\u044B
+        \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u0441\u0443\u043D\u0434\u0443\u043A"
+    - key: KEY_SUPPORT_US_TITLE
+      value: "\u041F\u043E\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044C \u043D\u0430\u0441"
+    - key: KEY_LEVEL_UP_TITLE
+      value: "\u041D\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+    - key: KEY_REACHED_LEVEL
+      value: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!
+        \u0412\u044B \u0434\u043E\u0441\u0442\u0438\u0433\u043B\u0438 \u0443\u0440\u043E\u0432\u043D\u044F"
+    - key: KEY_RESET_SKILLS
+      value: "\u041E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u0438"
+    - key: KEY_WARNING
+      value: "\u0412\u043D\u0438\u043C\u0430\u043D\u0438\u0435"
+    - key: KEY_BACK_TO_GAME_ZONE
+      value: "\u0412\u0435\u0440\u043D\u0438\u0442\u0435\u0441\u044C \u0432 \u0438\u0433\u0440\u043E\u0432\u0443\u044E
+        \u0437\u043E\u043D\u0443"
+    - key: KEY_LOADING
+      value: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..."
+    - key: KEY_RELOAD
+      value: "\u041F\u0435\u0440\u0435\u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435"
+    - key: KEY_UPGRADE
+      value: "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u044F"
+    - key: KEY_CUSTOMISATION
+      value: "\u041F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u044F"
+    - key: KEY_REMOVE_ADS
+      value: "\u0423\u0431\u0440\u0430\u0442\u044C \u0440\u0435\u043A\u043B\u0430\u043C\u0443,
+        \u0438 \u043F\u043E\u043B\u0443\u0447\u0430\u0442\u044C \u0432\u0441\u0435
+        \u0431\u043E\u043D\u0443\u0441\u044B \u0441\u0440\u0430\u0437\u0443 \u0430
+        \u0442\u0430\u043A\u0436\u0435 \u044D\u043A\u0441\u043A\u043B\u044E\u0437\u0438\u0432\u043D\u044B\u0439
+        \u0432\u0438\u0434 \u0438\u0433\u0440\u043E\u043A\u0430."
+    - key: KEY_COST
+      value: "\u0426\u0435\u043D\u0430:"
+    - key: KEY_SELECTED
+      value: "\u0412\u044B\u0431\u0440\u0430\u043D\u044B\u0439"
+    - key: KEY_SELECT
+      value: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C"
+    - key: KEY_MAX_VALUE
+      value: "\u041C\u0430\u043A\u0441\u0438\u043C\u0443\u043C"
+    - key: KEY_BONUS_DAMAGE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C \u0443\u0440\u043E\u043D"
+    - key: KEY_BONUS_FREEZE
+      value: "\u0417\u0430\u043C\u043E\u0440\u043E\u0437\u043A\u0430"
+    - key: KEY_BONUS_MONEY
+      value: "\u0411\u043E\u043D\u0443\u0441\u043D\u044B\u0435 \u043C\u043E\u043D\u0435\u0442\u044B"
+    - key: KEY_BONUS_BLOWUP
+      value: "\u0412\u0437\u043E\u0440\u0432\u0430\u0442\u044C \u0432\u0441\u0435\u0445"
+    - key: KEY_UPGRADE_HEALTH_TITLE
+      value: "\u041C\u0430\u043A\u0441. \u0437\u0430\u043F\u0430\u0441 \u041E\u0417
+        \u043F\u043E\u0432\u044B\u0448\u0430\u0435\u0442\u0441\u044F."
+    - key: KEY_UPGRADE_HEALTH
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u041E\u0417 \u043D\u0430 %n% \u043E\u0442 \u0431\u0430\u0437\u043E\u0432\u043E\u0433\u043E
+        \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+        \u041E\u0417"
+    - key: KEY_UPGRADE_ARMOR
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u0431\u0440\u043E\u043D\u0438
+        \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u043F\u043E\u0433\u043B\u043E\u0449\u0430\u0435\u0442
+        %n% \u0443\u0440\u043E\u043D\u0430"
+    - key: KEY_UPGRADE_SPEED
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F
+        \u0438\u0433\u0440\u043E\u043A\u0430 \u043D\u0430 %n% "
+    - key: KEY_UPGRADE_DAMAGE_MULTIPLIER
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0443\u0440\u043E\u043D \u043D\u0430\u043D\u043E\u0441\u0438\u043C\u044B\u0439
+        \u0438\u0433\u0440\u043E\u043A\u043E\u043C \u043D\u0430 %n%"
+    - key: KEY_UPGRADE_CRITICAL_CHANCE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0448\u0430\u043D\u0441 \u043D\u0430 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+        \u0443\u0440\u043E\u043D \u043D\u0430 %n%"
+    - key: KEY_UPGRADE_CRITICAL_DAMAGE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0443\u0440\u043E\u043D
+        \u043D\u0430 %n%"
+    - key: KEY_UPGRADE_RECOVER_TIME
+      value: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C
+        \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0438 \u0432\u0441\u0435\u0445
+        \u043E\u0440\u0443\u0434\u0438\u0439 \u043D\u0430 %n%"
+    - key: KEY_UPGRADE_MONEY_MULTIPLIER
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u043A\u043E\u043B-\u0432\u043E \u043C\u043E\u043D\u0435\u0442 \u043F\u0440\u0438
+        \u043F\u043E\u0434\u0431\u043E\u0440\u0435 \u043D\u0430 %n%"
+    - key: KEY_UPGRADE_PICK_UP_RADIUS
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0440\u0430\u0434\u0438\u0443\u0441 \u043F\u043E\u0434\u0431\u043E\u0440\u0430
+        \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432 \u043D\u0430 %n%"
+    - key: KEY_STARTER_SKILL
+      value: "\u0412 \u043D\u0430\u0447\u0430\u043B\u0435 \u0438\u0433\u0440\u044B
+        \u043C\u043E\u0436\u043D\u0430 \u0432\u044B\u0431\u0440\u0430\u0442\u044C
+        \u043E\u0434\u043D\u0443 \u043D\u0430\u0447\u0430\u043B\u044C\u043D\u0443\u044E
+        \u0441\u043F\u043E\u0441\u043E\u0431\u043D\u043E\u0441\u0442\u044C"
+    - key: KEY_SELECTION_PLAYER
+      value: "\u041A\u043E\u0440\u0430\u0431\u043B\u044C"
+    - key: KEY_SELECTION_DEFAULTBULLET
+      value: "\u041B\u0430\u0437\u0435\u0440"
+    - key: KEY_SELECTION_AUTOBULLET
+      value: "\u041F\u0440\u043E\u0442\u043E\u043D\u043E\u0432\u044B\u0439 \u043B\u0430\u0437\u0435\u0440"
+    - key: KEY_SELECTION_MINIGUNBULLET
+      value: "\u041F\u0443\u043B\u0435\u043C\u0435\u0442\u043D\u044B\u0439 \u0432\u044B\u0441\u0442\u0440\u0435\u043B"
+    - key: KEY_SELECTION_ROCKETBULLET
+      value: "\u0420\u0430\u043A\u0435\u0442\u0430"
+    - key: KEY_SELECTION_DRONES
+      value: "\u0414\u0440\u043E\u043D"
+    - key: KEY_SKILL_HEALTH_TITLE
+      value: "\u041E\u0417+"
+    - key: KEY_SKILL_HEALTH
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u041E\u0417 \u043D\u0430 %n% \u0435\u0434\u0438\u043D\u0438\u0446"
+    - key: KEY_SKILL_SPEED_TITLE
+      value: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C+"
+    - key: KEY_SKILL_SPEED
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F
+        \u0438\u0433\u0440\u043E\u043A\u0430 \u043D\u0430 %n%"
+    - key: KEY_SKILL_SHIELD_TITLE
+      value: "\u0429\u0438\u0442"
+    - key: KEY_SKILL_SHIELD
+      value: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u0449\u0438\u0442
+        \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043F\u043E\u043B\u043D\u043E\u0441\u0442\u044C\u044E
+        \u043F\u043E\u0433\u043B\u043E\u0449\u0430\u0435\u0442 \u0443\u0440\u043E\u043D"
+    - key: KEY_SKILL_SHIELD_RECOVER_TITLE
+      value: "\u0420\u0430\u0437\u0433\u043E\u043D \u0449\u0438\u0442\u0430"
+    - key: KEY_SKILL_SHIELD_RECOVER
+      value: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
+        \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0438 \u043D\u0430
+        %n%"
+    - key: KEY_SKILL_SHIELD_HEALTH_TITLE
+      value: "\u0423\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u0449\u0438\u0442\u0430"
+    - key: KEY_SKILL_SHIELD_HEALTH
+      value: "\u0429\u0438\u0442 \u043F\u043E\u0433\u043B\u0430\u0449\u0430\u0435\u0442
+        \u0431\u043E\u043B\u044C\u0448\u0435 \u0443\u0440\u043E\u043D\u0430"
+    - key: KEY_SKILL_ARMOR_TITLE
+      value: "\u0411\u0440\u043E\u043D\u044F"
+    - key: KEY_SKILL_ARMOR
+      value: "\u041F\u043E\u0433\u043B\u043E\u0449\u0430\u0435\u0442 %n% \u0443\u0440\u043E\u043D\u0430"
+    - key: KEY_SKILL_SHOT_AFTER_SHOT_TITLE
+      value: "\u0412\u044B\u0441\u0442\u0440\u0435\u043B \u0437\u0430 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u043E\u043C"
+    - key: KEY_SKILL_SHOT_AFTER_SHOT
+      value: "\u041A\u0430\u0436\u0434\u044B\u0439 \u0440\u0430\u0437 \u0434\u0435\u043B\u0430\u0435\u0442
+        \u0435\u0449\u0435 \u043E\u0434\u0438\u043D \u0432\u044B\u0441\u0442\u0440\u0435\u043B"
+    - key: KEY_SKILL_DOUBLE_SHOT_TITLE
+      value: "\u041C\u0443\u043B\u044C\u0442\u0438-\u0432\u044B\u0441\u0442\u0440\u0435\u043B"
+    - key: KEY_SKILL_DOUBLE_SHOT
+      value: "\u0412\u044B \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u0438\u0432\u0430\u0435\u0442\u0435
+        1 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439
+        \u0432\u044B\u0441\u0442\u0440\u0435\u043B \u0434\u0438\u0430\u0433\u043E\u043D\u0430\u043B\u044C\u043D\u043E."
+    - key: KEY_SKILL_RECOVER_TIME_TITLE
+      value: "\u041F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0430-"
+    - key: KEY_SKILL_RECOVER_TIME
+      value: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
+        \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u043A\u0438 \u0432\u0441\u0435\u0445
+        \u043E\u0440\u0443\u0434\u0438\u0439 \u043D\u0430 %n%"
+    - key: KEY_SKILL_DAMAGE_INCREASE_TITLE
+      value: "\u0423\u0440\u043E\u043D+"
+    - key: KEY_SKILL_DAMAGE_INCREASE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0443\u0440\u043E\u043D \u043E\u0442 \u0432\u0441\u0435\u0445 \u043E\u0440\u0443\u0434\u0438\u0439
+        \u043D\u0430 %n%"
+    - key: KEY_SKILL_AUTO_GUN_TITLE
+      value: "\u041F\u0440\u043E\u0442\u043E\u043D\u043E\u0432\u0430\u044F \u043F\u0443\u0448\u043A\u0430"
+    - key: KEY_SKILL_AUTO_GUN
+      value: "\u0414\u0430\u0435\u0442 \u043F\u0440\u043E\u0442\u043E\u043D\u043D\u043E\u0435
+        \u0441\u0430\u043C\u043E\u043D\u0430\u0432\u043E\u0434\u044F\u0449\u0438\u0435\u0441\u044F
+        \u043E\u0440\u0443\u0434\u0438\u0435 "
+    - key: KEY_SKILL_CRITICAL_DAMAGE_TITLE
+      value: "\u041A\u0440\u0438\u0442 \u0443\u0440\u043E\u043D+"
+    - key: KEY_SKILL_CRITICAL_DAMAGE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0443\u0440\u043E\u043D
+        \u043D\u0430 %n%"
+    - key: KEY_SKILL_CRITICAL_CHANCE_TITLE
+      value: "\u0428\u0430\u043D\u0441 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
+        \u0443\u0440\u043E\u043D\u0430+"
+    - key: KEY_SKILL_CRITICAL_CHANCE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0448\u0430\u043D\u0441 \u043D\u0430 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+        \u0443\u0440\u043E\u043D \u043D\u0430 %n%"
+    - key: KEY_SKILL_DASH_TITLE
+      value: "\u0420\u044B\u0432\u043E\u043A"
+    - key: KEY_SKILL_DASH
+      value: "\u0414\u0430\u0435\u0442 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C
+        \u0441\u043E\u0432\u0435\u0440\u0448\u0438\u0442\u044C \u0440\u044B\u0432\u043E\u043A
+        \u0432\u043F\u0435\u0440\u0435\u0434"
+    - key: KEY_SKILL_MASK_TITLE
+      value: "\u041C\u0430\u0441\u043A\u0438\u0440\u043E\u0432\u043A\u0430"
+    - key: KEY_SKILL_MASK
+      value: "\u0414\u0430\u0435\u0442 \u043F\u043E\u043B\u043D\u0443\u044E \u043D\u0435\u0443\u044F\u0437\u0432\u0438\u043C\u043E\u0441\u0442\u044C
+        \u0438 \u043C\u0430\u0441\u043A\u0438\u0440\u043E\u0432\u043A\u0443 \u043D\u0430
+        \u0432\u0440\u0435\u043C\u044F, \u043D\u043E \u043D\u0435 \u0434\u0430\u0435\u0442
+        \u0441\u0442\u0440\u0435\u043B\u044F\u0442\u044C \u0438 \u043F\u043E\u0434\u0431\u0438\u0440\u0430\u0442\u044C
+        \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u044B."
+    - key: KEY_SKILL_MASK_TIME_TITLE
+      value: "\u0412\u0440\u0435\u043C\u044F \u043C\u0430\u0441\u043A\u0438\u0440\u043E\u0432\u043A\u0438+"
+    - key: KEY_SKILL_MASK_TIME
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0432\u0440\u0435\u043C\u044F \u043C\u0430\u0441\u043A\u0438\u0440\u043E\u0432\u043A\u0438
+        \u043D\u0430 %n% <color=#FFBF00>\u0441\u0435\u043A\u0443\u043D\u0434</color>"
+    - key: KEY_SKILL_ROCKET_TITLE
+      value: "\u0420\u0430\u043A\u0435\u0442\u043D\u0430\u044F \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430"
+    - key: KEY_SKILL_ROCKET
+      value: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u0440\u0430\u043A\u0435\u0442\u043D\u0443\u044E
+        \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0443."
+    - key: KEY_SKILL_ROCKET_COUNT_TITLE
+      value: "\u0420\u0430\u043A\u0435\u0442\u043D\u044B\u0439 \u0431\u043E\u0435\u0437\u0430\u043F\u0430\u0441+"
+    - key: KEY_SKILL_ROCKET_COUNT
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u043D\u0430 1 \u043A\u043E\u043B-\u0432\u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C
+        \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u0438\u043C\u044B\u0445 \u0440\u0430\u043A\u0435\u0442"
+    - key: KEY_SKILL_ROCKET_EXPLOSION_TITLE
+      value: "\u0420\u0430\u043A\u0435\u0442\u043D\u0430\u044F \u043C\u043E\u0449\u044C+"
+    - key: KEY_SKILL_ROCKET_EXPLOSION
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0440\u0430\u0434\u0438\u0443\u0441 \u0432\u0437\u0440\u044B\u0432\u0430
+        \u043E\u0442 \u0440\u0430\u043A\u0435\u0442\u044B \u043D\u0430 %n%"
+    - key: KEY_SKILL_DRONE_TITLE
+      value: "\u0414\u0440\u043E\u043D"
+    - key: KEY_SKILL_DRONE
+      value: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u0434\u0440\u043E\u043D\u0430
+        \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043A\u0440\u0443\u0442\u0438\u0442\u0441\u044F
+        \u0432\u043E\u043A\u0440\u0443\u0433 \u043A\u043E\u0440\u0430\u0431\u043B\u044F"
+    - key: KEY_SKILL_DRONE_SPEED_TITLE
+      value: "\u0423\u0441\u043A\u043E\u0440\u0435\u043D\u0438\u0435 \u0434\u0440\u043E\u043D\u0430"
+    - key: KEY_SKILL_DRONE_SPEED
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0432\u0440\u0430\u0449\u0435\u043D\u0438\u044F
+        \u0434\u0440\u043E\u043D\u0430 \u043D\u0430 %n%"
+    - key: KEY_SKILL_XP_MULTIPLIER_TITLE
+      value: "\u041C\u043D\u043E\u0436\u0438\u0442\u0435\u043B\u044C \u043E\u043F\u044B\u0442\u0430"
+    - key: KEY_SKILL_XP_MULTIPLIER
+      value: "\u0423\u043C\u043D\u043E\u0436\u0430\u0435\u0442 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043D\u044B\u0439
+        \u043E\u043F\u044B\u0442 \u043D\u0430 %n%"
+    - key: KEY_SKILL_HEALTH_RESTORE_TITLE
+      value: "\u0420\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F"
+    - key: KEY_SKILL_HEALTH_RESTORE
+      value: "\u041E\u0417 \u043C\u0435\u0434\u043B\u0435\u043D\u043D\u043E \u0432\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442\u0441\u044F "
+    - key: KEY_SKILL_HEALTH_RESTORE_TIME_TITLE
+      value: "\u0420\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F+"
+    - key: KEY_SKILL_HEALTH_RESTORE_TIME
+      value: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0432\u0440\u0435\u043C\u044F
+        \u0434\u043B\u044F \u0440\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u0438
+        \u043D\u0430 %n%"
+    - key: KEY_SKILL_HEALTH_RESTORE_HEALTH_TITLE
+      value: "\u0420\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F+"
+    - key: KEY_SKILL_HEALTH_RESTORE_HEALTH
+      value: "\u0423\u0441\u0438\u043B\u0438\u0432\u0430\u0435\u0442 \u0440\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044E
+        \u043D\u0430 %n%"
+    - key: KEY_SKILL_LASER_TITLE
+      value: "\u041B\u0443\u0447\u0435\u0432\u0430\u044F \u043F\u0443\u0448\u043A\u0430"
+    - key: KEY_SKILL_LASER
+      value: "\u041D\u0430\u043D\u043E\u0441\u0438\u0442 \u043E\u0433\u0440\u043E\u043C\u043D\u044B\u0439
+        \u0443\u0440\u043E\u043D \u043F\u043E \u043F\u0440\u044F\u043C\u043E\u0439.
+        \u0414\u043E\u043B\u0433\u043E \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0436\u0430\u0435\u0442\u0441\u044F."
+    - key: KEY_SKILL_LASER_SIZE_TITLE
+      value: "\u0420\u0430\u0437\u043C\u0435\u0440 \u043B\u0443\u0447\u0430+"
+    - key: KEY_SKILL_LASER_SIZE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0440\u0430\u0437\u043C\u0435\u0440 \u043B\u0443\u0447\u0430 \u043D\u0430
+        %n%"
+    - key: KEY_SKILL_MINIGUN_TITLE
+      value: "\u041F\u0443\u043B\u0435\u043C\u0435\u0442\u043D\u0430\u044F \u043F\u0443\u0448\u043A\u0430"
+    - key: KEY_SKILL_MINIGUN
+      value: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u043F\u0443\u0448\u043A\u0443
+        \u043A\u043E\u0442\u043E\u0440\u0430\u044F \u0434\u0435\u043B\u0430\u0435\u0442
+        \u043C\u043D\u043E\u0433\u043E \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u043E\u043C
+        \u0438 \u0438\u043C\u0435\u0435\u0442 \u0431\u043E\u043B\u044C\u0448\u043E\u0439
+        \u0440\u0430\u0437\u0431\u0440\u043E\u0441."
+    - key: KEY_SKILL_MINIGUN_COUNT_TITLE
+      value: "\u0423\u0441\u0438\u043B\u0435\u043D\u0438\u0435 \u043F\u0443\u043B\u0435\u043C\u0435\u0442\u0430"
+    - key: KEY_SKILL_MINIGUN_COUNT
+      value: "\u041F\u0443\u043B\u0435\u043C\u0435\u0442 \u0434\u0435\u043B\u0430\u0435\u0442
+        \u0431\u043E\u043B\u044C\u0448\u0435 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u043E\u0432"
+    - key: KEY_SKILL_MINIGUN_ANGLE_INCREASE_TITLE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C \u0440\u0430\u0437\u0431\u0440\u043E\u0441"
+    - key: KEY_SKILL_MINIGUN_ANGLE_INCREASE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0440\u0430\u0437\u0431\u0440\u043E\u0441 \u043F\u0443\u043B\u0435\u043C\u0435\u0442\u043D\u044B\u0445
+        \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u043E\u0432 \u043D\u0430 %n% (\u0437\u0430\u043C\u0435\u043D\u044F\u0435\u0442
+        \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435 \u0442\u043E\u0447\u043D\u043E\u0441\u0442\u0438
+        \u043F\u0443\u043B\u0435\u043C\u0435\u0442\u0430)"
+    - key: KEY_SKILL_MINIGUN_ANGLE_DECREASE_TITLE
+      value: "\u0422\u043E\u0447\u043D\u043E\u0441\u0442\u044C \u043F\u0443\u043B\u0435\u043C\u0435\u0442\u0430"
+    - key: KEY_SKILL_MINIGUN_ANGLE_DECREASE
+      value: "\u0423\u043C\u0435\u043D\u044C\u0448\u0430\u0435\u0442 \u0440\u0430\u0437\u0431\u0440\u043E\u0441
+        \u043F\u0443\u043B\u0435\u043C\u0435\u0442\u043D\u044B\u0445 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u043E\u0432
+        \u043D\u0430 %n% (\u0437\u0430\u043C\u0435\u043D\u044F\u0435\u0442 \u0443\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435
+        \u0440\u0430\u0437\u0431\u0440\u043E\u0441\u0430)"
+    - key: KEY_SKILL_AUTO_GUN_BULLET_TITLE
+      value: "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435 \u043F\u0440\u043E\u0442\u043E\u043D\u043D\u043E\u0433\u043E
+        \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u0430"
+    - key: KEY_SKILL_AUTO_GUN_BULLET
+      value: "\u041F\u0440\u043E\u0442\u043E\u043D\u043D\u044B\u0439 \u0432\u044B\u0441\u0442\u0440\u0435\u043B
+        \u043F\u0440\u043E\u0445\u043E\u0434\u0438\u0442 \u043D\u0430\u0441\u043A\u0432\u043E\u0437\u044C
+        \u0435\u0449\u0435 \u043E\u0434\u043D\u043E\u0433\u043E \u0432\u0440\u0430\u0433\u0430"
+    - key: KEY_SKILL_DASH_DISTANCE_TITLE
+      value: "\u0423\u0441\u0438\u043B\u0435\u043D\u0438\u0435 \u0440\u044B\u0432\u043A\u0430"
+    - key: KEY_SKILL_DASH_DISTANCE
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0434\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u044C \u0440\u044B\u0432\u043A\u0430
+        \u043D\u0430 %n%"
+    - key: KEY_SKILL_ENERGY_GUN_TITLE
+      value: "\u042D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0430\u044F
+        \u043F\u0443\u0448\u043A\u0430"
+    - key: KEY_SKILL_ENERGY_GUN
+      value: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u044D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0443\u044E
+        \u043F\u0443\u0448\u043A\u0443. \u041A\u043E\u0442\u043E\u0440\u0430\u044F
+        \u043D\u0430\u0446\u0435\u043B\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u043D\u0430 \u0431\u043B\u0438\u0436\u0430\u0439\u0448\u0435\u0433\u043E
+        \u0432\u0440\u0430\u0433\u0430 \u0438 \u043D\u0430\u043D\u043E\u0441\u0438\u0442
+        \u0443\u0440\u043E\u043D \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
+        \u0432\u0440\u0435\u043C\u0435\u043D\u0438 "
+    - key: KEY_SKILL_ENERGY_GUN_COUNT_TITLE
+      value: "\u042D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0430\u044F
+        \u043F\u0443\u0448\u043A\u0430+"
+    - key: KEY_SKILL_ENERGY_GUN_COUNT
+      value: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u0435\u0449\u0435
+        \u043E\u0434\u043D\u0443 \u044D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0443\u044E
+        \u043F\u0443\u0448\u043A\u0443"
+    - key: KEY_SKILL_ENERGY_GUN_HIT_TITLE
+      value: "\u0423\u0441\u0438\u043B\u0435\u043D\u0438\u0435 \u044D\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0439
+        \u043F\u0443\u0448\u043A\u0438"
+    - key: KEY_SKILL_ENERGY_GUN_HIT
+      value: "\u041F\u0443\u0448\u043A\u0430 \u043D\u0430\u043D\u043E\u0441\u0438\u0442
+        \u0443\u0440\u043E\u043D \u0431\u044B\u0441\u0442\u0440\u0435\u0435 \u043D\u0430
+        %n%"
+    - key: KEY_SKILL_PICK_UP_TITLE
+      value: "\u041C\u0430\u0433\u043D\u0438\u0442+"
+    - key: KEY_SKILL_PICK_UP
+      value: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+        \u0440\u0430\u0434\u0438\u0443\u0441 \u043F\u043E\u0434\u0431\u043E\u0440\u0430
+        \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432 \u043D\u0430 %n%"
+  - language: 3
+    localizedTexts:
+    - key: KEY_MAIN_MENU_START
+      value: "\u0421\u0442\u0430\u0440\u0442\r"
+    - key: KEY_MAIN_MENU_SHOP
+      value: "\u041C\u0430\u0433\u0430\u0437\u0438\u043D\r"
+    - key: KEY_MAIN_MENU_LEADERBOARD
+      value: "\u0420\u0435\u043A\u043E\u0440\u0434\u0438\r"
+    - key: KEY_MAIN_MENU_INFO_NO_SIGNAL
+      value: "\u041D\u0435\u043C\u0430\u0454 \u0441\u0438\u0433\u043D\u0430\u043B\u0443...\r"
+    - key: KEY_DOUBLE_MONEY
+      value: "\u041F\u043E\u0434\u0432\u043E\u0457\u0442\u0438 \u043C\u043E\u043D\u0435\u0442\u043A\u0438!\r"
+    - key: KEY_LEADERBOARD_PLACE
+      value: "\u041C\u0456\u0441\u0446\u0435\r"
+    - key: KEY_LEADERBOARD_NICKNAME
+      value: "\u0406\u043C'\u044F\r"
+    - key: KEY_LEADERBOARD_TIME
+      value: "\u0427\u0430\u0441 \u0440\u0435\u0454\u0441\u0442\u0440\u0430\u0446\u0456\u0457\r"
+    - key: KEY_LEADERBOARD_SWITCH_TO_LOCAL
+      value: "\u041B\u043E\u043A\u0430\u043B\u044C\u043D\u044B\u0435\r"
+    - key: KEY_LEADERBOARD_SWITCH_TO_GLOBAL
+      value: "\u0413\u043B\u043E\u0431\u0430\u043B\u044C\u043D\u0456\r"
+    - key: KEY_ABOUT_US_TITLE
+      value: "\u041F\u0440\u043E \u043D\u0430\u0441\r"
+    - key: KEY_ABOUT_US_LEAD_PROGRAMME
+      value: "\u0413\u043E\u043B\u043E\u0432\u043D\u0438\u0439 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442,
+        \u0456\u0433\u0440\u043E\u0432\u0438\u0439 \u0434\u0438\u0437\u0430\u0439\u043D\u0435\u0440\"\r"
+    - key: KEY_ABOUT_US_LEAD_ARTIST
+      value: "\u0413\u043E\u043B\u043E\u0432\u043D\u0438\u0439 \u0445\u0443\u0434\u043E\u0436\u043D\u0438\u043A,
+        \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u0456\u0441\u0442\"\r"
+    - key: KEY_ABOUT_US_PATREON
+      value: "Patreon\r"
+    - key: KEY_ABOUT_US_INSTAGRAMM
+      value: "Instagram\r"
+    - key: KEY_ABOUT_US_LINK
+      value: "\u0437\u0432'\u044F\u0437\u043E\u043A\r"
+    - key: KEY_GAMEOVER_TITLE
+      value: "\u0413\u0440\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430\r"
+    - key: KEY_GAMEOVER_ENTER_NICKNAME
+      value: "\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0456\u043C'\u044F\r"
+    - key: KEY_SCORE
+      value: "\u0420\u0430\u0445\u0443\u043D\u043E\u043A\r"
+    - key: KEY_GAMEOVER_ONE_MORE_CHANCE
+      value: "\u0429\u0435 \u043E\u0434\u0438\u043D \u0448\u0430\u043D\u0441\r"
+    - key: KEY_CONTINUE
+      value: "\u041F\u0440\u043E\u0434\u043E\u0432\u0436\u0438\u0442\u0438\r"
+    - key: KEY_PAUSE_TITLE
+      value: "\u041F\u0430\u0443\u0437\u0430\r"
+    - key: KEY_EXIT
+      value: "\u0412\u0438\u0445\u0456\u0434\r"
+    - key: KEY_SETTINGS_TITLE
+      value: "\u041D\u0430\u043B\u0430\u0448\u0442\u0443\u0432\u0430\u043D\u043D\u044F\r"
+    - key: KEY_SETTINGS_SOUNDS
+      value: "\u0417\u0432\u0443\u043A\u0438\r"
+    - key: KEY_SETTINGS_MUSIC
+      value: "\u041C\u0443\u0437\u0438\u043A\u0430\r"
+    - key: KEY_SETTINGS_LANGUAGE
+      value: "\u041C\u043E\u0432\u0430\r"
+    - key: KEY_SETTINGS_JOYSTICK
+      value: "\u0414\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0441\u0442\u0430\u0442\u0438\u0447\u043D\u0438\u0439\r"
+    - key: KEY_TUTORIAL_TITLE
+      value: "\u041A\u0435\u0440\u0456\u0432\u043D\u0438\u0446\u0442\u0432\u043E\r"
+    - key: KEY_TUTORIAL_PAGE_0
+      value: "\u0426\u0435 \u0432\u0430\u0448 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436.\r"
+    - key: KEY_TUTORIAL_PAGE_1
+      value: "\u041F\u0440\u0430\u0432\u0438\u0439 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A
+        \u0432\u0438\u043A\u043E\u0440\u0438\u0441\u0442\u043E\u0432\u0443\u0454\u0442\u044C\u0441\u044F
+        \u0434\u043B\u044F \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044E \u0441\u0432\u043E\u0433\u043E
+        \u0445\u0430\u0440\u0430\u043A\u0442\u0435\u0440\u0443, \u0449\u043E\u0431
+        \u043F\u0435\u0440\u0435\u043C\u0456\u0449\u0443\u0432\u0430\u0442\u0438
+        \u0439\u043E\u0433\u043E \u0432 \u043F\u0440\u043E\u0441\u0442\u0456\u0440
+        \u0456 \u043F\u0435\u0440\u0435\u043C\u0456\u0449\u0443\u0432\u0430\u0442\u0438
+        \u0439\u043E\u0433\u043E. \u0417 \u043B\u0456\u0432\u0438\u043C joystick
+        \u0432\u0438 \u043C\u043E\u0436\u0435\u0442\u0435 rotate player \u0434\u043E
+        aim \u0431\u0435\u0437 \u0437\u043C\u0456\u043D\u0438 direction of movement.\"\r"
+    - key: KEY_TUTORIAL_PAGE_2
+      value: "\u0426\u0435 \u0437\u0434\u043E\u0440\u043E\u0432'\u044F \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430
+        \u044F\u043A\u0449\u043E \u0432\u043E\u043D\u043E \u0437\u0430\u043A\u0456\u043D\u0447\u0435\u043D\u043E
+        \u0442\u043E \u0433\u0440\u0443 \u0431\u0443\u0434\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u043E.\r"
+    - key: KEY_TUTORIAL_PAGE_3
+      value: "\u0412\u0441\u0435, \u0449\u043E \u0440\u0443\u0445\u0430\u0454\u0442\u044C\u0441\u044F
+        \u0456 \u043F\u0435\u0440\u0435\u0441\u043B\u0456\u0434\u0443\u0454 \u0432\u0430\u0448\u043E\u0433\u043E
+        \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u0436\u0430, \u0446\u0435 \u0432\u0430\u0448\u0456
+        \u0432\u043E\u0440\u043E\u0433\u0438, \u0437\u043D\u0438\u0449\u0443\u0432\u0430\u0442\u0438
+        \u0457\u0445 \u043C\u043E\u0436\u043D\u0430 \u0440\u0456\u0437\u043D\u0438\u043C\u0438
+        \u0432\u0438\u0434\u0430\u043C\u0438 \u0437\u0431\u0440\u043E\u0457, \u043E\u0441\u043D\u043E\u0432\u043D\u0430
+        \u0437\u0431\u0440\u043E\u044F \u0441\u043F\u0440\u0430\u0446\u044C\u043E\u0432\u0443\u0454
+        \u043F\u0440\u0438 \u043D\u0430\u0432\u0435\u0434\u0435\u043D\u043D\u0456
+        \u0433\u0440\u0430\u0432\u0446\u044F \u043D\u0430 \u0432\u043E\u0440\u043E\u0433\u0430.
+        \u041F\u0456\u0441\u043B\u044F \u0437\u043D\u0438\u0449\u0435\u043D\u043D\u044F
+        \u0432\u043E\u0440\u043E\u0433\u0430 \u0433\u0440\u0430\u0432\u0446\u0435\u0432\u0456
+        \u043D\u0430\u0440\u0430\u0445\u043E\u0432\u0443\u044E\u0442\u044C \u0431\u0430\u043B\u043B\u0438
+        \u0456 \u0437 \u0432\u043E\u0440\u043E\u0433\u0430 \u043C\u043E\u0436\u0435
+        \u0432\u0438\u043F\u0430\u0441\u0442\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442.\"\r"
+    - key: KEY_TUTORIAL_PAGE_4
+      value: "\u041F\u0456\u0441\u043B\u044F \u0437\u043D\u0438\u0449\u0435\u043D\u043D\u044F
+        \u0432\u043E\u0440\u043E\u0433\u0430 \u043F\u0430\u0434\u0430\u044E\u0442\u044C
+        \u043F\u0440\u0435\u0434\u043C\u0435\u0442. \u041D\u0430\u0439\u0447\u0430\u0441\u0442\u0456\u0448\u0438\u0439
+        \u043F\u0440\u0435\u0434\u043C\u0435\u0442 \u0446\u0435 \u043A\u0440\u0438\u0441\u0442\u0430\u043B
+        \u0434\u043E\u0441\u0432\u0456\u0434\u0443 \u043F\u0440\u0438 \u043F\u0456\u0434\u0431\u043E\u0440\u0456
+        \u044F\u043A\u043E\u0433\u043E \u0443 \u0433\u0440\u0430\u0432\u0446\u044F
+        \u0431\u0443\u0434\u0435 \u0437\u0430\u043F\u043E\u0432\u043D\u0435\u043D\u043E
+        \u0441\u043C\u0443\u0436\u043A\u0430 \u0434\u043E\u0441\u0432\u0456\u0434\u0443
+        \u043F\u0456\u0441\u043B\u044F \u0437\u0430\u043F\u043E\u0432\u043D\u0435\u043D\u043D\u044F
+        \u044F\u043A\u043E\u0457 \u0433\u0440\u0430\u0432\u0435\u0446\u044C \u043E\u0442\u0440\u0438\u043C\u0430\u0454
+        \u043D\u043E\u0432\u0438\u0439 \u0440\u0456\u0432\u0435\u043D\u044C. \u0422\u0430\u043A
+        \u0441\u0430\u043C\u043E \u0454 \u0456\u043D\u0448\u0456 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u0438,
+        \u0430\u043B\u0435 \u0457\u0445 \u0434\u0456\u044E \u0432\u0430\u043C \u0434\u043E\u0432\u0435\u0434\u0435\u0442\u044C\u0441\u044F
+        \u0434\u0456\u0437\u043D\u0430\u0442\u0438\u0441\u044F \u0441\u0430\u043C\u043E\u043C\u0443.\"\r"
+    - key: KEY_TUTORIAL_PAGE_5
+      value: "\u041F\u0440\u0438 \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u0456
+        \u043D\u043E\u0432\u043E\u0433\u043E \u0440\u0456\u0432\u043D\u044F \u0432\u0456\u0434\u043A\u0440\u0438\u0432\u0430\u0454\u0442\u044C\u0441\u044F
+        \u0432\u0456\u043A\u043D\u043E, \u0432 \u044F\u043A\u043E\u043C\u0443 \u043C\u043E\u0436\u043D\u0430
+        \u0432\u0438\u0431\u0440\u0430\u0442\u0438 \u0437\u0434\u0430\u0442\u043D\u0456\u0441\u0442\u044C.
+        \u0417\u0434\u0456\u0431\u043D\u043E\u0441\u0442\u0456 \u0431\u0443\u0432\u0430\u044E\u0442\u044C
+        2 \u0432\u0438\u0434\u0456\u0432 - \u0446\u0435 \u043F\u0430\u0441\u0438\u0432\u043D\u0456
+        \u0442\u0456, \u044F\u043A\u0456 \u0437 \u043F\u0440\u043E\u043A\u0430\u0447\u0443\u0432\u0430\u043D\u043D\u044F\u043C
+        \u0431\u0443\u0434\u0443\u0442\u044C \u0437\u0431\u0456\u043B\u044C\u0448\u0443\u0432\u0430\u0442\u0438
+        \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u0438 \u0433\u0440\u0430\u0432\u0446\u044F
+        \u0456 \u0430\u043A\u0442\u0438\u0432\u043D\u0456, \u044F\u043A\u0456 \u0431\u0443\u0434\u0443\u0442\u044C
+        \u0434\u0430\u0432\u0430\u0442\u0438 \u0433\u0440\u0430\u0432\u0446\u0435\u0432\u0456
+        \u043D\u043E\u0432\u0456 \u0432\u0438\u0434\u0438 \u043E\u0437\u0431\u0440\u043E\u0454\u043D\u043D\u044F
+        \u0430\u0431\u043E \u0437\u0430\u0445\u0438\u0441\u0442\u0443.\"\r"
+    - key: KEY_TUTORIAL_PAGE_6
+      value: "\u0422\u0430\u043A \u0441\u0430\u043C\u043E \u043E\u0434\u0438\u043D
+        \u0437 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u0456\u0432 \u0437 \u044F\u043A\u0438\u0445
+        \u0442\u0435\u0436 \u043C\u043E\u0436\u043D\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438
+        \u0437\u0434\u0456\u0431\u043D\u043E\u0441\u0442\u0456 \u0446\u0435 \u0441\u043A\u0440\u0438\u043D\u044F
+        \u044F\u043A\u0430 \u043F\u0430\u0434\u0430\u0454 \u0442\u0456\u043B\u044C\u043A\u0438
+        \u0437 \u0431\u043E\u0441\u0456\u0432. \u0417 \u0441\u043A\u0440\u0438\u043D\u0456
+        \u043C\u043E\u0436\u043D\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438
+        \u0432\u0456\u0434 1 \u0434\u043E 5 \u043F\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u043D\u044F
+        \u0432\u0430\u0448\u0438\u0445 \u0437\u0434\u0456\u0431\u043D\u043E\u0441\u0442\u0435\u0439.\r"
+    - key: KEY_TUTORIAL_PAGE_7
+      value: "\u041F\u0456\u0441\u043B\u044F \u0442\u043E\u0433\u043E \u044F\u043A
+        \u0432\u0438 \u043F\u0440\u043E\u0433\u0440\u0430\u0454\u0442\u0435, \u0432\u0438
+        \u0437\u043C\u043E\u0436\u0435\u0442\u0435 \u0432\u043D\u0435\u0441\u0442\u0438
+        \u0441\u0432\u043E\u0457 \u0440\u0435\u043A\u043E\u0440\u0434\u0438 \u0432
+        \u0442\u0430\u0431\u043B\u0438\u0446\u044E. \u0423\u0434\u0430\u0447\u0456,
+        \u0441\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u043F\u0440\u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438\u0441\u044F
+        \u044F\u043A\u043D\u0430\u0439\u0434\u043E\u0432\u0448\u0435 \u0456 \u043D\u0430\u0431\u0440\u0430\u0442\u0438
+        \u043E\u0447\u043E\u043A \u0431\u0456\u043B\u044C\u0448\u0435 \u043D\u0456\u0436
+        \u0456\u043D\u0448\u0456 \u0433\u0440\u0430\u0432\u0446\u0456!\"\r"
+    - key: KEY_SETTINGS_SELECTED_LANGUAGE
+      value: "\u0423\u043A\u0440\u0430\u0457\u043D\u044C\u0441\u043A\u0430\r"
+    - key: KEY_MAIN_MENU_INFO_TITLE
+      value: "\u0410 \u0432\u0438 \u0437\u043D\u0430\u043B\u0438?\r"
+    - key: KEY_MAIN_MENU_INFO_VALUE_0
+      value: "\u0427\u0435\u0440\u0432\u043E\u043D\u0438\u0439 \u043A\u0440\u0438\u0441\u0442\u0430\u043B
+        \u0434\u0430\u0454 \u043D\u0430\u0431\u0430\u0433\u0430\u0442\u043E \u0431\u0456\u043B\u044C\u0448\u0435
+        \u0434\u043E\u0441\u0432\u0456\u0434\u0443\r"
+    - key: KEY_MAIN_MENU_INFO_VALUE_1
+      value: "\u0411\u043E\u0441\u0438 \u043C\u043E\u0436\u0443\u0442\u044C \u0441\u043A\u0438\u043D\u0443\u0442\u0438
+        \u0441\u043A\u0440\u0438\u043D\u044E \u0437 \u043D\u0435\u0432\u0435\u043B\u0438\u043A\u043E\u044E
+        \u043A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044E \u043D\u0430\u0432\u0438\u0447\u043E\u043A\r"
+    - key: KEY_MAIN_MENU_INFO_VALUE_2
+      value: "If you run out of health, the game is over\"\r"
+    - key: KEY_MAIN_MENU_INFO_VALUE_3
+      value: "\u0442\u0435\u0441\u0442\r"
+    - key: KEY_MAIN_MENU_INFO_VALUE_4
+      value: "\u0442\u0435\u0441\u0442\r"
+    - key: KEY_GAME_LEVEL
+      value: "\u0420\u0456\u0432\u0435\u043D\u044C:\r"
+    - key: KEY_CONFIRM
+      value: "\u041F\u0456\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0438\r"
+    - key: KEY_TAP_TO_OPEN_CHEST
+      value: "\u041D\u0430\u0442\u0438\u0441\u043D\u0456\u0442\u044C \u0449\u043E\u0431
+        \u0432\u0456\u0434\u043A\u0440\u0438\u0442\u0438 \u0441\u043A\u0440\u0438\u043D\u044E\r"
+    - key: KEY_SUPPORT_US_TITLE
+      value: "\u041F\u0456\u0434\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430\u0441\r"
+    - key: KEY_LEVEL_UP_TITLE
+      value: "\u041D\u043E\u0432\u0438\u0439 \u0440\u0456\u0432\u0435\u043D\u044C\r"
+    - key: KEY_REACHED_LEVEL
+      value: "\u0412\u0456\u0442\u0430\u0454\u043C\u043E! \u0412\u0438 \u0434\u043E\u0441\u044F\u0433\u043B\u0438
+        \u0440\u0456\u0432\u043D\u044F\r"
+    - key: KEY_RESET_SKILLS
+      value: "\u041E\u043D\u043E\u0432\u0438\u0442\u0438 \u0437\u0434\u0456\u0431\u043D\u043E\u0441\u0442\u0456\r"
+    - key: KEY_WARNING
+      value: "\u0423\u0432\u0430\u0433\u0430\r"
+    - key: KEY_BACK_TO_GAME_ZONE
+      value: "\u041F\u0435\u0432\u0435\u0440\u043D\u0456\u0442\u044C\u0441\u044F
+        \u0434\u043E \u0456\u0433\u0440\u043E\u0432\u043E\u0457 \u0437\u043E\u043D\u0438\r"
+    - key: KEY_LOADING
+      value: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F...\r"
+    - key: KEY_RELOAD
+      value: "\u041F\u0435\u0440\u0435\u0437\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0442\u0435\r"
+    - key: KEY_UPGRADE
+      value: "\u041F\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u043D\u044F\r"
+    - key: KEY_CUSTOMISATION
+      value: "\u041F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u0456\u0437\u0430\u0446\u0456\u044F\r"
+    - key: KEY_REMOVE_ADS
+      value: "\u041F\u0440\u0438\u0431\u0440\u0430\u0442\u0438 \u0440\u0435\u043A\u043B\u0430\u043C\u0443,
+        \u0442\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u0432\u0441\u0456
+        \u0431\u043E\u043D\u0443\u0441\u0438 \u043E\u0434\u0440\u0430\u0437\u0443
+        \u0430 \u0442\u0430\u043A\u043E\u0436 \u0435\u043A\u0441\u043A\u043B\u044E\u0437\u0438\u0432\u043D\u0438\u0439
+        \u0432\u0438\u0434 \u0433\u0440\u0430\u0432\u0446\u044F.\"\r"
+    - key: KEY_COST
+      value: "\u0426\u0456\u043D\u0430:\r"
+    - key: KEY_SELECTED
+      value: "\u041E\u0431\u0440\u0430\u043D\u0438\u0439\r"
+    - key: KEY_SELECT
+      value: "\u041E\u0431\u0440\u0430\u0442\u0438\r"
+    - key: KEY_MAX_VALUE
+      value: "\u041C\u0430\u043A\u0441\u0438\u043C\u0443\u043C\r"
+    - key: KEY_BONUS_DAMAGE
+      value: "\u041F\u043E\u0442\u0440\u0456\u0439\u043D\u0438\u0439 \u0443\u0440\u043E\u043D\r"
+    - key: KEY_BONUS_FREEZE
+      value: "\u0417\u0430\u043C\u043E\u0440\u043E\u0437\u043A\u0430\r"
+    - key: KEY_BONUS_MONEY
+      value: "\u0411\u043E\u043D\u0443\u0441\u043D\u0456 \u043C\u043E\u043D\u0435\u0442\u043A\u0438\r"
+    - key: KEY_BONUS_BLOWUP
+      value: "\u0412\u0438\u0431\u0443\u0445\r"
+    - key: KEY_UPGRADE_HEALTH_TITLE
+      value: "\u041C\u0430\u043A\u0441. \u0437\u0430\u043F\u0430\u0441 \u041E\u0417
+        \u043F\u0456\u0434\u0432\u0438\u0449\u0443\u0454\u0442\u044C\u0441\u044F.\r"
+    - key: KEY_UPGRADE_HEALTH
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u041E\u0417 \u043D\u0430
+        %n% \u0432\u0456\u0434 \u0431\u0430\u0437\u043E\u0432\u043E\u0433\u043E \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u043E\u0433\u043E
+        \u041E\u0417\r"
+    - key: KEY_UPGRADE_ARMOR
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0435\u043D\u043D\u044F \u0431\u0440\u043E\u043D\u0456
+        \u044F\u043A\u0430 \u043F\u043E\u0433\u043B\u0438\u043D\u0430\u0454 %n% \u0448\u043A\u043E\u0434\u0438\r"
+    - key: KEY_UPGRADE_SPEED
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C
+        \u043F\u0435\u0440\u0435\u0441\u0443\u0432\u0430\u043D\u043D\u044F \u0433\u0440\u0430\u0432\u0446\u044F
+        \u043D\u0430 %n%\r"
+    - key: KEY_UPGRADE_DAMAGE_MULTIPLIER
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0448\u043A\u043E\u0434\u0443,
+        \u044F\u043A\u0443 \u0437\u0430\u0432\u0434\u0430\u0454 \u0433\u0440\u0430\u0432\u0435\u0446\u044C
+        \u043D\u0430 %n%\"\r"
+    - key: KEY_UPGRADE_CRITICAL_CHANCE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0448\u0430\u043D\u0441
+        \u043D\u0430 \u043A\u0440\u0438\u0442\u0438\u0447\u043D\u0456 \u0437\u0431\u0438\u0442\u043A\u0438
+        \u043D\u0430 %n%\r"
+    - key: KEY_UPGRADE_CRITICAL_DAMAGE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u043A\u0440\u0438\u0442\u0438\u0447\u043D\u0443
+        \u0448\u043A\u043E\u0434\u0443 \u043D\u0430 %n%\r"
+    - key: KEY_UPGRADE_RECOVER_TIME
+      value: "\u0417\u043C\u0435\u043D\u0448\u0443\u0454 \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C
+        \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u0436\u0430\u043D\u043D\u044F
+        \u0432\u0441\u0456\u0445 \u0437\u043D\u0430\u0440\u044F\u0434\u044C \u043D\u0430
+        %n%\r"
+    - key: KEY_UPGRADE_MONEY_MULTIPLIER
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u043A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C
+        \u043C\u043E\u043D\u0435\u0442 \u043F\u0440\u0438 \u043F\u0456\u0434\u0431\u043E\u0440\u0456
+        \u043D\u0430 %n%\r"
+    - key: KEY_UPGRADE_PICK_UP_RADIUS
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0440\u0430\u0434\u0456\u0443\u0441
+        \u043F\u0456\u0434\u0431\u043E\u0440\u0443 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u0456\u0432
+        \u043D\u0430 %n%\r"
+    - key: KEY_STARTER_SKILL
+      value: "\u041D\u0430 \u043F\u043E\u0447\u0430\u0442\u043A\u0443 \u0433\u0440\u0438
+        \u043C\u043E\u0436\u043D\u0430 \u0432\u0438\u0431\u0440\u0430\u0442\u0438
+        \u043E\u0434\u043D\u0443 \u043F\u043E\u0447\u0430\u0442\u043A\u043E\u0432\u0443
+        \u0437\u0434\u0430\u0442\u043D\u0456\u0441\u0442\u044C\r"
+    - key: KEY_SELECTION_PLAYER
+      value: "\u041A\u043E\u0440\u0430\u0431\u0435\u043B\u044C\r"
+    - key: KEY_SELECTION_DEFAULTBULLET
+      value: "\u041B\u0430\u0437\u0435\u0440\r"
+    - key: KEY_SELECTION_AUTOBULLET
+      value: "\u041F\u0440\u043E\u0442\u043E\u043D\u043D\u0438\u0439 \u043B\u0430\u0437\u0435\u0440\r"
+    - key: KEY_SELECTION_MINIGUNBULLET
+      value: "\u041A\u0443\u043B\u0435\u043C\u0435\u0442\u043D\u0438\u0439 \u043F\u043E\u0441\u0442\u0440\u0456\u043B\r"
+    - key: KEY_SELECTION_ROCKETBULLET
+      value: "\u0420\u0430\u043A\u0435\u0442\u0430\r"
+    - key: KEY_SELECTION_DRONES
+      value: "\u0414\u0440\u043E\u043D\r"
+    - key: KEY_SKILL_HEALTH_TITLE
+      value: "\u041E\u0417+\r"
+    - key: KEY_SKILL_HEALTH
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u041E\u0417 \u043D\u0430
+        %n% \u043E\u0434\u0438\u043D\u0438\u0446\u044C\r"
+    - key: KEY_SKILL_SPEED_TITLE
+      value: "\u0428\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C+\r"
+    - key: KEY_SKILL_SPEED
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C
+        \u043F\u0435\u0440\u0435\u0441\u0443\u0432\u0430\u043D\u043D\u044F \u0433\u0440\u0430\u0432\u0446\u044F
+        \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_SHIELD_TITLE
+      value: "\u0429\u0438\u0442\r"
+    - key: KEY_SKILL_SHIELD
+      value: "\u0414\u043E\u0434\u0430\u0454 \u0449\u0438\u0442 \u044F\u043A\u0438\u0439
+        \u043F\u043E\u0432\u043D\u0456\u0441\u0442\u044E \u043F\u043E\u0433\u043B\u0438\u043D\u0430\u0454
+        \u0448\u043A\u043E\u0434\u0443\r"
+    - key: KEY_SKILL_SHIELD_RECOVER_TITLE
+      value: "\u0420\u043E\u0437\u0433\u0456\u043D \u0449\u0438\u0442\u0430\r"
+    - key: KEY_SKILL_SHIELD_RECOVER
+      value: "\u0417\u043C\u0435\u043D\u0448\u0443\u0454 \u0447\u0430\u0441 \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u0436\u0430\u043D\u043D\u044F
+        \u043D\u0430 %n% \r"
+    - key: KEY_SKILL_SHIELD_HEALTH_TITLE
+      value: "\u0417\u043C\u0456\u0446\u043D\u0435\u043D\u043D\u044F \u0449\u0438\u0442\u0430\r"
+    - key: KEY_SKILL_SHIELD_HEALTH
+      value: "\u0429\u0438\u0442 \u043F\u043E\u0433\u043B\u0438\u043D\u0430\u0454
+        \u0431\u0456\u043B\u044C\u0448\u0435 \u0432\u0442\u0440\u0430\u0442\r"
+    - key: KEY_SKILL_ARMOR_TITLE
+      value: "\u0411\u0440\u043E\u043D\u044F\r"
+    - key: KEY_SKILL_ARMOR
+      value: "\u041F\u043E\u0433\u043B\u0438\u043D\u0430\u0454 %n% \u0432\u0442\u0440\u0430\u0442\r"
+    - key: KEY_SKILL_SHOT_AFTER_SHOT_TITLE
+      value: "\u041F\u043E\u0441\u0442\u0440\u0456\u043B \u0437\u0430 \u043F\u043E\u0441\u0442\u0440\u0456\u043B\u043E\u043C\r"
+    - key: KEY_SKILL_SHOT_AFTER_SHOT
+      value: "\u0429\u043E\u0440\u0430\u0437\u0443 \u0440\u043E\u0431\u0438\u0442\u044C
+        \u0449\u0435 \u043E\u0434\u0438\u043D \u043F\u043E\u0441\u0442\u0440\u0456\u043B\r"
+    - key: KEY_SKILL_DOUBLE_SHOT_TITLE
+      value: "\u041C\u0443\u043B\u044C\u0442\u0456-\u043F\u043E\u0441\u0442\u0440\u0456\u043B\r"
+    - key: KEY_SKILL_DOUBLE_SHOT
+      value: "\u0412\u0438 \u0432\u0438\u0441\u0442\u0440\u0456\u043B\u044E\u0454\u0442\u0435
+        \u043E\u0434\u0438\u043D \u0434\u043E\u0434\u0430\u0442\u043A\u043E\u0432\u0438\u0439
+        \u043F\u043E\u0441\u0442\u0440\u0456\u043B \u0434\u0456\u0430\u0433\u043E\u043D\u0430\u043B\u044C\u043D\u043E.\r"
+    - key: KEY_SKILL_RECOVER_TIME_TITLE
+      value: "\u041F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u0436\u0430\u043D\u043D\u044F-\r"
+    - key: KEY_SKILL_RECOVER_TIME
+      value: "\u0417\u043C\u0435\u043D\u0448\u0443\u0454 \u0447\u0430\u0441 \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u0436\u0430\u043D\u043D\u044F
+        \u0432\u0441\u0456\u0445 \u0437\u043D\u0430\u0440\u044F\u0434\u044C \u043D\u0430
+        %n%\r"
+    - key: KEY_SKILL_DAMAGE_INCREASE_TITLE
+      value: "\u041F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u043D\u044F+\r"
+    - key: KEY_SKILL_DAMAGE_INCREASE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0443\u0440\u043E\u043D
+        \u0432\u0456\u0434 \u0443\u0441\u0456\u0445 \u043E\u0440\u0443\u0434\u0456\u0439
+        \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_AUTO_GUN_TITLE
+      value: "\u041F\u0440\u043E\u0442\u043E\u043D\u043E\u0432\u0430 \u043F\u0443\u0448\u043A\u0430\r"
+    - key: KEY_SKILL_AUTO_GUN
+      value: "\u0414\u0430\u0454 \u043F\u0440\u043E\u0442\u043E\u043D\u043D\u043E\u0435
+        \u0441\u0430\u043C\u043E\u043D\u0430\u0432\u043E\u0434\u044F\u0449\u0435\u0435\u0441\u044F
+        \u043E\u0437\u0431\u0440\u043E\u0454\u043D\u043D\u044F\r"
+    - key: KEY_SKILL_CRITICAL_DAMAGE_TITLE
+      value: "\u041A\u0440\u0438\u0442 \u0443\u0440\u043E\u043D+\r"
+    - key: KEY_SKILL_CRITICAL_DAMAGE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u043A\u0440\u0438\u0442\u0438\u0447\u043D\u0456
+        \u0437\u0431\u0438\u0442\u043A\u0438 \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_CRITICAL_CHANCE_TITLE
+      value: "\u0428\u0430\u043D\u0441 \u043A\u0440\u0438\u0442\u0438\u0447\u043D\u043E\u0433\u043E
+        \u0443\u0440\u043E\u043D\u0430+\r"
+    - key: KEY_SKILL_CRITICAL_CHANCE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0448\u0430\u043D\u0441
+        \u043D\u0430 \u043A\u0440\u0438\u0442\u0438\u0447\u043D\u0456 \u0437\u0431\u0438\u0442\u043A\u0438
+        \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_DASH_TITLE
+      value: "\u0420\u0438\u0432\u043E\u043A\r"
+    - key: KEY_SKILL_DASH
+      value: "\u0414\u0430\u0454 \u043C\u043E\u0436\u043B\u0438\u0432\u0456\u0441\u0442\u044C
+        \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u0442\u0438 \u0440\u0438\u0432\u043E\u043A
+        \u0432\u043F\u0435\u0440\u0435\u0434\r"
+    - key: KEY_SKILL_MASK_TITLE
+      value: "\u041C\u0430\u0441\u043A\u0443\u0432\u0430\u043D\u043D\u044F\r"
+    - key: KEY_SKILL_MASK
+      value: "\u0414\u0430\u0454 \u043F\u043E\u0432\u043D\u0443 \u043D\u0435\u0432\u0440\u0430\u0437\u043B\u0438\u0432\u0456\u0441\u0442\u044C
+        \u0456 \u043C\u0430\u0441\u043A\u0443\u0432\u0430\u043D\u043D\u044F \u043D\u0430
+        \u044F\u043A\u0438\u0439\u0441\u044C \u0447\u0430\u0441, \u0430\u043B\u0435
+        \u043D\u0435 \u0434\u0430\u0454 \u0441\u0442\u0440\u0456\u043B\u044F\u0442\u0438
+        \u0456 \u043F\u0456\u0434\u0431\u0438\u0440\u0430\u0442\u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u0438.\"\r"
+    - key: KEY_SKILL_MASK_TIME_TITLE
+      value: "\u0427\u0430\u0441 \u043C\u0430\u0441\u043A\u0443\u0432\u0430\u043D\u043D\u044F+\r"
+    - key: KEY_SKILL_MASK_TIME
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0447\u0430\u0441
+        \u043C\u0430\u0441\u043A\u0443\u0432\u0430\u043D\u043D\u044F \u043D\u0430
+        %n% <color=#FFBF00>\u0441\u0435\u043A\u0443\u043D\u0434</color>\r"
+    - key: KEY_SKILL_ROCKET_TITLE
+      value: "\u0420\u0430\u043A\u0435\u0442\u043D\u0430 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430\r"
+    - key: KEY_SKILL_ROCKET
+      value: "\u0414\u043E\u0434\u0430\u0454 \u0440\u0430\u043A\u0435\u0442\u043D\u0443
+        \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0443.\r"
+    - key: KEY_SKILL_ROCKET_COUNT_TITLE
+      value: "\u0420\u0430\u043A\u0435\u0442\u043D\u0438\u0439 \u0431\u043E\u0454\u0437\u0430\u043F\u0430\u0441+\r"
+    - key: KEY_SKILL_ROCKET_COUNT
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u043D\u0430 1 \u043A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C
+        \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C \u043F\u0435\u0440\u0435\u043D\u043E\u0441\u0438\u043C\u0438\u0445
+        \u0440\u0430\u043A\u0435\u0442\r"
+    - key: KEY_SKILL_ROCKET_EXPLOSION_TITLE
+      value: "\u0420\u0430\u043A\u0435\u0442\u043D\u0430 \u043C\u0456\u0446\u044C+\r"
+    - key: KEY_SKILL_ROCKET_EXPLOSION
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0440\u0430\u0434\u0456\u0443\u0441
+        \u0432\u0438\u0431\u0443\u0445\u0443 \u0432\u0456\u0434 \u0440\u0430\u043A\u0435\u0442\u0438
+        \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_DRONE_TITLE
+      value: "\u0414\u0440\u043E\u043D\r"
+    - key: KEY_SKILL_DRONE
+      value: "\u0414\u043E\u0434\u0430\u0454 \u0434\u0440\u043E\u043D\u0443 \u0449\u043E
+        \u043E\u0431\u0435\u0440\u0442\u0430\u0454\u0442\u044C\u0441\u044F \u043D\u0430\u0432\u043A\u043E\u043B\u043E
+        \u043A\u043E\u0440\u0430\u0431\u043B\u044F\r"
+    - key: KEY_SKILL_DRONE_SPEED_TITLE
+      value: "\u041F\u0440\u0438\u0441\u043A\u043E\u0440\u0435\u043D\u043D\u044F
+        \u0434\u0440\u043E\u043D\u0443\r"
+    - key: KEY_SKILL_DRONE_SPEED
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0448\u0432\u0438\u0434\u043A\u0456\u0441\u0442\u044C
+        \u043E\u0431\u0435\u0440\u0442\u0430\u043D\u043D\u044F \u0434\u0440\u043E\u043D\u0443
+        \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_XP_MULTIPLIER_TITLE
+      value: "\u041C\u043D\u043E\u0436\u043D\u0438\u043A \u0434\u043E\u0441\u0432\u0456\u0434\u0443\r"
+    - key: KEY_SKILL_XP_MULTIPLIER
+      value: "\u041F\u043E\u043C\u043D\u043E\u0436\u0443\u0454 \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u0438\u0439
+        \u0434\u043E\u0441\u0432\u0456\u0434 \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_HEALTH_RESTORE_TITLE
+      value: "\u0420\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0456\u044F\r"
+    - key: KEY_SKILL_HEALTH_RESTORE
+      value: "\u041E\u0417 \u043F\u043E\u0432\u0456\u043B\u044C\u043D\u043E \u0432\u0456\u0434\u043D\u043E\u0432\u043B\u044E\u0454\u0442\u044C\u0441\u044F\r"
+    - key: KEY_SKILL_HEALTH_RESTORE_TIME_TITLE
+      value: "\u0420\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0456\u044F+\r"
+    - key: KEY_SKILL_HEALTH_RESTORE_TIME
+      value: "\u0417\u043C\u0435\u043D\u0448\u0443\u0454 \u0447\u0430\u0441 \u0434\u043B\u044F
+        \u0440\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0456\u0457 \u043D\u0430
+        %n%\r"
+    - key: KEY_SKILL_HEALTH_RESTORE_HEALTH_TITLE
+      value: "\u0420\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0456\u044F+\r"
+    - key: KEY_SKILL_HEALTH_RESTORE_HEALTH
+      value: "\u041F\u043E\u0441\u0438\u043B\u044E\u0454 \u0440\u0435\u0433\u0435\u043D\u0435\u0440\u0430\u0446\u0456\u044E
+        \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_LASER_TITLE
+      value: "\u041F\u0440\u043E\u043C\u0435\u043D\u0435\u0432\u0430 \u0433\u0430\u0440\u043C\u0430\u0442\u0430\r"
+    - key: KEY_SKILL_LASER
+      value: "\u0417\u0430\u0432\u0434\u0430\u0454 \u0432\u0435\u043B\u0438\u0447\u0435\u0437\u043D\u043E\u0457
+        \u0448\u043A\u043E\u0434\u0438 \u043F\u043E \u043F\u0440\u044F\u043C\u0456\u0439.
+        \u0414\u043E\u0432\u0433\u043E \u043F\u0435\u0440\u0435\u0437\u0430\u0440\u044F\u0434\u0436\u0430\u0454\u0442\u044C\u0441\u044F.\r"
+    - key: KEY_SKILL_LASER_SIZE_TITLE
+      value: "\u0420\u043E\u0437\u043C\u0456\u0440 \u043F\u0440\u043E\u043C\u0435\u043D\u044F+\r"
+    - key: KEY_SKILL_LASER_SIZE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0440\u043E\u0437\u043C\u0456\u0440
+        \u043F\u0440\u043E\u043C\u0435\u043D\u044F \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_MINIGUN_TITLE
+      value: "\u041A\u0443\u043B\u0435\u043C\u0435\u0442\u043D\u0430 \u0433\u0430\u0440\u043C\u0430\u0442\u0430\r"
+    - key: KEY_SKILL_MINIGUN
+      value: "\u0414\u043E\u0434\u0430\u0454 \u0433\u0430\u0440\u043C\u0430\u0442\u0443,
+        \u044F\u043A\u0430 \u0440\u043E\u0431\u0438\u0442\u044C \u0431\u0430\u0433\u0430\u0442\u043E
+        \u043F\u043E\u0441\u0442\u0440\u0456\u043B\u043E\u043C \u0456 \u043C\u0430\u0454
+        \u0432\u0435\u043B\u0438\u043A\u0438\u0439 \u0440\u043E\u0437\u043A\u0438\u0434.\"\r"
+    - key: KEY_SKILL_MINIGUN_COUNT_TITLE
+      value: "\u041F\u043E\u0441\u0438\u043B\u0435\u043D\u043D\u044F \u043A\u0443\u043B\u0435\u043C\u0435\u0442\u0430\r"
+    - key: KEY_SKILL_MINIGUN_COUNT
+      value: "\u041A\u0443\u043B\u0435\u043C\u0435\u0442 \u0440\u043E\u0431\u0438\u0442\u044C
+        \u0431\u0456\u043B\u044C\u0448\u0435 \u043F\u043E\u0441\u0442\u0440\u0456\u043B\u0456\u0432\r"
+    - key: KEY_SKILL_MINIGUN_ANGLE_INCREASE_TITLE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0438\u0442\u0438 \u0440\u043E\u0437\u043A\u0438\u0434\r"
+    - key: KEY_SKILL_MINIGUN_ANGLE_INCREASE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0440\u043E\u0437\u043A\u0438\u0434
+        \u043A\u0443\u043B\u0435\u043C\u0435\u0442\u043D\u0438\u0445 \u043F\u043E\u0441\u0442\u0440\u0456\u043B\u0456\u0432
+        \u043D\u0430 %n% (\u0437\u0430\u043C\u0456\u043D\u044E\u0454 \u043F\u043E\u043A\u0440\u0430\u0449\u0435\u043D\u043D\u044F
+        \u0442\u043E\u0447\u043D\u043E\u0441\u0442\u0456 \u043A\u0443\u043B\u0435\u043C\u0435\u0442\u0430)\r"
+    - key: KEY_SKILL_MINIGUN_ANGLE_DECREASE_TITLE
+      value: "\u0422\u043E\u0447\u043D\u0456\u0441\u0442\u044C \u043A\u0443\u043B\u0435\u043C\u0435\u0442\u0430\r"
+    - key: KEY_SKILL_MINIGUN_ANGLE_DECREASE
+      value: "\u0417\u043C\u0435\u043D\u0448\u0443\u0454 \u0440\u043E\u0437\u043A\u0438\u0434
+        \u043A\u0443\u043B\u0435\u043C\u0435\u0442\u043D\u0438\u0445 \u043F\u043E\u0441\u0442\u0440\u0456\u043B\u0456\u0432
+        \u043D\u0430 %n% (\u0437\u0430\u043C\u0456\u043D\u044E\u0454 \u0437\u0431\u0456\u043B\u044C\u0448\u0435\u043D\u043D\u044F
+        \u0440\u043E\u0437\u043A\u0438\u0434\u0443)\r"
+    - key: KEY_SKILL_AUTO_GUN_BULLET_TITLE
+      value: "\u041F\u043E\u043B\u0456\u043F\u0448\u0435\u043D\u043D\u044F \u043F\u0440\u043E\u0442\u043E\u043D\u043D\u043E\u0433\u043E
+        \u043F\u043E\u0441\u0442\u0440\u0456\u043B\u0443\r"
+    - key: KEY_SKILL_AUTO_GUN_BULLET
+      value: "\u041F\u0440\u043E\u0442\u043E\u043D\u043D\u0438\u0439 \u043F\u043E\u0441\u0442\u0440\u0456\u043B
+        \u043F\u0440\u043E\u0445\u043E\u0434\u0438\u0442\u044C \u043D\u0430\u0441\u043A\u0440\u0456\u0437\u044C
+        \u0449\u0435 \u043E\u0434\u043D\u043E\u0433\u043E \u0432\u043E\u0440\u043E\u0433\u0430\r"
+    - key: KEY_SKILL_DASH_DISTANCE_TITLE
+      value: "\u041F\u043E\u0441\u0438\u043B\u0435\u043D\u043D\u044F \u0440\u0438\u0432\u043A\u0430\r"
+    - key: KEY_SKILL_DASH_DISTANCE
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0434\u0430\u043B\u044C\u043D\u0456\u0441\u0442\u044C
+        \u0440\u0438\u0432\u043A\u0430 \u043D\u0430 %n%\r"
+    - key: KEY_SKILL_ENERGY_GUN_TITLE
+      value: "\u0415\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u043D\u0430
+        \u0433\u0430\u0440\u043C\u0430\u0442\u0430\r"
+    - key: KEY_SKILL_ENERGY_GUN
+      value: "\u0414\u043E\u0434\u0430\u0454 \u0435\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u043D\u0443
+        \u0433\u0430\u0440\u043C\u0430\u0442\u0443. \u042F\u043A\u0430 \u043D\u0430\u0446\u0456\u043B\u044E\u0454\u0442\u044C\u0441\u044F
+        \u043D\u0430 \u043D\u0430\u0439\u0431\u043B\u0438\u0436\u0447\u043E\u0433\u043E
+        \u0432\u043E\u0440\u043E\u0433\u0430 \u0456 \u0437\u0430\u0432\u0434\u0430\u0454
+        \u0448\u043A\u043E\u0434\u0438 \u043F\u0440\u043E\u0442\u044F\u0433\u043E\u043C
+        \u0447\u0430\u0441\u0443\r"
+    - key: KEY_SKILL_ENERGY_GUN_COUNT_TITLE
+      value: "\u0415\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u043D\u0430
+        \u0433\u0430\u0440\u043C\u0430\u0442\u0430+\r"
+    - key: KEY_SKILL_ENERGY_GUN_COUNT
+      value: "\u0414\u043E\u0434\u0430\u0454 \u0449\u0435 \u043E\u0434\u043D\u0443
+        \u0435\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u043D\u0443 \u0433\u0430\u0440\u043C\u0430\u0442\u0443\r"
+    - key: KEY_SKILL_ENERGY_GUN_HIT_TITLE
+      value: "\u041F\u043E\u0441\u0438\u043B\u0435\u043D\u043D\u044F \u0435\u043D\u0435\u0440\u0433\u0435\u0442\u0438\u0447\u043D\u043E\u0457
+        \u0433\u0430\u0440\u043C\u0430\u0442\u0438\r"
+    - key: KEY_SKILL_ENERGY_GUN_HIT
+      value: "\u0413\u0430\u0440\u043C\u0430\u0442\u0430 \u0437\u0430\u0432\u0434\u0430\u0454
+        \u0448\u043A\u043E\u0434\u0438 \u0448\u0432\u0438\u0434\u0448\u0435 \u043D\u0430
+        %n%\r"
+    - key: KEY_SKILL_PICK_UP_TITLE
+      value: "\u041C\u0430\u0433\u043D\u0456\u0442+\r"
+    - key: KEY_SKILL_PICK_UP
+      value: "\u0417\u0431\u0456\u043B\u044C\u0448\u0443\u0454 \u0440\u0430\u0434\u0456\u0443\u0441
+        \u043F\u0456\u0434\u0431\u043E\u0440\u0443 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u0456\u0432
+        \u043D\u0430 %n%"
   defaultLanguage: 1
-  localizationGoogleSpreadsheet: https://docs.google.com/spreadsheets/d/1un_-A0kIRBEftFVF8FBJjwlmIRM4YLVp_PNOprLGXO8/edit#gid=0
-  refreshLocalizationAtStart: 1
+  localizationGoogleSpreadsheet: 1un_-A0kIRBEftFVF8FBJjwlmIRM4YLVp_PNOprLGXO8
+  refreshLocalizationAtStart: 0
