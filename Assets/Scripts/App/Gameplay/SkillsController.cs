@@ -142,7 +142,7 @@ namespace TandC.RunIfYouWantToLive
             AllAviableSkills = new List<Skill>();
             ActiveSkills = new List<Skill>();
             PassiveSkills = new List<Skill>();
-            foreach (var skill in _gameplayData.StartenSkills2) 
+            foreach (var skill in _gameplayData.StartenSkills) 
             {
                 AddSkill(skill);
             }

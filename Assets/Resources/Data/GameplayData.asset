@@ -368,7 +368,7 @@ MonoBehaviour:
   - id: 3
     name: KEY_SKILL_SHIELD_RECOVER_TITLE
     nameForDev: Shield Recover
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 88aa0a72f13100f49a43a1f3c9434274, type: 3}
     MaxLevel: 4
     Value: 0.5
     type: 3
@@ -380,7 +380,7 @@ MonoBehaviour:
   - id: 4
     name: KEY_SKILL_SHIELD_HEALTH_TITLE
     nameForDev: Shield Health Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 75c9020cbd0c4c64fa33a2f49c6e0894, type: 3}
     MaxLevel: 3
     Value: 0
     type: 4
@@ -392,7 +392,7 @@ MonoBehaviour:
   - id: 5
     name: KEY_SKILL_ARMOR_TITLE
     nameForDev: Armor
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 7d07e0b00990cb442be6a8d9a41b3fbf, type: 3}
     MaxLevel: 5
     Value: 5
     type: 5
@@ -404,7 +404,7 @@ MonoBehaviour:
   - id: 6
     name: KEY_SKILL_SHOT_AFTER_SHOT_TITLE
     nameForDev: Shot after shot
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: bd239fc7bc743454cb6a4a01de9d328b, type: 3}
     MaxLevel: 4
     Value: 0
     type: 6
@@ -416,7 +416,7 @@ MonoBehaviour:
   - id: 7
     name: KEY_SKILL_DOUBLE_SHOT_TITLE
     nameForDev: Double Shot
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a62c6f4c57737574b87e498d2cfa6f1b, type: 3}
     MaxLevel: 4
     Value: 0
     type: 7
@@ -428,7 +428,7 @@ MonoBehaviour:
   - id: 8
     name: KEY_SKILL_RECOVER_TIME_TITLE
     nameForDev: Recover Time Decrease
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: d74f41a6be6e2214ba68f2b5ff9a4c89, type: 3}
     MaxLevel: 5
     Value: 0.1
     type: 11
@@ -440,7 +440,7 @@ MonoBehaviour:
   - id: 9
     name: KEY_SKILL_DAMAGE_INCREASE_TITLE
     nameForDev: Damage Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 2759f050f67bfd14890861120404bbfd, type: 3}
     MaxLevel: 10
     Value: 0.2
     type: 12
@@ -452,7 +452,7 @@ MonoBehaviour:
   - id: 10
     name: KEY_SKILL_AUTO_GUN_TITLE
     nameForDev: Auto gun
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 218562ded58b8b44e86b03d12a2f1bd2, type: 3}
     MaxLevel: 1
     Value: 0
     type: 17
@@ -464,7 +464,7 @@ MonoBehaviour:
   - id: 11
     name: KEY_SKILL_CRITICAL_DAMAGE_TITLE
     nameForDev: Critical Damage Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 52cc42aa8ad142b4884253f8b8bb9c97, type: 3}
     MaxLevel: 5
     Value: 2
     type: 16
@@ -476,7 +476,7 @@ MonoBehaviour:
   - id: 12
     name: KEY_SKILL_CRITICAL_CHANCE_TITLE
     nameForDev: Critical Chance Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 14aac5af2708b4742a8a39e4fd625720, type: 3}
     MaxLevel: 5
     Value: 2
     type: 15
@@ -488,7 +488,7 @@ MonoBehaviour:
   - id: 13
     name: KEY_SKILL_DASH_TITLE
     nameForDev: Dash
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a470f25fc42a4af4ebbece1cf4397c5f, type: 3}
     MaxLevel: 1
     Value: 0
     type: 19
@@ -500,7 +500,7 @@ MonoBehaviour:
   - id: 14
     name: KEY_SKILL_MASK_TITLE
     nameForDev: Mask
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f9b73c21ea5b66d48add072c40acaa6d, type: 3}
     MaxLevel: 1
     Value: 0
     type: 21
@@ -512,7 +512,7 @@ MonoBehaviour:
   - id: 15
     name: KEY_SKILL_MASK_TIME_TITLE
     nameForDev: Mask Active Time Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: f3a8903d4b086ea409ed02ed56280e43, type: 3}
     MaxLevel: 3
     Value: 1
     type: 22
@@ -524,7 +524,7 @@ MonoBehaviour:
   - id: 16
     name: KEY_SKILL_ROCKET_TITLE
     nameForDev: Rocket
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: a73a44cb9a0a85c4388e37972efb7f06, type: 3}
     MaxLevel: 1
     Value: 0
     type: 23
@@ -536,7 +536,7 @@ MonoBehaviour:
   - id: 17
     name: KEY_SKILL_ROCKET_COUNT_TITLE
     nameForDev: Rocket Max Count Upgrade
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 02ebf68ea0af86849805c49a8ed4dcc4, type: 3}
     MaxLevel: 7
     Value: 1
     type: 24
@@ -548,7 +548,7 @@ MonoBehaviour:
   - id: 18
     name: KEY_SKILL_ROCKET_EXPLOSION_TITLE
     nameForDev: Rocket Explosion Size Increse
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 5f67648f679ba23459fa615a5a70b3c1, type: 3}
     MaxLevel: 10
     Value: 0.2
     type: 25
@@ -560,7 +560,7 @@ MonoBehaviour:
   - id: 19
     name: KEY_SKILL_DRONE_TITLE
     nameForDev: Drone Add
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 7b1b67783152ca34faae7e7185b93ee3, type: 3}
     MaxLevel: 4
     Value: 0
     type: 13
@@ -572,7 +572,7 @@ MonoBehaviour:
   - id: 20
     name: KEY_SKILL_DRONE_SPEED_TITLE
     nameForDev: Increase Drone Speed
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 67f95025ce628a644b0a2184f02a5cbc, type: 3}
     MaxLevel: 5
     Value: 50
     type: 14
@@ -584,7 +584,7 @@ MonoBehaviour:
   - id: 21
     name: KEY_SKILL_XP_MULTIPLIER_TITLE
     nameForDev: Increse Xp Multiplier
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: e584b432052af3046be1c71bc54e4d54, type: 3}
     MaxLevel: 15
     Value: 0.25
     type: 29
@@ -596,7 +596,7 @@ MonoBehaviour:
   - id: 22
     name: KEY_SKILL_HEALTH_RESTORE_TITLE
     nameForDev: Health Restore By TIme
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 34502a7419c507d47bdb27908ab45ef5, type: 3}
     MaxLevel: 1
     Value: 0
     type: 26
@@ -608,7 +608,7 @@ MonoBehaviour:
   - id: 23
     name: KEY_SKILL_HEALTH_RESTORE_TIME_TITLE
     nameForDev: Decrease TIme Health Restore
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 5baa6ee19365cf145bfe86a8577f855b, type: 3}
     MaxLevel: 5
     Value: 0.5
     type: 27
@@ -620,7 +620,7 @@ MonoBehaviour:
   - id: 24
     name: KEY_SKILL_HEALTH_RESTORE_HEALTH_TITLE
     nameForDev: Increase Health Count Restore
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: c999327a25f4ed04482e6b4949000614, type: 3}
     MaxLevel: 5
     Value: 1
     type: 28
@@ -632,7 +632,7 @@ MonoBehaviour:
   - id: 25
     name: KEY_SKILL_LASER_TITLE
     nameForDev: Laser Gun
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 52e9433d8f99e6341a97400e7db0fbd8, type: 3}
     MaxLevel: 1
     Value: 0
     type: 30
@@ -644,7 +644,7 @@ MonoBehaviour:
   - id: 26
     name: KEY_SKILL_LASER_SIZE_TITLE
     nameForDev: Laser Gun Size Increse
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 12585403ebb444e4686491fd9fc09cf0, type: 3}
     MaxLevel: 5
     Value: 1.5
     type: 31
@@ -656,7 +656,7 @@ MonoBehaviour:
   - id: 27
     name: KEY_SKILL_MINIGUN_TITLE
     nameForDev: Minigun
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 8bab814baf82d4a4685a0fb865819e6a, type: 3}
     MaxLevel: 1
     Value: 0
     type: 32
@@ -668,7 +668,7 @@ MonoBehaviour:
   - id: 28
     name: KEY_SKILL_MINIGUN_COUNT_TITLE
     nameForDev: Minigun Shot Count Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 3c3f1fcc6ed150d4ca204bd96ff9280d, type: 3}
     MaxLevel: 5
     Value: 3
     type: 33
@@ -680,7 +680,7 @@ MonoBehaviour:
   - id: 29
     name: KEY_SKILL_MINIGUN_ANGLE_INCREASE_TITLE
     nameForDev: Minigun Size Angle Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 339fdc4543208674f92b2112d0354c1c, type: 3}
     MaxLevel: 5
     Value: 5
     type: 34
@@ -692,7 +692,7 @@ MonoBehaviour:
   - id: 30
     name: KEY_SKILL_MINIGUN_ANGLE_DECREASE_TITLE
     nameForDev: Minigun Size Angle Decrease
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 2e9f23f5633bae147a5f485c1577b096, type: 3}
     MaxLevel: 5
     Value: 5
     type: 35
@@ -704,7 +704,7 @@ MonoBehaviour:
   - id: 31
     name: KEY_SKILL_AUTO_GUN_BULLET_TITLE
     nameForDev: AutoGunBulletLifeAdd
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: b6812e1082f8b8840ab4b0312a4871d5, type: 3}
     MaxLevel: 5
     Value: 1
     type: 18
@@ -716,7 +716,7 @@ MonoBehaviour:
   - id: 32
     name: KEY_SKILL_DASH_DISTANCE_TITLE
     nameForDev: Dash Distance Increase
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 404462b205f8cac4f9e6288471807575, type: 3}
     MaxLevel: 5
     Value: 0.05
     type: 20
@@ -728,7 +728,7 @@ MonoBehaviour:
   - id: 33
     name: KEY_SKILL_ENERGY_GUN_TITLE
     nameForDev: EnergyGun
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 375df1768e4d66a40a196542fff58442, type: 3}
     MaxLevel: 1
     Value: 0
     type: 36
@@ -740,7 +740,7 @@ MonoBehaviour:
   - id: 34
     name: KEY_SKILL_ENERGY_GUN_COUNT_TITLE
     nameForDev: Energy Gun Shot Count
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 8ff4e88f20bb0924db8a39aa084fea12, type: 3}
     MaxLevel: 4
     Value: 1
     type: 37
@@ -752,7 +752,7 @@ MonoBehaviour:
   - id: 35
     name: KEY_SKILL_ENERGY_GUN_HIT_TITLE
     nameForDev: Energy Gun Faster Hit
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: e0164af94fd06cc41b0ebea987c61773, type: 3}
     MaxLevel: 5
     Value: 0.1
     type: 38
@@ -764,7 +764,7 @@ MonoBehaviour:
   - id: 36
     name: KEY_SKILL_PICK_UP_TITLE
     nameForDev: Increase Pick Up Radius
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 405c29e796ce8c34c95ef7e0b10e445e, type: 3}
     MaxLevel: 10
     Value: 4
     type: 41

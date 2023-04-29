@@ -25,7 +25,7 @@ MonoBehaviour:
     - 260
     - 280
     - 300
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: 92b92c8df3f18d4498490a29e8c5642f, type: 3}
     Title: KEY_UPGRADE_HEALTH_TITLE
     DescriptionKey: KEY_UPGRADE_HEALTH
     DescriptionForDev: Upgrade Player Health
@@ -45,7 +45,7 @@ MonoBehaviour:
     - 8
     - 9
     - 10
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: 7d07e0b00990cb442be6a8d9a41b3fbf, type: 3}
     Title: KEY_UPGRADE_ARMOR_TITLE
     DescriptionKey: KEY_UPGRADE_ARMOR
     DescriptionForDev: Upgrade Player Armor
@@ -60,7 +60,7 @@ MonoBehaviour:
     - 172.5
     - 180
     - 187.5
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: 375fa44e98b3b4e43b6736913fed1f4c, type: 3}
     Title: KEY_UPGRADE_SPEED_TITLE
     DescriptionKey: KEY_UPGRADE_SPEED
     DescriptionForDev: Upgrade Player Armor
@@ -75,7 +75,7 @@ MonoBehaviour:
     - 1.6
     - 1.8
     - 2
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: 2759f050f67bfd14890861120404bbfd, type: 3}
     Title: KEY_UPGRADE_DAMAGE_MULTIPLIER_TITLE
     DescriptionKey: KEY_UPGRADE_DAMAGE_MULTIPLIER
     DescriptionForDev: Upgrade Player Damage Multiplier
@@ -94,7 +94,7 @@ MonoBehaviour:
     - 8
     - 9
     - 10
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: 14aac5af2708b4742a8a39e4fd625720, type: 3}
     Title: KEY_UPGRADE_CRITICAL_CHANCE_TITLE
     DescriptionKey: KEY_UPGRADE_CRITICAL_CHANCE
     DescriptionForDev: Upgrade Player Critical Chance
@@ -113,7 +113,7 @@ MonoBehaviour:
     - 3
     - 3.25
     - 3.5
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: 52cc42aa8ad142b4884253f8b8bb9c97, type: 3}
     Title: KEY_UPGRADE_CRITICAL_DAMAGE_TITLE
     DescriptionKey: KEY_UPGRADE_CRITICAL_DAMAGE
     DescriptionForDev: Upgrade Player Critical Damage Multiplier
@@ -129,7 +129,7 @@ MonoBehaviour:
     - 2
     - 2.25
     - 2.5
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: 8c1b27e5c99daa442bd7b8179c044aba, type: 3}
     Title: KEY_UPGRADE_MONEY_MULTIPLIER_TITLE
     DescriptionKey: KEY_UPGRADE_MONEY_MULTIPLIER
     DescriptionForDev: Earned money multiplier
@@ -143,7 +143,7 @@ MonoBehaviour:
     - 0.95
     - 0.925
     - 0.9
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: d74f41a6be6e2214ba68f2b5ff9a4c89, type: 3}
     Title: KEY_UPGRADE_RECOVER_TIME_TITLE
     DescriptionKey: KEY_UPGRADE_RECOVER_TIME
     DescriptionForDev: Reload Gun Time decrease
@@ -158,7 +158,7 @@ MonoBehaviour:
     - 23.4
     - 25.2
     - 27
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: 405c29e796ce8c34c95ef7e0b10e445e, type: 3}
     Title: KEY_UPGRADE_PICK_UP_RADIUS_TITLE
     DescriptionKey: KEY_UPGRADE_PICK_UP_RADIUS
     DescriptionForDev: Pick up radius
@@ -169,7 +169,7 @@ MonoBehaviour:
   - UpgradeList:
     - 0
     - 1
-    UpgradeSprite: {fileID: 0}
+    UpgradeSprite: {fileID: 21300000, guid: cd0e3f1884fe7ab4d88eaa0e02eb89b9, type: 3}
     Title: KEY_STARTER_SKILL_TITLE
     DescriptionKey: KEY_STARTER_SKILL
     DescriptionForDev: Earned money multiplier
