@@ -1,10 +1,9 @@
-﻿using TandC.RunIfYouWantToLive.Common;
-using System;
-using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using TandC.RunIfYouWantToLive.Common;
 using TandC.RunIfYouWantToLive.Helpers;
+using UnityEngine;
 
 namespace TandC.RunIfYouWantToLive
 {
@@ -90,7 +89,6 @@ namespace TandC.RunIfYouWantToLive
 
         private void ApplyLocalization()
         {
-            Debug.LogError(_dataManager.CachedUserLocalData.appLanguage);
             if (!SupportedLanguages.ContainsKey(Application.systemLanguage))
             {
                 if (_dataManager.CachedUserLocalData.appLanguage == Enumerators.Language.Unknown)
