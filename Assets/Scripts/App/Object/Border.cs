@@ -27,7 +27,7 @@ namespace TandC.RunIfYouWantToLive
             if (collider != _playerModel)
                 return;
 
-            Debug.Log("Player leave");
+            //Debug.Log("Player leave");
             PlayerLeaveBorderEvent?.Invoke();
         }
 
@@ -37,7 +37,7 @@ namespace TandC.RunIfYouWantToLive
                 return;
 
 
-            Debug.Log("Player back");
+            //Debug.Log("Player back");
             PlayerBackGameLocationEvent?.Invoke();
         }
     }

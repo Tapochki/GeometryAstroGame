@@ -89,7 +89,6 @@ namespace TandC.RunIfYouWantToLive
             {
                 case Enumerators.CacheDataType.USER_LOCAL_DATA:
                     {
-                        Debug.Log(File.Exists(_cacheDataPathes[type]));
                         if (!File.Exists(_cacheDataPathes[type]))
                             File.Create(_cacheDataPathes[type]).Close();
 
