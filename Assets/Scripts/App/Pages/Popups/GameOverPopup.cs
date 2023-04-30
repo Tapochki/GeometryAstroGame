@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using TMPro;
 using System;
-using I2.Loc;
 using TandC.RunIfYouWantToLive.Common;
 
 namespace TandC.RunIfYouWantToLive

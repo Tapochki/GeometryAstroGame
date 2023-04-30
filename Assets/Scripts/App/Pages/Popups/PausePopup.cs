@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using TMPro;
 using TandC.RunIfYouWantToLive.Common;
 using System;
-using I2.Loc;
 
 namespace TandC.RunIfYouWantToLive
 {

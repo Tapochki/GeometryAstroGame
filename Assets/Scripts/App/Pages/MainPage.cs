@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 using TMPro;
-using I2.Loc;
 using System;
 
 namespace TandC.RunIfYouWantToLive
