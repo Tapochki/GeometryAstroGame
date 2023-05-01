@@ -221,14 +221,14 @@ namespace TandC.RunIfYouWantToLive
         {
             public int Id { get; set; }
             public string Name { get; set; }
-            public int Score { get; set; }
+            public long Score { get; set; }
             public string EndTime { get; set; }
         }
         private class UserEntry
         {
             private GameObject _selfObject;
 
-            public UserEntry(GameObject prefab, int number, string name, int score, string endTime) 
+            public UserEntry(GameObject prefab, int number, string name, long score, string endTime) 
             {
                 _selfObject = prefab;
                 _selfObject.transform.Find("Icon_Order/Text_Value").GetComponent<TextMeshProUGUI>().text = number.ToString();

@@ -755,7 +755,7 @@ PlayerSettings:
   allowUnsafeCode: 0
   useDeterministicCompilation: 1
   enableRoslynAnalyzers: 1
-  selectedPlatform: 0
+  selectedPlatform: 2
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
   gcIncremental: 1
@@ -825,7 +825,8 @@ PlayerSettings:
     Build: 0
     Collab: 0
     Game Performance: 0
-    Purchasing: 0
+    Legacy Analytics: 1
+    Purchasing: 1
     UDP: 0
     Unity Ads: 1
   luminIcon:
@@ -842,11 +843,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1e557243-2c26-4d31-ac5e-b22935ec1eb9
+  cloudProjectId: 8ef8428b-08b5-4962-b16c-f9d0d5af1c03
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: GeometryAstroSurvival
-  organizationId: danil_vasilkovskyi
+  projectName: AstroSurvival
+  organizationId: tapochehki
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

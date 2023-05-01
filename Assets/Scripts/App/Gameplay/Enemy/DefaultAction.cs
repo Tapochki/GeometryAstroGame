@@ -18,6 +18,7 @@ namespace TandC.RunIfYouWantToLive
 
             public void Action()
             {
+                _enemy.Action();
                 _enemy._actualCooldown = _enemy._attackCooldown;
                 _enemy.IsCanAction = true;
             }
@@ -27,7 +28,7 @@ namespace TandC.RunIfYouWantToLive
                 _enemy._actualCooldown -= Time.deltaTime;
                 if (_enemy._actualCooldown <= 0)
                 {
-                    _enemy.Action();
+                    Action();
                 }
             }
         }
