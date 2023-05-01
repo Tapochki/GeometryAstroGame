@@ -31,6 +31,7 @@
 #if UNITY_EDITOR
             IsDebugMode = true;
 #endif
+            AddService<IGoogleManager>(new GoogleManager());
             AddService<ITimerManager>(new TimerManager());
             AddService<IAdvarismetnManager>(new AdvarismetnManager());
             AddService<ILocalizationManager>(new LocalizationManager());

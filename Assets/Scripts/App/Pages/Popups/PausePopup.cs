@@ -65,7 +65,7 @@ namespace TandC.RunIfYouWantToLive
             _textTitle2.text = _localizationManager.GetUITranslation("KEY_PAUSE_TITLE");
             _textTitle3.text = _localizationManager.GetUITranslation("KEY_PAUSE_TITLE");
             _textScoreTitle.text = _localizationManager.GetUITranslation("KEY_SCORE");
-            _textExitButton.text = _localizationManager.GetUITranslation("KEY_EXIT") + ":";
+            _textExitButton.text = _localizationManager.GetUITranslation("KEY_EXIT");
             _textContinueButton.text = _localizationManager.GetUITranslation("KEY_CONTINUE");
         }
 

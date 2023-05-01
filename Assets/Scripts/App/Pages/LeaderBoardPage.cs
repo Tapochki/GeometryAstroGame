@@ -5,6 +5,7 @@ using TMPro;
 using System;
 using System.Collections.Generic;
 using TandC.RunIfYouWantToLive.Common;
+using UnityEngine.Purchasing.MiniJSON;
 
 namespace TandC.RunIfYouWantToLive
 {
@@ -15,7 +16,7 @@ namespace TandC.RunIfYouWantToLive
         private IUIManager _uiManager;
         private ILoadObjectsManager _loadObjectsManager;
         private IDataManager _dataManager;
-        private INetworkManager _networkManager;
+        private IGoogleManager _googleManager;
         private ILocalizationManager _localizationManager;
 
         private Button _backToMenuButton;
@@ -46,7 +47,7 @@ namespace TandC.RunIfYouWantToLive
             _uiManager = GameClient.Get<IUIManager>();
             _loadObjectsManager = GameClient.Get<ILoadObjectsManager>();
             _dataManager = GameClient.Get<IDataManager>();
-            _networkManager = GameClient.Get<INetworkManager>();
+            _googleManager = GameClient.Get<IGoogleManager>();
             _localizationManager = GameClient.Get<ILocalizationManager>();
 
             _selfPage = MonoBehaviour.Instantiate(_loadObjectsManager.GetObjectByPath<GameObject>("Prefabs/UI/LeaderBoardPage"), _uiManager.Canvas.transform, false);
@@ -133,40 +134,44 @@ namespace TandC.RunIfYouWantToLive
             for (int i = 0; i < _globalRecordItems.Count; i++)
             {
                 var item = _globalRecordItems[i];
+                if(item.Id == -1) 
+                {
+                    _globalUserEntry.Add(new UserEntry(MonoBehaviour.Instantiate(_userEntryPrefab, _globalRecordsContent.transform)));
+                    continue;
+                }
                 //DateTime time = DateTime.Parse(item.EndTime);
-                _globalUserEntry.Add(new UserEntry(MonoBehaviour.Instantiate(_userEntryPrefab, _globalRecordsContent.transform), i + 1, item.Name, item.Score, item.EndTime));
+                _globalUserEntry.Add(new UserEntry(MonoBehaviour.Instantiate(_userEntryPrefab, _globalRecordsContent.transform), item.Id, item.Name, item.Score, item.EndTime));
             }
         }
         
-        private void OnGetRecords(string json) 
+        private void OnGetRecordsHandler(List<GlobalRecordItem> items) 
         {
-            try
+            if(items != null) 
             {
                 foreach (var item in _globalUserEntry)
                 {
                     item.Dispose();
                 }
                 _globalUserEntry = new List<UserEntry>();
-                _globalRecordItems = JsonConvert.DeserializeObject<List<GlobalRecordItem>>(json);
+                _globalRecordItems = items;
                 BuildGlobalRecords();
             }
-            catch (Exception ex)
+            else 
             {
-                OnGetError(json);
+                OnGetError();
             }
 
         }
-        private void OnGetError(string json) 
+        private void OnGetError() 
         {
             _wrongPanel.gameObject.SetActive(true);
             _loadingPanel.SetActive(false);
-             Debug.LogError(json);
         }
 
         private void GetGlobalRecords() 
         {
             _loadingPanel.SetActive(true);
-            _networkManager.StartGetData(OnGetRecords, OnGetError);
+            _googleManager.LoadLeaderboardData(OnGetRecordsHandler);        
         }
 
         public void Show()
@@ -227,6 +232,11 @@ namespace TandC.RunIfYouWantToLive
         private class UserEntry
         {
             private GameObject _selfObject;
+
+            public UserEntry(GameObject prefab)
+            {
+                _selfObject = prefab;
+            }
 
             public UserEntry(GameObject prefab, int number, string name, long score, string endTime) 
             {

@@ -7,18 +7,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using static TandC.RunIfYouWantToLive.LeaderBoardPage;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace TandC.RunIfYouWantToLive
 {
-    public class GoogleManager : IService
+    public class GoogleManager : IGoogleManager, IService
     {
-        public Action<bool> PlayerAuthentificate;
+        private const string _leaderBoardId = "CgkI1qT9kJQKEAIQAQ";
+        public Action<bool> PlayerAuthentificate { get; set; }
 
-        private const string _leaderBoardId = "";
+        public bool IsAuthenticated { get; set; }
 
-        private bool isAuthenticated;
+        public string DisplayedName { get; set; }
 
-        public string DisplayedName;
+        private List<GlobalRecordItem> _leaderBoardRecords;
         public void Dispose()
         {
 
@@ -40,15 +42,16 @@ namespace TandC.RunIfYouWantToLive
 
             Social.localUser.Authenticate(success =>
             {
-                isAuthenticated = success;
+                IsAuthenticated = success;
                 DisplayedName = Social.localUser.userName;
+                Debug.LogError(DisplayedName);
                 PlayerAuthentificate?.Invoke(success);
             });
         }
 
         public void LoadLeaderboardData(Action<List<GlobalRecordItem>> callback)
         {
-            if (isAuthenticated)
+            if (IsAuthenticated)
             {
                 PlayGamesPlatform.Instance.LoadScores(_leaderBoardId, LeaderboardStart.TopScores, 50, LeaderboardCollection.Public, LeaderboardTimeSpan.AllTime, (data) =>
                 {
@@ -56,9 +59,19 @@ namespace TandC.RunIfYouWantToLive
                     {
                         List<GlobalRecordItem> scores = new List<GlobalRecordItem>();
                         Debug.LogError($"rank {data.PlayerScore.rank} name {data.PlayerScore.userID} value {data.PlayerScore.value}");
+                        bool isHasPlayer = false;
                         foreach (IScore score in data.Scores)
                         {
-                            scores.Add(new GlobalRecordItem() {Id = score.rank, Name = score.userID, Score = score.value});
+                            if(score.userID == data.PlayerScore.userID) 
+                            {
+                                isHasPlayer = true;
+                            }
+                            scores.Add(new GlobalRecordItem() {Id = score.rank, Name = score.userID, Score = score.value, EndTime = score.date.ToString("dd.MM.yyyy ss.mm.HH") });
+                        }
+                        if (!isHasPlayer) 
+                        {
+                            scores.Add(new GlobalRecordItem() { Id = -1});
+                            scores.Add(new GlobalRecordItem() { Id = data.PlayerScore.rank, Score = data.PlayerScore.value, Name = data.PlayerScore.userID, EndTime = data.PlayerScore.date.ToString("") });
                         }
                         callback(scores);
                     }
@@ -76,7 +89,7 @@ namespace TandC.RunIfYouWantToLive
 
         public void LoadPlayerScore(Action<GlobalRecordItem> callback)
         {
-            if (isAuthenticated)
+            if (IsAuthenticated)
             {
                 PlayGamesPlatform.Instance.LoadScores(
                     _leaderBoardId,
@@ -88,7 +101,7 @@ namespace TandC.RunIfYouWantToLive
                     {
                         if (data.PlayerScore != null)
                         {
-                            GlobalRecordItem currentPlayerRecord = new GlobalRecordItem() { Id = data.PlayerScore.rank, Score = data.PlayerScore.value, Name = data.PlayerScore.userID };
+                            GlobalRecordItem currentPlayerRecord = new GlobalRecordItem() { Id = data.PlayerScore.rank, Score = data.PlayerScore.value, Name = data.PlayerScore.userID, EndTime = data.PlayerScore.date.ToString("dd.MM.yyyy ss.mm.HH") };
                             callback(currentPlayerRecord);
                         }
                         else
@@ -108,7 +121,7 @@ namespace TandC.RunIfYouWantToLive
 
         public void SaveDataToCloud(string fileName, byte[] data, Action<bool> callback)
         {
-            if (isAuthenticated)
+            if (IsAuthenticated)
             {
                 ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
                 savedGameClient.OpenWithAutomaticConflictResolution(fileName, DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseMostRecentlySaved, (status, metadata) =>
@@ -144,7 +157,7 @@ namespace TandC.RunIfYouWantToLive
 
         public void LoadDataFromCloud(string fileName, Action<byte[]> callback)
         {
-            if (isAuthenticated)
+            if (IsAuthenticated)
             {
                 ISavedGameClient savedGameClient = PlayGamesPlatform.Instance.SavedGame;
                 savedGameClient.OpenWithAutomaticConflictResolution(fileName, DataSource.ReadCacheOrNetwork, ConflictResolutionStrategy.UseMostRecentlySaved, (status, metadata) =>
@@ -177,7 +190,7 @@ namespace TandC.RunIfYouWantToLive
 
         public void SavePlayerScore(string leaderboardId, long score)
         {
-            if (isAuthenticated)
+            if (IsAuthenticated)
             {
                 Social.ReportScore(score, leaderboardId, success =>
                 {
