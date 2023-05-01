@@ -824,11 +824,11 @@ MonoBehaviour:
     DronChance: 70
   bonusTypes:
   - type: 0
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: e7d87d2e18de961448b01cc53d0852e9, type: 3}
   - type: 1
-    sprite: {fileID: 21300000, guid: b643f07f2158dba43b084cefa5838c56, type: 3}
+    sprite: {fileID: 21300000, guid: ea57e32c62953124386c4518cc9175c0, type: 3}
   - type: 2
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: e3350eeea3dd9b94db32bcdb2c42495a, type: 3}
   gamePhases:
   - PhaseId: 0
     spawnTime: 3

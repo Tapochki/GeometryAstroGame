@@ -1,10 +1,10 @@
-﻿using TandC.RunIfYouWantToLive.Common;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using UnityEngine;
 using System.Threading.Tasks;
+using TandC.RunIfYouWantToLive.Common;
+using UnityEngine;
 
 namespace TandC.RunIfYouWantToLive
 {
@@ -89,7 +89,6 @@ namespace TandC.RunIfYouWantToLive
             {
                 case Enumerators.CacheDataType.USER_LOCAL_DATA:
                     {
-                        Debug.LogError(File.Exists(_cacheDataPathes[type]));
                         if (!File.Exists(_cacheDataPathes[type]))
                             File.Create(_cacheDataPathes[type]).Close();
 
@@ -116,7 +115,7 @@ namespace TandC.RunIfYouWantToLive
                     {
                         if (File.Exists(_cacheDataPathes[type]))
                             CachedUserLocalData = DeserializeObjectFromPath<UserLocalData>(_cacheDataPathes[type]);
-                        if(CachedUserLocalData.PlayerCharacteristicsData.Count <= 0) 
+                        if (CachedUserLocalData.PlayerCharacteristicsData.Count <= 0)
                         {
                             CachedUserLocalData.SetCharecteristicData();
                         }
@@ -132,26 +131,26 @@ namespace TandC.RunIfYouWantToLive
             }
         }
 
-        public void AddRecord(RecordItem item) 
+        public void AddRecord(RecordItem item)
         {
-            if(UserLocalRecords.Count >= Constants.MAX_RECORDS - 1) 
+            if (UserLocalRecords.Count >= Constants.MAX_RECORDS - 1)
             {
                 RecordItem minimalRecord = UserLocalRecords[0];
-                foreach (var record in UserLocalRecords) 
+                foreach (var record in UserLocalRecords)
                 {
-                    if(minimalRecord.Score <= record.Score) 
+                    if (minimalRecord.Score <= record.Score)
                     {
                         minimalRecord = record;
                         break;
                     }
                 }
-                if(minimalRecord.Score > item.Score) 
+                if (minimalRecord.Score > item.Score)
                 {
                     return;
                 }
                 UserLocalRecords.Remove(minimalRecord);
             }
-            
+
             UserLocalRecords.Add(item);
             UserLocalRecords.Sort(delegate (RecordItem item1, RecordItem item2)
             {
@@ -169,7 +168,7 @@ namespace TandC.RunIfYouWantToLive
 
         public T DeserializeObjectFromPath<T>(string path)
         {
-           return JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
+            return JsonConvert.DeserializeObject<T>(File.ReadAllText(path));
         }
 
         private async Task StartLoadSpreadsheetsData()

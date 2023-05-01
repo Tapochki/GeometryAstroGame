@@ -20,7 +20,7 @@ namespace TandC.RunIfYouWantToLive
         private SpriteRenderer _spriteRenderer;
         public GameObject SelfObject => _selfObject;
         public int CurrentLevel { get; private set; }
-        private int     _armorAmount,
+        private int _armorAmount,
                         _currentXp,
                         _maxXp;
 
@@ -38,7 +38,7 @@ namespace TandC.RunIfYouWantToLive
 
         public Transform SelfTransform { get; private set; }
 
-        private bool _playerGotShieldSkill, 
+        private bool _playerGotShieldSkill,
                         _shieldActive;
 
         private Joystick _variableJoystick;
@@ -61,7 +61,7 @@ namespace TandC.RunIfYouWantToLive
         public GameObject ModelObject;
 
 
-        public PlayerObject(GameObject selfObject, PlayerData data, Joystick variableJoystick, Joystick rotationJoystick, float health, float speed, int armor, float startPickUpRadius, GameObject model) 
+        public PlayerObject(GameObject selfObject, PlayerData data, Joystick variableJoystick, Joystick rotationJoystick, float health, float speed, int armor, float startPickUpRadius, GameObject model)
         {
             _selfObject = selfObject;
             SelfTransform = _selfObject.transform;
@@ -72,7 +72,7 @@ namespace TandC.RunIfYouWantToLive
             _bodyObject = _selfObject.transform.Find("Body").gameObject;
             ModelObject = MonoBehaviour.Instantiate<GameObject>(model, _bodyObject.transform);
             ModelObject.transform.localPosition = Vector3.zero;
-            _collider  = model.GetComponent<Collider2D>();
+            _collider = model.GetComponent<Collider2D>();
             _collider.enabled = true;
             _pickUpCollider = _bodyObject.transform.Find("PickUpCollider").GetComponent<CircleCollider2D>();
             _pickUpCollider.radius = startPickUpRadius;
@@ -97,7 +97,7 @@ namespace TandC.RunIfYouWantToLive
             return _shoowDetectorObject;
         }
 
-        public void StartGameEvent() 
+        public void StartGameEvent()
         {
             Animator.Play("End", -1, 0);
             LevelUpdateEvent?.Invoke(CurrentLevel);
@@ -105,7 +105,7 @@ namespace TandC.RunIfYouWantToLive
             XpUpdateEvent?.Invoke(_currentXp);
         }
 
-        public void ShieldImpulse(ShieldSkillVFX shieldVFX, int damage) 
+        public void ShieldImpulse(ShieldSkillVFX shieldVFX, int damage)
         {
             shieldVFX.ShieldOffByImpulse(damage);
         }
@@ -120,7 +120,7 @@ namespace TandC.RunIfYouWantToLive
             };
         }
 
-        public void IncreasePickUpRadius(float value) 
+        public void IncreasePickUpRadius(float value)
         {
             _pickUpCollider.radius += value;
         }
@@ -128,10 +128,10 @@ namespace TandC.RunIfYouWantToLive
         public void DecreaseShieldCooldownHandler(ShieldSkillVFX shieldVFX, float value) => shieldVFX.DecreaseShieldRecovery(value);
         public void IncreaseShieldHealthHandler(ShieldSkillVFX shieldVFX) => shieldVFX.IncreaseShieldHealth();
 
-        public void AddXp(int addedXp) 
+        public void AddXp(int addedXp)
         {
             _currentXp += addedXp;
-            if(_currentXp >= _maxXp) 
+            if (_currentXp >= _maxXp)
             {
                 _currentXp -= _maxXp;
                 LevelUp();
@@ -142,7 +142,7 @@ namespace TandC.RunIfYouWantToLive
         public float GetMaxHealthValue() => _maxHealth;
         public float GetMaxExperianceValue() => _maxXp;
 
-        public void TakeDamage(int damage) 
+        public void TakeDamage(int damage)
         {
             if (_playerGotShieldSkill && _shieldActive)
             {
@@ -166,16 +166,16 @@ namespace TandC.RunIfYouWantToLive
             }
         }
 
-        public void PlayerRecieve() 
+        public void PlayerRecieve()
         {
-            _bodyObject.gameObject.SetActive(true);
             IsAlive = true;
+            _bodyObject.gameObject.SetActive(true);
         }
 
-        private void PlayerDie() 
+        private void PlayerDie()
         {
-            _bodyObject.gameObject.SetActive(false);
             IsAlive = false;
+            _bodyObject.gameObject.SetActive(false);
             OnPlayerDiedEvent?.Invoke();
         }
 
@@ -185,10 +185,10 @@ namespace TandC.RunIfYouWantToLive
             //Debug.LogError($"Current Hp: {_currentHealth} Max Hp {_maxHealth}");
             HealthUpdateEvent?.Invoke(_currentHealth, _maxHealth);
         }
-        public void RestoreHealth(int healthValue) 
+        public void RestoreHealth(int healthValue)
         {
             _currentHealth += healthValue;
-            if(_currentHealth >= _maxHealth) 
+            if (_currentHealth >= _maxHealth)
             {
                 _currentHealth = _maxHealth;
             }
@@ -219,7 +219,7 @@ namespace TandC.RunIfYouWantToLive
         {
             _maxHealth += amount;
             _currentHealth += amount;
-            if(_currentHealth > _maxHealth) 
+            if (_currentHealth > _maxHealth)
             {
                 _currentHealth = _maxHealth;
             }
@@ -239,16 +239,16 @@ namespace TandC.RunIfYouWantToLive
         private void ShieldIsActiveEventHandler(bool active)
         {
             _shieldActive = active;
-        }  
-        
-        public void StartAnimationBackToCenter() 
+        }
+
+        public void StartAnimationBackToCenter()
         {
             //Start Animation
             _teleportPlayerStart = true;
             _currentTimerToTeleportPlayer = _maxTimerToTeleportPlayer;
         }
 
-        public void OnAnimationBackToCenterEnd() 
+        public void OnAnimationBackToCenterEnd()
         {
             // On Animation end
             GameClient.Get<IGameplayManager>().PauseGame(false);
@@ -257,21 +257,21 @@ namespace TandC.RunIfYouWantToLive
             _teleportPlayerStart = false;
         }
 
-        public void FixedUpdate() 
+        public void FixedUpdate()
         {
-            if (_selfObject == null || !IsAlive) 
+            if (_selfObject == null || !IsAlive)
             {
                 return;
             }
-            if (_isDash) 
+            if (_isDash)
             {
                 Dash();
                 //return;
             }
-            if (IsMaskActive) 
+            if (IsMaskActive)
             {
                 _maskTimer -= Time.deltaTime;
-                if (_maskTimer <= 0) 
+                if (_maskTimer <= 0)
                 {
                     EndMask();
                 }
@@ -288,7 +288,7 @@ namespace TandC.RunIfYouWantToLive
 
             _selfObject.transform.Translate(movementDirection * _movementSpeed * (inputMagnitude) * Time.deltaTime, Space.World);
 
-            if (_rotationJoystick.Vertical != 0 && _rotationJoystick.Horizontal != 0) 
+            if (_rotationJoystick.Vertical != 0 && _rotationJoystick.Horizontal != 0)
             {
                 Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotationDirection);
                 _bodyObject.transform.rotation = Quaternion.RotateTowards(_bodyObject.transform.rotation, toRotation, _rotateSpeed * Time.deltaTime);
@@ -303,10 +303,10 @@ namespace TandC.RunIfYouWantToLive
                 {
                     //if (!_setNormalRotation) 
                     //{
-                        _bodyObject.transform.rotation = Quaternion.RotateTowards(_bodyObject.transform.rotation, toRotation, _rotateSpeed * Time.deltaTime);
-                        //_modelObject.transform.localRotation = new Quaternion(0,0,0,0);
-                        //_setNormalRotation = true;
-                   // }
+                    _bodyObject.transform.rotation = Quaternion.RotateTowards(_bodyObject.transform.rotation, toRotation, _rotateSpeed * Time.deltaTime);
+                    //_modelObject.transform.localRotation = new Quaternion(0,0,0,0);
+                    //_setNormalRotation = true;
+                    // }
                 }
             }
         }
@@ -342,38 +342,38 @@ namespace TandC.RunIfYouWantToLive
             }
         }
 
-        public void StartDash(float dashTimer = 0.25f) 
+        public void StartDash(float dashTimer = 0.25f)
         {
             _dashTimer = dashTimer;
-            IsDashActive=true;
+            IsDashActive = true;
             _variableJoystick.UpdateHandleCenter();
             _variableJoystick.enabled = false;
             _dashSkillContainer.SetActive(true);
             _isDash = true;
         }
 
-        public void StartMask(float maskTimer = 3f) 
+        public void StartMask(float maskTimer = 3f)
         {
             IsMaskActive = true;
             _collider.enabled = false;
             _maskTimer = maskTimer;
             _spriteRenderer.color = new Color(1f, 1f, 1f, 0.7f);
         }
-        private void EndMask() 
+        private void EndMask()
         {
             _collider.enabled = true;
             _spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
             IsMaskActive = false;
         }
 
-        private void LevelUp() 
+        private void LevelUp()
         {
             _maxXp = (int)InternalTools.GetIncrementalFloatValue(100, 1.2f, CurrentLevel);
             CurrentLevel++;
             LevelUpdateEvent?.Invoke(CurrentLevel);
         }
 
-        public void Dispose() 
+        public void Dispose()
         {
             MonoBehaviour.Destroy(_selfObject);
         }

@@ -1,7 +1,6 @@
 ﻿using System;
 using TandC.RunIfYouWantToLive.Common;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -317,6 +316,7 @@ namespace TandC.RunIfYouWantToLive
         {
             if (active)
                 ResetBackToGameTimerValue();
+
             _backToGameZoneContainer.SetActive(active);
             _backToGameZoneEnabled = active;
         }
@@ -348,10 +348,10 @@ namespace TandC.RunIfYouWantToLive
             }
         }
 
-        public void DamageIndicatorShow(bool value) 
+        public void DamageIndicatorShow(bool value)
         {
             _damageIndicatorAnimator.gameObject.SetActive(value);
-            if (value) 
+            if (value)
             {
                 _damageIndicatorAnimator.Play("LowHealthIndicatorAnimation", -1, 0);
             }
