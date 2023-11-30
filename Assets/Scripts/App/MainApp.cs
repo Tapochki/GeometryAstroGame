@@ -1,4 +1,6 @@
 ﻿using System;
+using TandC.RunIfYouWantToLive.Helpers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +14,9 @@ namespace TandC.RunIfYouWantToLive
         public event Action LateUpdateEvent;
         public event Action FixedUpdateEvent;
 
+        private FPSCounter _fPSCounter;
+        [SerializeField] private TextMeshProUGUI _fpsText;
+
         private static MainApp _Instance;
         public static MainApp Instance
         {
@@ -21,38 +26,21 @@ namespace TandC.RunIfYouWantToLive
 
         float deltaTime = 0.0f;
 
-        public bool IsShowFps;
-
-        void OnGUI()
-        {
-         //   if (IsShowFps) 
-           // {
-                int w = Screen.width, h = Screen.height;
-
-                GUIStyle style = new GUIStyle();
-
-                int heightRect = h * 2 / 100;
-                Rect rect = new Rect(0, h - heightRect * 2, w, heightRect);
-                style.alignment = TextAnchor.UpperLeft;
-                style.fontSize = h * 2 / 100;
-                style.normal.textColor = Color.white;
-                float msec = deltaTime * 1000.0f;
-                float fps = 1.0f / deltaTime;
-                string text = string.Format("{0:0.0} ms ({1:0.} fps)", msec, fps);
-                GUI.Label(rect, text, style);
-         //   }
-        }
+        [SerializeField] private bool _isShowFps;
+        [SerializeField] private int _fpsLimit = 60;
 
         private void Awake()
         {
-            if(Instance != null)
+            if (Instance != null)
             {
                 Destroy(gameObject);
                 return;
             }
 
+            _fPSCounter = new FPSCounter(_fpsText);
+
             Instance = this;
-            Application.targetFrameRate = 60;
+            Application.targetFrameRate = _fpsLimit;
             DontDestroyOnLoad(gameObject);
         }
 
@@ -63,7 +51,6 @@ namespace TandC.RunIfYouWantToLive
                 GameClient.Instance.InitServices();
                 GameClient.Get<IAppStateManager>().ChangeAppState(Common.Enumerators.AppState.APP_INIT_LOADING);
                 SceneManager.sceneLoaded += SceneManager_sceneLoaded;
-
             }
         }
 
@@ -71,7 +58,14 @@ namespace TandC.RunIfYouWantToLive
         {
             deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
             if (Instance == this)
+            {
                 GameClient.Instance.Update();
+
+                if (_isShowFps)
+                {
+                    _fPSCounter.Update();
+                }
+            }
         }
 
         private void LateUpdate()
@@ -79,7 +73,9 @@ namespace TandC.RunIfYouWantToLive
             if (Instance == this)
             {
                 if (LateUpdateEvent != null)
+                {
                     LateUpdateEvent();
+                }
             }
         }
 
@@ -88,19 +84,25 @@ namespace TandC.RunIfYouWantToLive
             if (Instance == this)
             {
                 if (FixedUpdateEvent != null)
+                {
                     FixedUpdateEvent();
+                }
             }
         }
 
         private void OnDestroy()
         {
             if (Instance == this)
+            {
                 GameClient.Instance.Dispose();
+            }
         }
         private void OnApplicationQuit()
         {
             if (Instance == this)
+            {
                 GameClient.Instance.Dispose();
+            }
         }
 
 
@@ -109,7 +111,9 @@ namespace TandC.RunIfYouWantToLive
             if (Instance == this)
             {
                 if (OnLevelWasLoadedEvent != null)
+                {
                     OnLevelWasLoadedEvent(arg0.buildIndex);
+                }
             }
         }
     }
