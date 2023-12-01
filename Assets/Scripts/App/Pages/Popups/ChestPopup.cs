@@ -14,7 +14,7 @@ namespace TandC.RunIfYouWantToLive
 
         private ILoadObjectsManager _loadObjectManager;
         private IGameplayManager _gameplayManager;
-        private IUIManager _uIManager;
+        private IUIManager _uiManager;
         private ILocalizationManager _localizationManager;
         private IDataManager _dataManager;
 
@@ -42,11 +42,11 @@ namespace TandC.RunIfYouWantToLive
         {
             _loadObjectManager = GameClient.Get<ILoadObjectsManager>();
             _gameplayManager = GameClient.Get<IGameplayManager>();
-            _uIManager = GameClient.Get<IUIManager>();
+            _uiManager = GameClient.Get<IUIManager>();
             _localizationManager = GameClient.Get<ILocalizationManager>();
             _dataManager = GameClient.Get<IDataManager>();
 
-            _selfObject = MonoBehaviour.Instantiate(_loadObjectManager.GetObjectByPath<GameObject>("Prefabs/UI/Popups/ChestPopup"), _uIManager.Canvas.transform);
+            _selfObject = MonoBehaviour.Instantiate(_loadObjectManager.GetObjectByPath<GameObject>("Prefabs/UI/Popups/ChestPopup"), _uiManager.Canvas.transform);
 
             _container = _selfObject.transform.Find("Container").gameObject;
             _skillsContainer = _container.transform.Find("Container_Skills").gameObject;

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -59,6 +58,7 @@ namespace TandC.RunIfYouWantToLive
                 new GameOverPopup(),
                 new AboutUSPopup(),
                 new DoubleMoneyPopup(),
+                new BossPopup(),
             };
 
             foreach (var popup in _uiPopups)

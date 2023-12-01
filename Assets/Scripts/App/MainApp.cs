@@ -16,6 +16,8 @@ namespace TandC.RunIfYouWantToLive
 
         private FPSCounter _fPSCounter;
         [SerializeField] private TextMeshProUGUI _fpsText;
+        [SerializeField] private bool _isShowFps;
+        [SerializeField] private int _fpsLimit = 60;
 
         private static MainApp _Instance;
         public static MainApp Instance
@@ -23,11 +25,6 @@ namespace TandC.RunIfYouWantToLive
             get { return _Instance; }
             private set { _Instance = value; }
         }
-
-        float deltaTime = 0.0f;
-
-        [SerializeField] private bool _isShowFps;
-        [SerializeField] private int _fpsLimit = 60;
 
         private void Awake()
         {
@@ -37,11 +34,24 @@ namespace TandC.RunIfYouWantToLive
                 return;
             }
 
-            _fPSCounter = new FPSCounter(_fpsText);
+            InitFpsCounter();
 
             Instance = this;
             Application.targetFrameRate = _fpsLimit;
             DontDestroyOnLoad(gameObject);
+        }
+
+        private void InitFpsCounter()
+        {
+            _fPSCounter = new FPSCounter(_fpsText);
+            if (_isShowFps)
+            {
+                _fpsText.gameObject.SetActive(true);
+            }
+            else
+            {
+                _fpsText.gameObject.SetActive(false);
+            }
         }
 
         private void Start()
@@ -56,7 +66,6 @@ namespace TandC.RunIfYouWantToLive
 
         private void Update()
         {
-            deltaTime += (Time.unscaledDeltaTime - deltaTime) * 0.1f;
             if (Instance == this)
             {
                 GameClient.Instance.Update();
