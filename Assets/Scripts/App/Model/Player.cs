@@ -93,7 +93,6 @@ namespace TandC.RunIfYouWantToLive
             _maxXp = data.startNeedXp;
             _currentXp = 0;
             IsAlive = true;
-            _setNormalRotation = true;
         }
 
         public GameObject GetShootDetecrot()
@@ -290,7 +289,6 @@ namespace TandC.RunIfYouWantToLive
             {
                 Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotationDirection);
                 _bodyObject.transform.rotation = Quaternion.RotateTowards(_bodyObject.transform.rotation, toRotation, _rotateSpeed * Time.deltaTime);
-                _setNormalRotation = false;
             }
             if (_variableJoystick.Vertical != 0 && _variableJoystick.Horizontal != 0)
             {
