@@ -274,12 +274,12 @@ namespace TandC.RunIfYouWantToLive
             Vector2 movementDirection;
             movementDirection = new Vector2(_variableJoystick.Horizontal, _variableJoystick.Vertical);
             movementDirection.Normalize();
-
+            float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
             Vector2 rotationDirection;
             rotationDirection = new Vector2(_rotationJoystick.Horizontal, _rotationJoystick.Vertical);
             rotationDirection.Normalize();
 
-            _selfRigidbody2D.velocity = movementDirection.normalized * _movementSpeed;
+            _selfObject.transform.Translate(movementDirection * _movementSpeed * (inputMagnitude) * Time.deltaTime, Space.World);
             if (_rotationJoystick.Vertical != 0 && _rotationJoystick.Horizontal != 0)
             {
                 Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotationDirection);
@@ -320,7 +320,6 @@ namespace TandC.RunIfYouWantToLive
 
         public void StartMask(float maskTimer = 3f)
         {
-            _collider.enabled = false;
             _playerMask.StartMask(maskTimer);
         }
         private void LevelUp()

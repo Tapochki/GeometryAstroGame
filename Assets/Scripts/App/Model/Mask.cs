@@ -27,14 +27,14 @@ namespace TandC.RunIfYouWantToLive
         }
         public void StartMask(float maskTimer = 3f)
         {
-            IsMaskActive = true;
-            _collider.enabled = false;
             _maskTimer = maskTimer;
+            _collider.isTrigger = true;
             _spriteRenderer.color = new Color(1f, 1f, 1f, 0.7f);
+            IsMaskActive = true;
         }
         private void EndMask()
         {
-            _collider.enabled = true;
+            _collider.isTrigger = false;
             _spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
             IsMaskActive = false;
         }

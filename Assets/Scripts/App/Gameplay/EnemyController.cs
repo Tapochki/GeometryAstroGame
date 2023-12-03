@@ -75,6 +75,10 @@ namespace TandC.RunIfYouWantToLive
         {
             if (gameObject == _playerController.Player.ModelObject || gameObject == _playerController.Player.SelfObject)
             {
+                if (_playerController.Player.IsMaskActive) 
+                {
+                    return;
+                }
                 if (_playerController.Player.IsDash)
                 {
                     enemy.DeathEvent += OnEnemyDeath;
