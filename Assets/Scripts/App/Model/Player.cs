@@ -195,6 +195,10 @@ namespace TandC.RunIfYouWantToLive
 
             if (_isHaveAnotherChance)
             {
+                GameClient.Get<IUIManager>().DrawPopup<ReviewPopup>();
+
+                StartMask(5);
+
                 PlayerRecieve();
                 RestoreHealth(10);
             }

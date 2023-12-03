@@ -1,15 +1,16 @@
+using System;
 using System.Collections.Generic;
+using TandC.RunIfYouWantToLive.Common;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using TandC.RunIfYouWantToLive.Common;
-using System;
 
 namespace TandC.RunIfYouWantToLive
 {
     public class LevelUpPopup : IUIPopup
     {
-        public event Action<Enumerators.SkillType> OnSkillChoiceEvent; 
+        public event Action<Enumerators.SkillType> OnSkillChoiceEvent;
+
         public GameObject Self
         {
             get { return _selfPage; }
@@ -26,6 +27,7 @@ namespace TandC.RunIfYouWantToLive
 
         private Button _continueButton,
                         _viewADButton;
+
         private TextMeshProUGUI _contratulationText;
 
         public List<SkillItem> _skillItemsList;
@@ -38,7 +40,6 @@ namespace TandC.RunIfYouWantToLive
 
         private bool _isReloadOneTime;
         private string _reachedText;
-
 
         public void Init()
         {
@@ -71,7 +72,8 @@ namespace TandC.RunIfYouWantToLive
             _playerController = _gameplayManager.GetController<PlayerController>();
         }
 
-        public void Show() {}
+        public void Show()
+        { }
 
         public void Show(object data)
         {
@@ -122,17 +124,18 @@ namespace TandC.RunIfYouWantToLive
             _playerController.AddXpToPlayer(0);
         }
 
-        private void OnCompleteAds() 
+        private void OnCompleteAds()
         {
             ResetSkillList();
             _skills = _gameplayManager.GetController<SkillsController>().FillUpgradeList();
             FillSkillList();
-
         }
-        private void OnFailedAds() 
+
+        private void OnFailedAds()
         {
             Debug.LogError("Fail");
         }
+
         private void ViewADButtonOnClickHandler()
         {
             if (_isReloadOneTime)
@@ -150,9 +153,8 @@ namespace TandC.RunIfYouWantToLive
 
             SkillItem skillItem;
 
-            for(int i = 0; i < _skills.Count; i++) 
+            for (int i = 0; i < _skills.Count; i++)
             {
-               
                 Skill skill = _skills[i];
                 skillItem = new SkillItem(MonoBehaviour.Instantiate(_levelUpPrefab, _skillContainer), skill.SkillData, skill.SkillUseType != Enumerators.SkillUseType.Additional);
                 skillItem.ItemSelectionChangedEvent += ItemSelectEventHandler;
@@ -180,7 +182,9 @@ namespace TandC.RunIfYouWantToLive
             if (_skillItemsList != null)
             {
                 foreach (var item in _skillItemsList)
+                {
                     item.Dispose();
+                }
 
                 _skillItemsList.Clear();
                 _skillItemsList = null;
@@ -204,6 +208,7 @@ namespace TandC.RunIfYouWantToLive
     public class SkillItem
     {
         public event Action<Enumerators.SkillType> ItemSelectionChangedEvent;
+
         public event Action<Enumerators.SkillType> ItemConfirmSelectionEvent;
 
         public GameObject selfObject;
@@ -228,11 +233,11 @@ namespace TandC.RunIfYouWantToLive
             _buttonConfirmSelection.gameObject.SetActive(false);
             selfObject.transform.Find("Image_IconBackground/Image_Icon").GetComponent<Image>().sprite = data.sprite;
             string text = _localizationManager.GetUITranslation(data.description);
-            if (data.isProcent) 
+            if (data.isProcent)
             {
                 text = text.Replace("%n%", $"<color=#FFBF00>{data.procentIncrease}%</color>");
             }
-            else 
+            else
             {
                 text = text.Replace("%n%", $"<color=#FFBF00>{data.Value}</color>");
             }
@@ -246,7 +251,10 @@ namespace TandC.RunIfYouWantToLive
             _selectButton.onClick.AddListener(SelectButtonOnClickHandler);
             _buttonConfirmSelection.onClick.AddListener(ConfirmSelectionButtonOnClickHandler);
 
-            if (isChestSkill) _selectButton.interactable = false;
+            if (isChestSkill)
+            {
+                _selectButton.interactable = false;
+            }
         }
 
         private void SelectButtonOnClickHandler()
@@ -257,7 +265,9 @@ namespace TandC.RunIfYouWantToLive
         public void SetSelection(bool state)
         {
             if (isSelect == state)
+            {
                 return;
+            }
 
             ItemSelectionChangedEvent?.Invoke(skillType);
             isSelect = state;

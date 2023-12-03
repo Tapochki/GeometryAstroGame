@@ -7,7 +7,8 @@ namespace TandC.RunIfYouWantToLive
 {
     public class UIManager : IService, IUIManager
     {
-        public List<IUIElement> Pages { get { return _uiPages; } }
+        public List<IUIElement> Pages
+        { get { return _uiPages; } }
 
         private List<IUIElement> _uiPages;
         private List<IUIPopup> _uiPopups;
@@ -25,10 +26,14 @@ namespace TandC.RunIfYouWantToLive
         public void Dispose()
         {
             foreach (var page in _uiPages)
+            {
                 page.Dispose();
+            }
 
             foreach (var popup in _uiPopups)
+            {
                 popup.Dispose();
+            }
         }
 
         public void Init()
@@ -49,7 +54,9 @@ namespace TandC.RunIfYouWantToLive
                 new UpgradesPage(),
             };
             foreach (var page in _uiPages)
+            {
                 page.Init();
+            }
 
             _uiPopups = new List<IUIPopup>()
             {
@@ -59,19 +66,26 @@ namespace TandC.RunIfYouWantToLive
                 new GameOverPopup(),
                 new AboutUSPopup(),
                 new DoubleMoneyPopup(),
+                new ReviewPopup(),
             };
 
             foreach (var popup in _uiPopups)
+            {
                 popup.Init();
+            }
         }
 
         public void Update()
         {
             foreach (var page in _uiPages)
+            {
                 page.Update();
+            }
 
             foreach (var popup in _uiPopups)
+            {
                 popup.Update();
+            }
         }
 
         public void HideAllPages()
@@ -91,7 +105,9 @@ namespace TandC.RunIfYouWantToLive
             else
             {
                 if (CurrentPage != null)
+                {
                     CurrentPage.Hide();
+                }
             }
 
             foreach (var _page in _uiPages)
@@ -108,30 +124,47 @@ namespace TandC.RunIfYouWantToLive
         public void SaveCurrentPage()
         {
             if (CurrentPage != null)
+            {
                 PreviuosPage = CurrentPage;
+            }
         }
+
         public void LoadPreviousPage()
         {
             if (CurrentPage != null)
+            {
                 CurrentPage.Hide();
+            }
+
             if (PreviuosPage != null)
+            {
                 PreviuosPage.Show();
+            }
 
             CurrentPage = PreviuosPage;
 
             PreviuosPage = null;
         }
+
         public void SaveCurrentPopup()
         {
             if (CurrentPopup != null)
+            {
                 PreviuosPopup = CurrentPopup;
+            }
         }
+
         public void LoadPreviousPopup()
         {
             if (CurrentPopup != null)
+            {
                 CurrentPopup.Hide();
+            }
+
             if (PreviuosPopup != null)
+            {
                 PreviuosPopup.Show();
+            }
 
             CurrentPopup = PreviuosPopup;
 
@@ -150,12 +183,18 @@ namespace TandC.RunIfYouWantToLive
             }
 
             if (setMainPriority)
+            {
                 CurrentPopup.SetMainPriority();
+            }
 
             if (message == null)
+            {
                 CurrentPopup.Show();
+            }
             else
+            {
                 CurrentPopup.Show(message);
+            }
         }
 
         public void HidePopup<T>() where T : IUIPopup

@@ -444,6 +444,7 @@ namespace TandC.RunIfYouWantToLive
 
         public void AddsPlayerAnotherChance()
         {
+            Debug.Log("add another chance");
             Player.AddAnotherChance();
         }
 
