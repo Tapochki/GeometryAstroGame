@@ -182,7 +182,7 @@ MonoBehaviour:
     BombDamage: 800
     StartRocketBlowSize: 1
     StartDashTime: 0.1
-    StartDodgePower: 3
+    StartDodgePower: 300
     StartDodgeRecoverTimer: 1
     DroneData:
       prefab: {fileID: 33846994018246858, guid: 5309fbf4072fd874ba7d5d4e32b3ab32,

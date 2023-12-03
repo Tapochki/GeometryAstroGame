@@ -136,7 +136,6 @@ namespace TandC.RunIfYouWantToLive
         {
             if (_isCanDodge) 
             {
-                Debug.LogError(12);
                 Player.StartDodge(swipeDirection, _dodgePower);
                 _dodgeTime = _dodgeTimer;
                 _isCanDodge = false;
@@ -651,7 +650,7 @@ namespace TandC.RunIfYouWantToLive
                 }
                 if (weapon != null)
                 {
-                    if (Player.IsMaskActive || Player.IsDashActive)
+                    if (Player.IsMaskActive || Player.IsDash)
                     {
                         return;
                     }

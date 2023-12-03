@@ -12,7 +12,7 @@ namespace TandC.RunIfYouWantToLive
         public Action<int> LevelUpdateEvent;
         public event Action OnPlayerDiedEvent;
 
-        private GameObject //_healthBar,
+        private GameObject
                                 _bodyObject,
                                 _selfObject,
                                 _dashSkillContainer,
@@ -34,6 +34,8 @@ namespace TandC.RunIfYouWantToLive
 
         public Animator Animator;
 
+        private Rigidbody2D _selfRigidbody2D;
+
         private int _rotateSpeed = 1000;
 
         public Transform SelfTransform { get; private set; }
@@ -45,19 +47,13 @@ namespace TandC.RunIfYouWantToLive
         private Joystick _rotationJoystick;
         public bool IsAlive;
 
-        public bool IsDashActive;
-        private float _dashTimer;
-        private bool _isDash;
+        private Dodge _playerDodge;
+        private Dash _playerDash;
 
-        private float _dodgeTimer = 0.1f;
-        private bool _isDodge;
-        private float _dodgePower;
-        private Vector2 _dodgeDirection;
+        public bool IsDash;
 
         public bool IsMaskActive;
         private float _maskTimer;
-
-        private bool _setNormalRotation;
 
         private float _maxTimerToTeleportPlayer = 5f,
                         _currentTimerToTeleportPlayer;
@@ -69,6 +65,7 @@ namespace TandC.RunIfYouWantToLive
         public PlayerObject(GameObject selfObject, PlayerData data, Joystick variableJoystick, Joystick rotationJoystick, float health, float speed, int armor, float startPickUpRadius, GameObject model)
         {
             _selfObject = selfObject;
+            _selfRigidbody2D = _selfObject.GetComponent<Rigidbody2D>();
             SelfTransform = _selfObject.transform;
             _variableJoystick = variableJoystick;
             _variableJoystick.UpdateHandleCenter();
@@ -83,6 +80,8 @@ namespace TandC.RunIfYouWantToLive
             _pickUpCollider.radius = startPickUpRadius;
             Animator = _bodyObject.GetComponent<Animator>();
             _dashSkillContainer = _bodyObject.transform.Find("[Skills]/DashSkill").gameObject;
+            _playerDodge = new Dodge(SelfTransform);
+            _playerDash = new Dash(SelfTransform, _dashSkillContainer);
             _shoowDetectorObject = ModelObject.transform.Find("ShootDetector").gameObject;
             _spriteRenderer = ModelObject.gameObject.GetComponent<SpriteRenderer>();
             _maxHealth = health;
@@ -173,12 +172,15 @@ namespace TandC.RunIfYouWantToLive
 
         public void PlayerRecieve()
         {
+            _selfRigidbody2D.constraints = RigidbodyConstraints2D.None;
+            _selfRigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
             IsAlive = true;
             _bodyObject.gameObject.SetActive(true);
         }
 
         private void PlayerDie()
         {
+            _selfRigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
             IsAlive = false;
             _bodyObject.gameObject.SetActive(false);
             OnPlayerDiedEvent?.Invoke();
@@ -187,7 +189,6 @@ namespace TandC.RunIfYouWantToLive
         public void RestoreFullHealth()
         {
             _currentHealth = _maxHealth;
-            //Debug.LogError($"Current Hp: {_currentHealth} Max Hp {_maxHealth}");
             HealthUpdateEvent?.Invoke(_currentHealth, _maxHealth);
         }
         public void RestoreHealth(int healthValue)
@@ -248,14 +249,12 @@ namespace TandC.RunIfYouWantToLive
 
         public void StartAnimationBackToCenter()
         {
-            //Start Animation
             _teleportPlayerStart = true;
             _currentTimerToTeleportPlayer = _maxTimerToTeleportPlayer;
         }
 
         public void OnAnimationBackToCenterEnd()
         {
-            // On Animation end
             GameClient.Get<IGameplayManager>().PauseGame(false);
             Animator.Play("End", -1, 0);
             SelfTransform.position = new Vector2(0, 0);
@@ -268,15 +267,6 @@ namespace TandC.RunIfYouWantToLive
             {
                 return;
             }
-            if (_isDash)
-            {
-                Dash();
-                //return;
-            }
-            if (_isDodge) 
-            {
-                Dodge();
-            }
             if (IsMaskActive)
             {
                 _maskTimer -= Time.deltaTime;
@@ -285,18 +275,17 @@ namespace TandC.RunIfYouWantToLive
                     EndMask();
                 }
             }
+            _playerDodge.Update();
+            _playerDash.Update();
             Vector2 movementDirection;
             movementDirection = new Vector2(_variableJoystick.Horizontal, _variableJoystick.Vertical);
-            float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
             movementDirection.Normalize();
 
             Vector2 rotationDirection;
             rotationDirection = new Vector2(_rotationJoystick.Horizontal, _rotationJoystick.Vertical);
-            float rotationMagnitude = Mathf.Clamp01(rotationDirection.magnitude);
             rotationDirection.Normalize();
 
-            _selfObject.transform.Translate(movementDirection * _movementSpeed * (inputMagnitude) * Time.deltaTime, Space.World);
-
+            _selfRigidbody2D.velocity = movementDirection.normalized * _movementSpeed;
             if (_rotationJoystick.Vertical != 0 && _rotationJoystick.Horizontal != 0)
             {
                 Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotationDirection);
@@ -310,76 +299,30 @@ namespace TandC.RunIfYouWantToLive
 
                 if (_rotationJoystick.Vertical == 0 && _rotationJoystick.Horizontal == 0)
                 {
-                    //if (!_setNormalRotation) 
-                    //{
                     _bodyObject.transform.rotation = Quaternion.RotateTowards(_bodyObject.transform.rotation, toRotation, _rotateSpeed * Time.deltaTime);
-                    //_modelObject.transform.localRotation = new Quaternion(0,0,0,0);
-                    //_setNormalRotation = true;
-                    // }
                 }
-            }
-        }
-
-        private void Dash()
-        {
-
-            //if (_rotationJoystick.Vertical != 0 && _rotationJoystick.Horizontal != 0)
-            //{
-            //    //Vector2 rotationDirection;
-            //   // rotationDirection = new Vector2(_rotationJoystick.Horizontal, _rotationJoystick.Vertical);
-            //    //Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotationDirection);
-
-            //    //Debug.LogError($" _selfObject {_selfObject.transform.rotation}  _modelObject {_modelObject.transform.rotation} toRotate {toRotation}");
-            //}
-            _selfObject.transform.rotation = _bodyObject.transform.rotation;
-            _bodyObject.transform.localRotation = Quaternion.identity;
-            _bodyObject.transform.localRotation = Quaternion.identity;
-            if (IsDashActive)
-            {
-                _selfObject.transform.Translate(Vector2.up * _movementSpeed * 10 * Time.deltaTime);
-            }
-            _dashTimer -= Time.deltaTime;
-            if (_dashTimer < 0)
-            {
-                IsDashActive = false;
-                _variableJoystick.enabled = true;
-                if (_dashTimer <= -0.5f)
-                {
-                    _isDash = false;
-                    _dashSkillContainer.SetActive(false);
-                }
-            }
-        }
-
-        public void Dodge()
-        {
-            int playerDirection = _selfObject.transform.rotation.eulerAngles.z > 90f || _selfObject.transform.rotation.eulerAngles.z < -90f ? -1 : 1;
-            _selfObject.transform.Translate(_dodgeDirection * _dodgePower * _movementSpeed * playerDirection * Time.deltaTime);
-            _dodgeTimer -= Time.deltaTime;
-            if (_dodgeTimer < 0) 
-            {
-                _variableJoystick.enabled = true;
-                _isDodge = false;
             }
         }
 
         public void StartDodge(Vector2 direction, float dodgePower) 
         {
-            _dodgeTimer = 0.1f;
-            _dodgeDirection = direction;
-            _dodgePower = dodgePower;
-            _isDodge = true;
-            _variableJoystick.enabled = false;
+            _playerDodge.StartDodge(direction, dodgePower);
         }
 
         public void StartDash(float dashTimer = 0.25f)
         {
-            _dashTimer = dashTimer;
-            IsDashActive = true;
+            IsDash = true;
             _variableJoystick.UpdateHandleCenter();
             _variableJoystick.enabled = false;
-            _dashSkillContainer.SetActive(true);
-            _isDash = true;
+            _selfObject.transform.rotation = _bodyObject.transform.rotation;
+            _bodyObject.transform.localRotation = Quaternion.identity;
+            _playerDash.StartDash(_movementSpeed, dashTimer);
+            _playerDash.EndDashEvent += OnDashEndHandler;
+        }
+        private void OnDashEndHandler() 
+        {
+            IsDash = false;
+            _variableJoystick.enabled = true;
         }
 
         public void StartMask(float maskTimer = 3f)

@@ -75,7 +75,7 @@ namespace TandC.RunIfYouWantToLive
         {
             if (gameObject == _playerController.Player.ModelObject || gameObject == _playerController.Player.SelfObject)
             {
-                if (_playerController.Player.IsDashActive)
+                if (_playerController.Player.IsDash)
                 {
                     enemy.DeathEvent += OnEnemyDeath;
                     enemy.DropChance = _gameplayData.DropChance.DashChance;
@@ -625,16 +625,7 @@ namespace TandC.RunIfYouWantToLive
                     IncreasePhaseIndex();
                 }
             }
-            for (int i = 0; i < _enemyBullets.Count; i++)
-            {
-                EnemyBullet bullet = _enemyBullets[i];
-                if (!bullet.IsLife)
-                {
-                    bullet.Dispose();
-                    _enemyBullets.Remove(bullet);
-                }
-                bullet.Update();
-            }
+            
             //foreach (var item in _enemies) 
             //{
             //    item.Update();
@@ -658,6 +649,16 @@ namespace TandC.RunIfYouWantToLive
             if (!_gameplayManager.IsGameplayStarted)
                 return;
 
+            for (int i = 0; i < _enemyBullets.Count; i++)
+            {
+                EnemyBullet bullet = _enemyBullets[i];
+                if (!bullet.IsLife)
+                {
+                    bullet.Dispose();
+                    _enemyBullets.Remove(bullet);
+                }
+                bullet.Update();
+            }
 
             if (_enemies.Count > 0)
                 foreach (var item in _enemies)

@@ -284,16 +284,7 @@ namespace TandC.RunIfYouWantToLive
                 }
             }
             //_starsParticle.transform.position = _gameplayManager.GameplayCamera.transform.position * -1.75f;
-            for (int i = 0; i < _bulletList.Count; i++)
-            {
-                PlayerBullet bullet = _bulletList[i];
-                if (!bullet.IsLife)
-                {
-                    bullet.Dispose();
-                    _bulletList.Remove(bullet);
-                }
-                bullet.Update();
-            }
+            
             foreach (var item in _items)
             {
                 item.Update();
@@ -304,7 +295,19 @@ namespace TandC.RunIfYouWantToLive
 
         public void FixedUpdate()
         {
+            if (!_gameplayManager.IsGameplayStarted)
+                return;
 
+            for (int i = 0; i < _bulletList.Count; i++)
+            {
+                PlayerBullet bullet = _bulletList[i];
+                if (!bullet.IsLife)
+                {
+                    bullet.Dispose();
+                    _bulletList.Remove(bullet);
+                }
+                bullet.Update();
+            }
         }
     }
 

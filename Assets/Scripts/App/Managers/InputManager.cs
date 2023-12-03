@@ -102,7 +102,6 @@ namespace TandC.RunIfYouWantToLive
         {
             
             Touch touch = Input.GetTouch(touchIndex);
-            Debug.LogError(touch.phase);
             switch (touch.phase)
             {
                 case TouchPhase.Began:
