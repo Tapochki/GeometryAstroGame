@@ -7,6 +7,7 @@ namespace TandC.RunIfYouWantToLive
     {
         event Action<Vector2> OnLeftMouseButtonClickEvent;
         event Action<Vector2> OnLeftMouseButtonOnUIClickEvent;
+        event Action<Vector2> OnSwipeEvent;
         public Vector2 ReturnCameraMovementVelocity();
         public Vector2 MouseWorldPosition { get; }
         event Action OnRocketShootClickHandler;

@@ -9,6 +9,7 @@ namespace TandC.RunIfYouWantToLive
     {
         public event Action<Vector2> OnLeftMouseButtonClickEvent;
         public event Action<Vector2> OnLeftMouseButtonOnUIClickEvent;
+        public event Action<Vector2> OnSwipeEvent;
 
         private IGameplayManager _gameplayManager;
 
@@ -26,6 +27,13 @@ namespace TandC.RunIfYouWantToLive
 
         private IUIManager _uIManager;
         private bool _mousePressed;
+
+        private Vector2 fingerDown;
+        private Vector2 fingerUp;
+        private bool detectSwipe = false;
+        private float minSwipeDistance = 20f;
+        private float maxSwipeTime = 1f;
+        private float swipeStartTime;
 
         public Vector2 ReturnCameraMovementVelocity()
         {
@@ -72,6 +80,62 @@ namespace TandC.RunIfYouWantToLive
             if (Input.GetMouseButtonUp(0))
             {
                 _mousePressed = false;
+            }
+            if(CurrentJoystick.Direction != Vector2.zero) 
+            {
+                if (Input.touchCount == 2)
+                {
+                    Swipe(1);
+                }
+            }
+            else
+            {
+                if (Input.touchCount == 1)
+                {
+                    Swipe(0);
+                }
+
+            }
+        }
+
+        private void Swipe(int touchIndex) 
+        {
+            
+            Touch touch = Input.GetTouch(touchIndex);
+            Debug.LogError(touch.phase);
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    detectSwipe = true;
+                    fingerDown = touch.position;
+                    fingerUp = touch.position;
+                    swipeStartTime = Time.time;
+                    break;
+
+                case TouchPhase.Canceled:
+                    detectSwipe = false;
+                    break;
+
+                case TouchPhase.Ended:
+                    fingerUp = touch.position;
+                    float swipeDuration = Time.time - swipeStartTime;
+                    float swipeDistance = (fingerDown - fingerUp).magnitude;
+
+                    if (detectSwipe && swipeDuration < maxSwipeTime && swipeDistance > minSwipeDistance)
+                    {
+                        Vector2 swipeDirection = fingerDown - fingerUp;
+                        swipeDirection.Normalize();
+
+                        if (swipeDirection.x > 0)
+                        {
+                            OnSwipeEvent?.Invoke(Vector2.left);
+                        }
+                        else if (swipeDirection.x < 0)
+                        {
+                            OnSwipeEvent?.Invoke(Vector2.right);
+                        }
+                    }
+                    break;
             }
         }
         //private Vector2 GetMouseUIPosition()

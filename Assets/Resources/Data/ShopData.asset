@@ -52,14 +52,14 @@ MonoBehaviour:
     Cost: 00000000c80000002c01000090010000f4010000ee020000e8030000e2040000dc050000d0070000b80b0000
     UpgradeType: 1
     IsProcent: 1
-    CurrentLevel: 10
+    CurrentLevel: 0
   - UpgradeList:
-    - 150
-    - 157.5
-    - 165
-    - 172.5
-    - 180
-    - 187.5
+    - 225
+    - 236.25
+    - 247.5
+    - 258.75
+    - 270
+    - 281.25
     UpgradeSprite: {fileID: 21300000, guid: 375fa44e98b3b4e43b6736913fed1f4c, type: 3}
     Title: KEY_UPGRADE_SPEED_TITLE
     DescriptionKey: KEY_UPGRADE_SPEED
@@ -101,7 +101,7 @@ MonoBehaviour:
     Cost: 00000000c8000000900100005802000020030000e8030000dc050000d0070000c409000088130000
     UpgradeType: 4
     IsProcent: 1
-    CurrentLevel: 9
+    CurrentLevel: 0
   - UpgradeList:
     - 1.25
     - 1.5
@@ -120,7 +120,7 @@ MonoBehaviour:
     Cost: 00000000fa000000f4010000ee020000e8030000dc050000d0070000b80b00008813000010270000
     UpgradeType: 5
     IsProcent: 0
-    CurrentLevel: 9
+    CurrentLevel: 0
   - UpgradeList:
     - 1
     - 1.25

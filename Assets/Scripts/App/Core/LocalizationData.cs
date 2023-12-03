@@ -37,7 +37,7 @@ namespace TandC.RunIfYouWantToLive
 	{
 		public string Keys;
         public string English;
+        public string Ukrainian;
         public string Russian;
-		public string Ukrainian;
 	}
 }

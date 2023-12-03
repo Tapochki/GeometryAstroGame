@@ -37,7 +37,7 @@ namespace TandC.RunIfYouWantToLive
         {
             _dataManager = GameClient.Get<IDataManager>();
             _loadObjectsManager = GameClient.Get<ILoadObjectsManager>();
-
+            
             LocalizationData = _loadObjectsManager.GetObjectByPath<LocalizationData>("Data/LocalizationData");
 
             DefaultLanguage = LocalizationData.defaultLanguage;

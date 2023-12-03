@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Advertisements;
 using TMPro;
 using System;
+using GooglePlayGames;
 
 namespace TandC.RunIfYouWantToLive
 {
@@ -75,6 +76,7 @@ namespace TandC.RunIfYouWantToLive
 
             _localizationManager.LanguageWasChangedEvent += LanguageWasChangedEvent;
 
+           // _textStartButton.text = PlayGamesPlatform.Instance.GetUserId();
             _infoIndex = 0;
             UpdateLocalization();
             Hide();
@@ -96,7 +98,7 @@ namespace TandC.RunIfYouWantToLive
 
         private void UpdateLocalization()
         {
-            _textStartButton.text = _localizationManager.GetUITranslation("KEY_MAIN_MENU_START");
+            //_textStartButton.text = _localizationManager.GetUITranslation("KEY_MAIN_MENU_START");
             _textShopButton.text = _localizationManager.GetUITranslation("KEY_MAIN_MENU_SHOP");
             _textLeaderboardButton.text = _localizationManager.GetUITranslation("KEY_MAIN_MENU_LEADERBOARD");
             _textInfoTitle.text = _localizationManager.GetUITranslation("KEY_MAIN_MENU_INFO_TITLE");

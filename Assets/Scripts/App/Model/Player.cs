@@ -49,6 +49,11 @@ namespace TandC.RunIfYouWantToLive
         private float _dashTimer;
         private bool _isDash;
 
+        private float _dodgeTimer = 0.1f;
+        private bool _isDodge;
+        private float _dodgePower;
+        private Vector2 _dodgeDirection;
+
         public bool IsMaskActive;
         private float _maskTimer;
 
@@ -268,6 +273,10 @@ namespace TandC.RunIfYouWantToLive
                 Dash();
                 //return;
             }
+            if (_isDodge) 
+            {
+                Dodge();
+            }
             if (IsMaskActive)
             {
                 _maskTimer -= Time.deltaTime;
@@ -340,6 +349,27 @@ namespace TandC.RunIfYouWantToLive
                     _dashSkillContainer.SetActive(false);
                 }
             }
+        }
+
+        public void Dodge()
+        {
+            int playerDirection = _selfObject.transform.rotation.eulerAngles.z > 90f || _selfObject.transform.rotation.eulerAngles.z < -90f ? -1 : 1;
+            _selfObject.transform.Translate(_dodgeDirection * _dodgePower * _movementSpeed * playerDirection * Time.deltaTime);
+            _dodgeTimer -= Time.deltaTime;
+            if (_dodgeTimer < 0) 
+            {
+                _variableJoystick.enabled = true;
+                _isDodge = false;
+            }
+        }
+
+        public void StartDodge(Vector2 direction, float dodgePower) 
+        {
+            _dodgeTimer = 0.1f;
+            _dodgeDirection = direction;
+            _dodgePower = dodgePower;
+            _isDodge = true;
+            _variableJoystick.enabled = false;
         }
 
         public void StartDash(float dashTimer = 0.25f)

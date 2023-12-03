@@ -184,6 +184,8 @@ namespace TandC.RunIfYouWantToLive
         public int BombDamage;
         public float StartRocketBlowSize;
         public float StartDashTime;
+        public float StartDodgePower;
+        public float StartDodgeRecoverTimer;
         public DroneData DroneData;
         public GameObject playerPrefab;
         public Enumerators.WeaponType StartWeaponType;

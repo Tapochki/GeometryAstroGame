@@ -45,6 +45,7 @@ namespace TandC.RunIfYouWantToLive
                 IsAuthenticated = success;
                 DisplayedName = Social.localUser.userName;
                 Debug.LogError(DisplayedName);
+                Debug.LogError(PlayGamesPlatform.Instance.GetUserId());
                 PlayerAuthentificate?.Invoke(success);
             });
         }

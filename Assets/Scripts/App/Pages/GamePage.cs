@@ -58,6 +58,7 @@ namespace TandC.RunIfYouWantToLive
                       _laserFillImage,
                       _rocketFillImage,
                       _imageHealthBar,
+                      _imageDodgeBar,
                       _imageExperianceBar,
                       _imageBonus;
 
@@ -116,6 +117,7 @@ namespace TandC.RunIfYouWantToLive
             _laserFillImage = _laserShootButton.transform.Find("RestoreBar_Image").GetComponent<Image>();
             _rocketFillImage = _rocketShootButton.transform.Find("RestoreBar_Image").GetComponent<Image>();
             _imageHealthBar = _selfObject.transform.Find("Container_TopPanel/Container_HealthBar/Image_Fillbar").GetComponent<Image>();
+            _imageDodgeBar = _selfObject.transform.Find("Container_TopPanel/Container_HealthBar/Image_StaminaBar").GetComponent<Image>();
             _imageExperianceBar = _selfObject.transform.Find("Container_TopPanel/Container_Experiance/Image_ExperianceFillBar").GetComponent<Image>();
             _imageBonus = _bonusContainer.transform.Find("Image_Icon").GetComponent<Image>();
 
@@ -346,6 +348,11 @@ namespace TandC.RunIfYouWantToLive
             {
                 _lowHealthIndicatorAnimator.gameObject.SetActive(false);
             }
+        }
+
+        public void UpdateDodgePanel(float time, float timer) 
+        {
+            _imageDodgeBar.fillAmount = 1 - time / timer;
         }
 
         public void DamageIndicatorShow(bool value)

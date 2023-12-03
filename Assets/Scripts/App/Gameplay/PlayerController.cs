@@ -64,6 +64,11 @@ namespace TandC.RunIfYouWantToLive
         private float _restoreHealthTimer;
         private float _restoreHealthTime;
 
+        private float _dodgePower;
+        private float _dodgeTimer;
+        private float _dodgeTime;
+        private bool _isCanDodge;
+
         private float _xpMultiplier;
 
         public int BombDamage;
@@ -124,7 +129,18 @@ namespace TandC.RunIfYouWantToLive
             _inputManager.OnMaskClickHandler += PlayerMask;
             _inputManager.OnRocketShootClickHandler += OnRocketClickHandler;
             _inputManager.OnLaserShootClickHandler += OnLaserClickHandler;
+            _inputManager.OnSwipeEvent += PlayerOnSwipeEventHandler;
+        }
 
+        public void PlayerOnSwipeEventHandler(Vector2 swipeDirection) 
+        {
+            if (_isCanDodge) 
+            {
+                Debug.LogError(12);
+                Player.StartDodge(swipeDirection, _dodgePower);
+                _dodgeTime = _dodgeTimer;
+                _isCanDodge = false;
+            }
         }
 
         public void UpgradeWeaponDoubleShot()
@@ -178,6 +194,10 @@ namespace TandC.RunIfYouWantToLive
             _back_0Material = _gameplayManager.GameplayCamera.transform.Find("BasicLevel").GetComponent<MeshRenderer>();
             _back_1Material = _gameplayManager.GameplayCamera.transform.Find("BasicLevel/Back_0").GetComponent<MeshRenderer>();
             _back_2Material = _gameplayManager.GameplayCamera.transform.Find("BasicLevel/Back_1").GetComponent<MeshRenderer>();
+
+            _dodgeTimer = _gameData.playerData.StartDodgeRecoverTimer;
+            _dodgePower = _gameData.playerData.StartDodgePower;
+            _isCanDodge = true;
 
             Player.HealthUpdateEvent += UpdateHealth;
             Player.XpUpdateEvent += UpdateXp;
@@ -603,6 +623,15 @@ namespace TandC.RunIfYouWantToLive
                 if(_restoreHealthTimer <= 0) 
                 {
                     RestoreHealthByTime();
+                }
+            }
+            if (!_isCanDodge) 
+            {
+                _dodgeTime -= Time.deltaTime;
+                (_uiManager.GetPage<GamePage>() as GamePage).UpdateDodgePanel(_dodgeTime, _dodgeTimer);
+                if (_dodgeTime <= 0) 
+                {
+                    _isCanDodge = true;
                 }
             }
             if (_isStartDamageBonusMultiplier) 
