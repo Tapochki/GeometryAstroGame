@@ -22,7 +22,7 @@
             BlowUp
         }
 
-        public enum ItemType 
+        public enum ItemType
         {
             SmallXp,
             MeduimXp,
@@ -34,10 +34,12 @@
             Chest,
             Bomb,
             Magnet,
-            SmallMoney
+            SmallMoney,
+            Review,
+            RandomChest,
         }
 
-        public enum ActiveButtonType 
+        public enum ActiveButtonType
         {
             MaskButton,
             LaserButton,
@@ -98,7 +100,7 @@
             INACTIVE
         }
 
-        public enum UpgradeType 
+        public enum UpgradeType
         {
             Health,
             Armor,
@@ -130,13 +132,15 @@
             DistanceMove,
             MoveInPoint,
         }
+
         public enum EnemyActionType
         {
             Undefined,
             DefaultAction,
             WeaponAction,
         }
-        public enum SpawnType 
+
+        public enum SpawnType
         {
             Random,
             Circle,
@@ -157,7 +161,6 @@
             DownPosition,
             LeftPosition,
             RightPosition,
-
         }
 
         public enum MaterialTypes
@@ -166,7 +169,7 @@
             FlashEnemyMaterial
         }
 
-        public enum EnemyType 
+        public enum EnemyType
         {
             StandartSquare,
             StandartPentagon,
@@ -182,6 +185,7 @@
             Impulse,
             ImpulseSaw,
         }
+
         public enum WeaponType
         {
             Undefined,
@@ -194,7 +198,7 @@
             LightningGun,
         }
 
-        public enum SkillUseType 
+        public enum SkillUseType
         {
             Active,
             Passive,

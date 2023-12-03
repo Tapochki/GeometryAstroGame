@@ -10,6 +10,7 @@ namespace TandC.RunIfYouWantToLive
         public Action<float, float> HealthUpdateEvent;
         public Action<float> XpUpdateEvent;
         public Action<int> LevelUpdateEvent;
+
         public event Action OnPlayerDiedEvent;
 
         private GameObject //_healthBar,
@@ -17,9 +18,11 @@ namespace TandC.RunIfYouWantToLive
                                 _selfObject,
                                 _dashSkillContainer,
                                 _shoowDetectorObject;
+
         private SpriteRenderer _spriteRenderer;
         public GameObject SelfObject => _selfObject;
         public int CurrentLevel { get; private set; }
+
         private int _armorAmount,
                         _currentXp,
                         _maxXp;
@@ -61,10 +64,12 @@ namespace TandC.RunIfYouWantToLive
 
         private float _maxTimerToTeleportPlayer = 5f,
                         _currentTimerToTeleportPlayer;
+
         private bool _teleportPlayerStart;
 
         public GameObject ModelObject;
 
+        private bool _isHaveAnotherChance;
 
         public PlayerObject(GameObject selfObject, PlayerData data, Joystick variableJoystick, Joystick rotationJoystick, float health, float speed, int armor, float startPickUpRadius, GameObject model)
         {
@@ -93,6 +98,7 @@ namespace TandC.RunIfYouWantToLive
             _armorAmount = armor;
             _maxXp = data.startNeedXp;
             _currentXp = 0;
+            _isHaveAnotherChance = false;
             IsAlive = true;
             _setNormalRotation = true;
         }
@@ -131,6 +137,7 @@ namespace TandC.RunIfYouWantToLive
         }
 
         public void DecreaseShieldCooldownHandler(ShieldSkillVFX shieldVFX, float value) => shieldVFX.DecreaseShieldRecovery(value);
+
         public void IncreaseShieldHealthHandler(ShieldSkillVFX shieldVFX) => shieldVFX.IncreaseShieldHealth();
 
         public void AddXp(int addedXp)
@@ -145,6 +152,7 @@ namespace TandC.RunIfYouWantToLive
         }
 
         public float GetMaxHealthValue() => _maxHealth;
+
         public float GetMaxExperianceValue() => _maxXp;
 
         public void TakeDamage(int damage)
@@ -173,15 +181,29 @@ namespace TandC.RunIfYouWantToLive
 
         public void PlayerRecieve()
         {
+            _isHaveAnotherChance = false;
             IsAlive = true;
             _bodyObject.gameObject.SetActive(true);
         }
 
         private void PlayerDie()
         {
-            IsAlive = false;
-            _bodyObject.gameObject.SetActive(false);
-            OnPlayerDiedEvent?.Invoke();
+            if (!IsAlive)
+            {
+                return;
+            }
+
+            if (_isHaveAnotherChance)
+            {
+                PlayerRecieve();
+                RestoreHealth(10);
+            }
+            else
+            {
+                IsAlive = false;
+                _bodyObject.gameObject.SetActive(false);
+                OnPlayerDiedEvent?.Invoke();
+            }
         }
 
         public void RestoreFullHealth()
@@ -190,6 +212,9 @@ namespace TandC.RunIfYouWantToLive
             //Debug.LogError($"Current Hp: {_currentHealth} Max Hp {_maxHealth}");
             HealthUpdateEvent?.Invoke(_currentHealth, _maxHealth);
         }
+
+        public bool IsPlayerHaveAnotherChance() => _isHaveAnotherChance;
+
         public void RestoreHealth(int healthValue)
         {
             _currentHealth += healthValue;
@@ -273,7 +298,7 @@ namespace TandC.RunIfYouWantToLive
                 Dash();
                 //return;
             }
-            if (_isDodge) 
+            if (_isDodge)
             {
                 Dodge();
             }
@@ -310,7 +335,7 @@ namespace TandC.RunIfYouWantToLive
 
                 if (_rotationJoystick.Vertical == 0 && _rotationJoystick.Horizontal == 0)
                 {
-                    //if (!_setNormalRotation) 
+                    //if (!_setNormalRotation)
                     //{
                     _bodyObject.transform.rotation = Quaternion.RotateTowards(_bodyObject.transform.rotation, toRotation, _rotateSpeed * Time.deltaTime);
                     //_modelObject.transform.localRotation = new Quaternion(0,0,0,0);
@@ -322,7 +347,6 @@ namespace TandC.RunIfYouWantToLive
 
         private void Dash()
         {
-
             //if (_rotationJoystick.Vertical != 0 && _rotationJoystick.Horizontal != 0)
             //{
             //    //Vector2 rotationDirection;
@@ -356,14 +380,14 @@ namespace TandC.RunIfYouWantToLive
             int playerDirection = _selfObject.transform.rotation.eulerAngles.z > 90f || _selfObject.transform.rotation.eulerAngles.z < -90f ? -1 : 1;
             _selfObject.transform.Translate(_dodgeDirection * _dodgePower * _movementSpeed * playerDirection * Time.deltaTime);
             _dodgeTimer -= Time.deltaTime;
-            if (_dodgeTimer < 0) 
+            if (_dodgeTimer < 0)
             {
                 _variableJoystick.enabled = true;
                 _isDodge = false;
             }
         }
 
-        public void StartDodge(Vector2 direction, float dodgePower) 
+        public void StartDodge(Vector2 direction, float dodgePower)
         {
             _dodgeTimer = 0.1f;
             _dodgeDirection = direction;
@@ -389,6 +413,7 @@ namespace TandC.RunIfYouWantToLive
             _maskTimer = maskTimer;
             _spriteRenderer.color = new Color(1f, 1f, 1f, 0.7f);
         }
+
         private void EndMask()
         {
             _collider.enabled = true;
@@ -406,6 +431,11 @@ namespace TandC.RunIfYouWantToLive
         public void Dispose()
         {
             MonoBehaviour.Destroy(_selfObject);
+        }
+
+        public void AddAnotherChance()
+        {
+            _isHaveAnotherChance = true;
         }
     }
 }

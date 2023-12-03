@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TandC.RunIfYouWantToLive.Common;
 using UnityEngine;
 
-
 namespace TandC.RunIfYouWantToLive
 {
     public class PlayerController : IController
@@ -26,6 +25,7 @@ namespace TandC.RunIfYouWantToLive
 
         private ObjectsController _objectsController;
         private EnemyController _enemyController;
+
         private event Action<object[]> _gameOverEvent;
 
         public event Action<Enumerators.ActiveButtonType> ActiveButtonEvent;
@@ -35,12 +35,16 @@ namespace TandC.RunIfYouWantToLive
         public DroneParent Drones { get; private set; }
 
         public event Action<float, float> XpUpdateEvent;
+
         public event Action<float, float> HealthUpdateEvent;
+
         public event Action<int> LevelUpdateEvent;
+
         public event Action<int> ScoreUpdateEvent;
+
         public int CriticalChanceProcent { get; private set; }
         public float CriticalDamageMultiplier { get; private set; }
-        public Action<Enumerators.ActiveButtonType,float> SetTimerForButton;
+        public Action<Enumerators.ActiveButtonType, float> SetTimerForButton;
         public Action<int, int> UpdateRocketCount;
 
         private INetworkManager _networkManager;
@@ -92,24 +96,23 @@ namespace TandC.RunIfYouWantToLive
 
         public PlayerController()
         {
-
         }
 
         public void Dispose()
         {
-
         }
 
-        public void IncreaseCriticalChanceProcent(int value) 
+        public void IncreaseCriticalChanceProcent(int value)
         {
             CriticalChanceProcent += value;
         }
-        public void IncreaseCriticalDamageMultiplier(float value) 
+
+        public void IncreaseCriticalDamageMultiplier(float value)
         {
             CriticalDamageMultiplier += value;
         }
 
-        public void UpgradeDashTime(float value) 
+        public void UpgradeDashTime(float value)
         {
             _dashTime += value;
         }
@@ -132,9 +135,9 @@ namespace TandC.RunIfYouWantToLive
             _inputManager.OnSwipeEvent += PlayerOnSwipeEventHandler;
         }
 
-        public void PlayerOnSwipeEventHandler(Vector2 swipeDirection) 
+        public void PlayerOnSwipeEventHandler(Vector2 swipeDirection)
         {
-            if (_isCanDodge) 
+            if (_isCanDodge)
             {
                 Debug.LogError(12);
                 Player.StartDodge(swipeDirection, _dodgePower);
@@ -147,33 +150,38 @@ namespace TandC.RunIfYouWantToLive
         {
             GetWeapon<DefaultWeapon>().UpgradeDoubleShoot();
         }
+
         public void UpgradeWeaponShotAfterShot()
         {
             GetWeapon<DefaultWeapon>().UpgradeShootAfterShoot();
         }
+
         public void IncreaseDefaultBulletSpeed<T>(int value) where T : Weapon
         {
             GetWeapon<T>().IncreaseBulletSpeed(value);
         }
+
         public void IncreaseDamage(float value)
         {
             DamageMultiplier += value;
         }
 
-        public void ActiveButton(Enumerators.ActiveButtonType type) 
+        public void ActiveButton(Enumerators.ActiveButtonType type)
         {
             ActiveButtonEvent?.Invoke(type);
         }
 
-        public void UpgradeDronesCount() 
+        public void UpgradeDronesCount()
         {
             Drones.RegisterNewDrone();
         }
-        public void UpgradeDronesDamage(int value) 
+
+        public void UpgradeDronesDamage(int value)
         {
             Drones.UpgradeDamage(value);
         }
-        public void UpgradeDroneSpeed(float value) 
+
+        public void UpgradeDroneSpeed(float value)
         {
             Drones.UpgradeDroneSpeed(value);
         }
@@ -185,7 +193,7 @@ namespace TandC.RunIfYouWantToLive
             _gameData = _gameplayManager.GameplayData;
             _shopData = _gameplayManager.ShopData;
             GameObject playerObject = MonoBehaviour.Instantiate(_gameData.playerData.playerPrefab, parent, false);
-            Player = new PlayerObject(playerObject, _gameData.playerData, _inputManager.CurrentJoystick, _inputManager.RotationJoystick, 
+            Player = new PlayerObject(playerObject, _gameData.playerData, _inputManager.CurrentJoystick, _inputManager.RotationJoystick,
                 _shopData.GetUpgradeValueByType(Enumerators.UpgradeType.Health), _shopData.GetUpgradeValueByType(Enumerators.UpgradeType.Speed), (int)_shopData.GetUpgradeValueByType(Enumerators.UpgradeType.Armor),
                 _shopData.GetUpgradeValueByType(Enumerators.UpgradeType.PickUpRadius), _gameplayManager.GetSelectedProduct(Enumerators.CustomisationType.Player));
             CriticalChanceProcent = (int)_shopData.GetUpgradeValueByType(Enumerators.UpgradeType.CriticalChance);
@@ -217,11 +225,12 @@ namespace TandC.RunIfYouWantToLive
             EarnedMoney = 0;
         }
 
-        private void OnDroneGiveDamageHandler(GameObject enemy, GameObject drone, float damage) 
+        private void OnDroneGiveDamageHandler(GameObject enemy, GameObject drone, float damage)
         {
             _enemyController.HitEnemy(enemy, damage, _gameData.DropChance.DronChance);
         }
-        public void ActivateLaserGun() 
+
+        public void ActivateLaserGun()
         {
             ActiveWeapon(Enumerators.WeaponType.LaserGun);
             _laserShotSize = _gameData.playerData.StartLaserShotSize;
@@ -229,26 +238,29 @@ namespace TandC.RunIfYouWantToLive
             ActiveButtonEvent(Enumerators.ActiveButtonType.LaserButton);
             SetLaserShotSize(_laserShotSize);
         }
-        public void UpgradeLaserGunSize(float value) 
+
+        public void UpgradeLaserGunSize(float value)
         {
             _laserShotSize += value;
             SetLaserShotSize(_laserShotSize);
         }
 
-        public void DecreaseReloadTimer(float value) 
+        public void DecreaseReloadTimer(float value)
         {
             _recoverTimerMultiplier -= value;
-            foreach(var weapon in _allWeapons) 
+            foreach (var weapon in _allWeapons)
             {
                 weapon.SetRecoverTimeMultiplier(_recoverTimerMultiplier);
             }
         }
-        private void SetLaserShotSize(float size) 
+
+        private void SetLaserShotSize(float size)
         {
             GameObject laserShotObject = _gameData.GetBulletByType(Enumerators.WeaponType.LaserGun).ButlletObject;
             laserShotObject.transform.localScale = new Vector2(size, laserShotObject.transform.localScale.y);
         }
-        public void IncreseXpMultiplier(float value) 
+
+        public void IncreseXpMultiplier(float value)
         {
             _xpMultiplier += value;
         }
@@ -295,38 +307,39 @@ namespace TandC.RunIfYouWantToLive
             _vfxController.SpawnDamagePointVFX(Player.SelfObject.transform.position, amount, Color.green);
             Player.RestoreHealth(amount);
         }
+
         public void FullRestorePlayerHealth()
         {
             Player.RestoreFullHealth();
         }
 
-        public void ActiveMaskSkill() 
+        public void ActiveMaskSkill()
         {
             ActiveButtonEvent?.Invoke(Enumerators.ActiveButtonType.MaskButton);
             _mascRecoverTime = _gameData.playerData.StartMaskRecoverTime;
             MaskTime = _gameData.playerData.StartMaskActiveTime;
         }
 
-        public void MaskTimeActiveIncrease(float value) 
+        public void MaskTimeActiveIncrease(float value)
         {
             MaskTime += value;
         }
 
-        public void PlayerMask() 
+        public void PlayerMask()
         {
             SetTimerForButton?.Invoke(Enumerators.ActiveButtonType.MaskButton, _mascRecoverTime * _recoverTimerMultiplier);
             Player.StartMask(MaskTime);
         }
 
-        public void UpgradeRocketMaxCount(int value) 
+        public void UpgradeRocketMaxCount(int value)
         {
             _rocketMaxCount += value;
             UpdateRocketCount?.Invoke(_rocketCurrentCount, _rocketMaxCount);
         }
 
-        public bool OnGetRocketBox() 
+        public bool OnGetRocketBox()
         {
-            if(IfRocketIsMax()) 
+            if (IfRocketIsMax())
             {
                 return false;
             }
@@ -344,7 +357,7 @@ namespace TandC.RunIfYouWantToLive
             return false;
         }
 
-        public void BackPlayerToCenter(int value) 
+        public void BackPlayerToCenter(int value)
         {
             Player.TakeDamage(value);
             Player.OnAnimationBackToCenterEnd();
@@ -360,7 +373,7 @@ namespace TandC.RunIfYouWantToLive
             _objectsController.WeaponShoot((PlayerBulletData)bulletData, shotPosition, direction, damage, dropChance, bulletLife);
         }
 
-        public void IncreasePlayerPickUpRadius(float value) 
+        public void IncreasePlayerPickUpRadius(float value)
         {
             Player.IncreasePickUpRadius(value);
         }
@@ -368,60 +381,73 @@ namespace TandC.RunIfYouWantToLive
         public void GetDash()
         {
             ActiveButtonEvent?.Invoke(Enumerators.ActiveButtonType.DashButton);
-            _dashRecoverTime = _gameData.playerData.StartDashTimeRecover ;
+            _dashRecoverTime = _gameData.playerData.StartDashTimeRecover;
             DashDamage = _gameData.playerData.StartDashDamage;
         }
-        private void PlayerDash() 
+
+        private void PlayerDash()
         {
             SetTimerForButton?.Invoke(Enumerators.ActiveButtonType.DashButton, _dashRecoverTime * _recoverTimerMultiplier);
             Player.StartDash(_dashTime);
         }
-        public void IncreaseDashDamage(int damage) 
+
+        public void IncreaseDashDamage(int damage)
         {
             DashDamage += damage;
         }
 
-        private void OnRocketClickHandler() 
+        private void OnRocketClickHandler()
         {
-            if(_rocketCurrentCount <= 0)
-                {
+            if (_rocketCurrentCount <= 0)
+            {
                 return;
             }
             _rocketCurrentCount--;
             UpdateRocketCount?.Invoke(_rocketCurrentCount, _rocketMaxCount);
             OnClickWeapon(Enumerators.WeaponType.RocketLauncer, Enumerators.ActiveButtonType.RocketButton, _rocketRecoverTime * _recoverTimerMultiplier);
         }
-        private void OnLaserClickHandler() 
+
+        private void OnLaserClickHandler()
         {
             OnClickWeapon(Enumerators.WeaponType.LaserGun, Enumerators.ActiveButtonType.LaserButton, _laserRecoverTime * _recoverTimerMultiplier);
         }
-        public void ActivatePlayerRestoreHealth() 
+
+        public void ActivatePlayerRestoreHealth()
         {
             _isRestorePlayerByTime = true;
             _restoreHealthTime = _gameData.playerData.StartHealthRestoreTime;
             _restoreHealthCount = _gameData.playerData.StartHealthCountRestoreByTime;
             _restoreHealthTimer = _restoreHealthTime;
         }
-        public void RestoreHealthByTime() 
+
+        public void RestoreHealthByTime()
         {
             RestoreHelathPlayer(_restoreHealthCount);
             _restoreHealthTimer = _restoreHealthTime;
         }
-        public void DecreaseRestoreHelathTimer(float value) 
+
+        public void DecreaseRestoreHelathTimer(float value)
         {
             _restoreHealthTime -= value;
         }
-        public void IncreseRestoreCountHealth(int value) 
+
+        public void IncreseRestoreCountHealth(int value)
         {
             _restoreHealthCount += value;
         }
 
-        private void OnClickWeapon(Enumerators.WeaponType type, Enumerators.ActiveButtonType buttonType, float recoverTime) 
+        private void OnClickWeapon(Enumerators.WeaponType type, Enumerators.ActiveButtonType buttonType, float recoverTime)
         {
             SetTimerForButton?.Invoke(buttonType, recoverTime * _recoverTimerMultiplier);
             GetWeaponByType(type).ClickShoot();
         }
-        public void RecievePlayer() 
+
+        public void AddsPlayerAnotherChance()
+        {
+            Player.AddAnotherChance();
+        }
+
+        public void RecievePlayer()
         {
             FullRestorePlayerHealth();
             Player.StartMask();
@@ -430,7 +456,8 @@ namespace TandC.RunIfYouWantToLive
             _objectsController.FreezeEnemies(Player.SelfObject.transform.position);
             _enemyController.StopStartEnemy(true);
         }
-        public void ActivateRocket() 
+
+        public void ActivateRocket()
         {
             _rocketMaxCount = _gameData.playerData.StartRocketCount;
             _rocketCurrentCount = _gameData.playerData.StartRocketCount;
@@ -440,43 +467,50 @@ namespace TandC.RunIfYouWantToLive
             ActiveButtonEvent?.Invoke(Enumerators.ActiveButtonType.RocketButton);
         }
 
-        public void EarnMoney(int value) 
+        public void EarnMoney(int value)
         {
             EarnedMoney += (int)(value * _moneyMultiplier);
             EarnCoinEvent?.Invoke(EarnedMoney);
         }
 
-        public void UpgradeRocketBlow(int value) 
+        public void UpgradeRocketBlow(int value)
         {
             RocketBlowDamage += value;
         }
+
         public void TakeWeapon(PlayerWeaponData data)
         {
             Weapon weapon;
             bool isButtonWeapon = false;
-            switch (data.type) 
+            switch (data.type)
             {
                 case Enumerators.WeaponType.Standart:
                     _weaponLine = new WeaponLine(Player.SelfObject.transform.Find("Body/[Weapon]/ShootLine").gameObject);
                     weapon = new DefaultWeapon();
                     break;
+
                 case Enumerators.WeaponType.RocketLauncer:
                     isButtonWeapon = true;
                     weapon = new RocketWeapon();
                     break;
+
                 case Enumerators.WeaponType.LaserGun:
                     isButtonWeapon = true;
                     weapon = new LaserWeapon();
                     break;
+
                 case Enumerators.WeaponType.AutoGun:
                     weapon = new AutoWeapon();
                     break;
+
                 case Enumerators.WeaponType.Minigun:
                     weapon = new MinigunWeapon();
                     break;
+
                 case Enumerators.WeaponType.EnergyGun:
                     weapon = new EnergyWeapon();
                     break;
+
                 default:
                     weapon = new DefaultWeapon();
                     break;
@@ -484,17 +518,19 @@ namespace TandC.RunIfYouWantToLive
             weapon.Init(Player.SelfObject.transform.Find($"Body/[Weapon]/{data.weaponName}").gameObject, data, _gameData.GetBulletByType(data.type), _gameData.DropChance.StandartShotChance, Player.GetShootDetecrot(), isButtonWeapon);
             _allWeapons.Add(weapon);
         }
-        public Weapon GetWeaponByType(Enumerators.WeaponType type) 
+
+        public Weapon GetWeaponByType(Enumerators.WeaponType type)
         {
-            foreach(Weapon weapon in _allWeapons) 
+            foreach (Weapon weapon in _allWeapons)
             {
-                if(weapon.WeaponType == type) 
+                if (weapon.WeaponType == type)
                 {
                     return weapon;
                 }
             }
             return null;
         }
+
         public T GetWeapon<T>() where T : Weapon
         {
             foreach (var weapon in _allWeapons)
@@ -507,9 +543,10 @@ namespace TandC.RunIfYouWantToLive
 
             throw new Exception("Weapon " + typeof(T).ToString() + " have not implemented");
         }
-        public void ActiveWeapon(Enumerators.WeaponType type) 
+
+        public void ActiveWeapon(Enumerators.WeaponType type)
         {
-            var weapon =  GetWeaponByType(type);
+            var weapon = GetWeaponByType(type);
             if (weapon != null)
             {
                 if (weapon != null)
@@ -526,14 +563,16 @@ namespace TandC.RunIfYouWantToLive
             }
             weapon.ActiveWeapon();
         }
+
         private void TakeDefaultWeaponWeapons()
         {
-            foreach(var weapon in _gameData.weaponData) 
+            foreach (var weapon in _gameData.weaponData)
             {
                 TakeWeapon(weapon);
             }
             ActiveWeapon(_gameData.playerData.StartWeaponType);
         }
+
         public void ResetAll()
         {
             foreach (var weapon in _allWeapons)
@@ -543,7 +582,7 @@ namespace TandC.RunIfYouWantToLive
             _allWeapons.Clear();
             Player.HealthUpdateEvent -= UpdateHealth;
             Player.XpUpdateEvent -= UpdateXp;
-            Player.LevelUpdateEvent -= UpdateLevel;           
+            Player.LevelUpdateEvent -= UpdateLevel;
             Player = null;
         }
 
@@ -552,15 +591,15 @@ namespace TandC.RunIfYouWantToLive
             return _vfxController.GetSkillVFXByType(type);
         }
 
-        public void ImpulsePlayer(int damage) 
+        public void ImpulsePlayer(int damage)
         {
-            if(_vfxController.GetSkillVFXByType(Enumerators.SkillType.Shield) != null) 
+            if (_vfxController.GetSkillVFXByType(Enumerators.SkillType.Shield) != null)
             {
                 Player.ShieldImpulse(_vfxController.GetSkillVFXByType(Enumerators.SkillType.Shield) as ShieldSkillVFX, damage);
             }
-            foreach(var weapon in _allWeapons) 
+            foreach (var weapon in _allWeapons)
             {
-                if (weapon.IsActive) 
+                if (weapon.IsActive)
                 {
                     weapon.SetImpulseToWeapon(damage);
                 }
@@ -591,7 +630,7 @@ namespace TandC.RunIfYouWantToLive
             Player.GotShieldSkill(value);
         }
 
-        public void StartDamageBonus() 
+        public void StartDamageBonus()
         {
             DamageMultiplier += _damageMultiplierFromBonus;
             _damageMultiplierTimer = _damageMultiplierTime;
@@ -599,7 +638,7 @@ namespace TandC.RunIfYouWantToLive
             _isStartDamageBonusMultiplier = true;
         }
 
-        private void EndDamageBonus() 
+        private void EndDamageBonus()
         {
             _isStartDamageBonusMultiplier = false;
             (_uiManager.GetPage<GamePage>() as GamePage).DamageIndicatorShow(false);
@@ -609,43 +648,49 @@ namespace TandC.RunIfYouWantToLive
         public void Update()
         {
             if (!_gameplayManager.IsGameplayStarted)
+            {
                 return;
+            }
+
             if (Player != null)
             {
                 _gameplayManager.GameplayCamera.transform.position = Player.SelfObject.transform.position;
                 Player.Update();
             }
             if (!_gameplayManager.IsGameplayStarted || !Player.IsAlive)
+            {
                 return;
-            if (_isRestorePlayerByTime) 
+            }
+
+            if (_isRestorePlayerByTime)
             {
                 _restoreHealthTimer -= Time.deltaTime;
-                if(_restoreHealthTimer <= 0) 
+                if (_restoreHealthTimer <= 0)
                 {
                     RestoreHealthByTime();
                 }
             }
-            if (!_isCanDodge) 
+            if (!_isCanDodge)
             {
                 _dodgeTime -= Time.deltaTime;
                 (_uiManager.GetPage<GamePage>() as GamePage).UpdateDodgePanel(_dodgeTime, _dodgeTimer);
-                if (_dodgeTime <= 0) 
+                if (_dodgeTime <= 0)
                 {
                     _isCanDodge = true;
                 }
             }
-            if (_isStartDamageBonusMultiplier) 
+            if (_isStartDamageBonusMultiplier)
             {
                 _damageMultiplierTimer -= Time.deltaTime;
-                if(_damageMultiplierTimer <= 0) 
+                if (_damageMultiplierTimer <= 0)
                 {
                     EndDamageBonus();
                 }
             }
             Drones.Update();
-            foreach (var weapon in _allWeapons) 
+            foreach (var weapon in _allWeapons)
             {
-                if (!weapon.IsActive) 
+                if (!weapon.IsActive)
                 {
                     continue;
                 }
@@ -674,7 +719,10 @@ namespace TandC.RunIfYouWantToLive
         public void FixedUpdate()
         {
             if (!_gameplayManager.IsGameplayStarted)
+            {
                 return;
+            }
+
             if (Player != null)
             {
                 Player.FixedUpdate();
@@ -684,6 +732,5 @@ namespace TandC.RunIfYouWantToLive
                 _back_2Material.material.mainTextureOffset = Player.SelfTransform.position / 8 * Time.deltaTime;
             }
         }
-
     }
 }

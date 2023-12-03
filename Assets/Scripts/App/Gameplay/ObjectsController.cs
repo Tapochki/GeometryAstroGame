@@ -27,6 +27,7 @@ namespace TandC.RunIfYouWantToLive
         {
             get { return _invokedBulletsList; }
         }
+
         private const float _playerLeaveBorderTime = 5f;
         private float _playerLeaveBorderTimer;
         private bool _isPlayerInBorder;
@@ -36,12 +37,10 @@ namespace TandC.RunIfYouWantToLive
 
         public ObjectsController()
         {
-
         }
 
         public void Dispose()
         {
-
         }
 
         public void UpgradeRocketBlowSize(float value)
@@ -54,7 +53,6 @@ namespace TandC.RunIfYouWantToLive
             bool takeShot = _enemyController.HitEnemy(collider, bullet.Damage, bullet.DropChance);
             if (takeShot)
             {
-
                 if (bullet.BulletType == WeaponType.RocketLauncer)
                 {
                     var _rocketBlow = new Blow(_vfxController.SpawnRocketBlow(bullet.SelfObject.transform.position, _rocketBlowSize), _playerController.RocketBlowDamage, _gameplayData.DropChance.RocketBlowChance);
@@ -71,10 +69,12 @@ namespace TandC.RunIfYouWantToLive
                 bullet.Dispose();
             }
         }
+
         private void HitBlowEnemy(GameObject collider, float damage, int dropChance)
         {
             _enemyController.HitEnemy(collider, damage, dropChance);
         }
+
         public void Init()
         {
             _gameplayManager = GameClient.Get<IGameplayManager>();
@@ -103,8 +103,8 @@ namespace TandC.RunIfYouWantToLive
             //_starsParticle = parent.transform.Find("Particle_Star").gameObject;
             _rocketBlowSize = _gameplayManager.GameplayData.playerData.StartRocketBlowSize;
             //_gamePage = GameClient.Get<IUIManager>().GetPage<GamePage>() as GamePage;
-
         }
+
         private void OnItemDestory(Item item)
         {
             switch (item.ItemType)
@@ -114,53 +114,57 @@ namespace TandC.RunIfYouWantToLive
                 case ItemType.MeduimXp:
                     _playerController.AddXpToPlayer(item.ItemValue);
                     break;
+
                 case ItemType.Medecine:
                     _playerController.RestoreHelathPlayer(item.ItemValue);
                     break;
+
                 case ItemType.SmallMoney:
                     _playerController.EarnMoney(item.ItemValue);
                     break;
+
                 case ItemType.FrozenBomb:
                     FreezeEnemies(item.SelfObject.transform.position);
                     break;
+
                 case ItemType.Bomb:
                     BlowupAllEnemies(item.SelfObject.transform.position);
                     break;
+
                 case ItemType.Magnet:
                     foreach (var dropItem in _items)
                     {
                         if (dropItem.ItemType == ItemType.SmallXp || dropItem.ItemType == ItemType.MeduimXp || dropItem.ItemType == ItemType.BigXp || dropItem.ItemType == ItemType.SmallMoney)
+                        {
                             dropItem.StartMoving();
+                        }
                     }
                     break;
+
                 case ItemType.Chest:
                     GameClient.Get<IUIManager>().DrawPopup<ChestPopup>(_skillsController.FillUpgradeList(_randomDrop.GetChestDrop(), true));
                     //_chestMarker.isChestActive = false;
                     //_gamePage.SetMarkerActive(false);
                     break;
+
                 case ItemType.RocketBox:
                     if (!_playerController.OnGetRocketBox())
                     {
                         return;
                     }
                     break;
+
+                case ItemType.Review:
+                    _playerController.AddsPlayerAnotherChance();
+                    break;
+
+                case ItemType.RandomChest:
+                    OnEnemyDeath();
+                    break;
             }
             item.Dispose();
             _items.Remove(item);
         }
-        //public bool IsLaserShot(GameObject gameObject, out float damage) 
-        //{
-        //    damage = 0;
-        //    if(LaserShot != null) 
-        //    {
-        //        if(gameObject == LaserShot) 
-        //        {
-        //            damage = _laserGunDamage;
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
 
         public void FreezeEnemies(Vector2 position)
         {
@@ -177,10 +181,17 @@ namespace TandC.RunIfYouWantToLive
         public void OnEnemyDeath(Enemy enemy)
         {
             ItemData itemData = GetRandomItem(enemy.DropChance, enemy.IsBoss);
+
             if (itemData == null)
             {
                 return;
             }
+
+            if (_playerController.Player.IsPlayerHaveAnotherChance() && itemData.type == ItemType.Review)
+            {
+                return;
+            }
+
             int itemValue = InternalTools.GetRandomNumberInteger(itemData.itemValueMin, itemData.itemValueMax);
             Item item = new Item(itemData.prefab, _itemContainer, enemy.EnemyTransform.position, itemData.type, itemValue);
 
@@ -195,7 +206,33 @@ namespace TandC.RunIfYouWantToLive
             _items.Add(item);
         }
 
+        public void OnEnemyDeath()
+        {
+            ItemData itemData = GetRandomItem(100, false);
 
+            if (itemData == null)
+            {
+                return;
+            }
+
+            if (_playerController.Player.IsPlayerHaveAnotherChance() && itemData.type == ItemType.Review)
+            {
+                return;
+            }
+
+            int itemValue = InternalTools.GetRandomNumberInteger(itemData.itemValueMin, itemData.itemValueMax);
+            Item item = new Item(itemData.prefab, _itemContainer, _playerController.Player.SelfTransform.position, itemData.type, itemValue);
+
+            //if (item.ItemType == ItemType.Chest)
+            //{
+            //    _chestMarker = new ChestMarker(item.SelfObject.transform.position, _UIManager.UICamera, _playerController, _gamePage.GetMarkerObject());
+            //    _chestMarker.isChestActive = true;
+            //    _gamePage.SetMarkerActive(true);
+            //}
+
+            item.ItemDestroyHandler += OnItemDestory;
+            _items.Add(item);
+        }
 
         private ItemData GetRandomItem(int dropChance, bool isBoss = false)
         {
@@ -238,7 +275,6 @@ namespace TandC.RunIfYouWantToLive
                 }
 
                 _bulletList.Add(bullet);
-
             };
         }
 
@@ -254,11 +290,13 @@ namespace TandC.RunIfYouWantToLive
             _isPlayerInBorder = false;
             _playerController.BackPlayerToCenterStart();
         }
+
         private void BackToBorderHandler()
         {
             OnPlayerInBorderHandler?.Invoke(false);
             ResetTimer();
         }
+
         private void ResetTimer()
         {
             _isPlayerInBorder = true;
@@ -273,7 +311,10 @@ namespace TandC.RunIfYouWantToLive
         public void Update()
         {
             if (!_gameplayManager.IsGameplayStarted)
+            {
                 return;
+            }
+
             if (!_isPlayerInBorder)
             {
                 _playerLeaveBorderTimer -= Time.deltaTime;
@@ -304,8 +345,6 @@ namespace TandC.RunIfYouWantToLive
 
         public void FixedUpdate()
         {
-
         }
     }
-
 }
