@@ -14,10 +14,9 @@ namespace TandC.RunIfYouWantToLive
 
         private GameObject
                                 _bodyObject,
-                                _selfObject,
-                                _dashSkillContainer,
+                                _selfObject,                               
                                 _shoowDetectorObject;
-        private SpriteRenderer _spriteRenderer;
+        
         public GameObject SelfObject => _selfObject;
         public int CurrentLevel { get; private set; }
         private int _armorAmount,
@@ -49,11 +48,10 @@ namespace TandC.RunIfYouWantToLive
 
         private Dodge _playerDodge;
         private Dash _playerDash;
+        private Mask _playerMask;
 
         public bool IsDash;
-
-        public bool IsMaskActive;
-        private float _maskTimer;
+        public bool IsMaskActive => _playerMask.IsMaskActive;
 
         private float _maxTimerToTeleportPlayer = 5f,
                         _currentTimerToTeleportPlayer;
@@ -79,11 +77,10 @@ namespace TandC.RunIfYouWantToLive
             _pickUpCollider = _bodyObject.transform.Find("PickUpCollider").GetComponent<CircleCollider2D>();
             _pickUpCollider.radius = startPickUpRadius;
             Animator = _bodyObject.GetComponent<Animator>();
-            _dashSkillContainer = _bodyObject.transform.Find("[Skills]/DashSkill").gameObject;
             _playerDodge = new Dodge(SelfTransform);
-            _playerDash = new Dash(SelfTransform, _dashSkillContainer);
+            _playerDash = new Dash(SelfTransform, _bodyObject.transform.Find("[Skills]/DashSkill").gameObject);
+            _playerMask = new Mask(_collider, ModelObject.gameObject.GetComponent<SpriteRenderer>());
             _shoowDetectorObject = ModelObject.transform.Find("ShootDetector").gameObject;
-            _spriteRenderer = ModelObject.gameObject.GetComponent<SpriteRenderer>();
             _maxHealth = health;
             _currentHealth = _maxHealth;
             _movementSpeed = speed;
@@ -147,6 +144,10 @@ namespace TandC.RunIfYouWantToLive
 
         public void TakeDamage(int damage)
         {
+            if (IsMaskActive) 
+            {
+                return;
+            }
             if (_playerGotShieldSkill && _shieldActive)
             {
                 IsShieldTakeDamageEvent?.Invoke(true);
@@ -266,16 +267,10 @@ namespace TandC.RunIfYouWantToLive
             {
                 return;
             }
-            if (IsMaskActive)
-            {
-                _maskTimer -= Time.deltaTime;
-                if (_maskTimer <= 0)
-                {
-                    EndMask();
-                }
-            }
             _playerDodge.Update();
             _playerDash.Update();
+            _playerMask.Update();
+
             Vector2 movementDirection;
             movementDirection = new Vector2(_variableJoystick.Horizontal, _variableJoystick.Vertical);
             movementDirection.Normalize();
@@ -325,18 +320,9 @@ namespace TandC.RunIfYouWantToLive
 
         public void StartMask(float maskTimer = 3f)
         {
-            IsMaskActive = true;
             _collider.enabled = false;
-            _maskTimer = maskTimer;
-            _spriteRenderer.color = new Color(1f, 1f, 1f, 0.7f);
+            _playerMask.StartMask(maskTimer);
         }
-        private void EndMask()
-        {
-            _collider.enabled = true;
-            _spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
-            IsMaskActive = false;
-        }
-
         private void LevelUp()
         {
             _maxXp = (int)InternalTools.GetIncrementalFloatValue(100, 1.2f, CurrentLevel);
