@@ -333,7 +333,7 @@ MonoBehaviour:
   - itemId: 9
     itemValueMin: 2
     itemValueMax: 10
-    weight: 80
+    weight: 0.5
     prefab: {fileID: 4128430794202135926, guid: 2c985cbcdf768d64bb429c539d85ad5e,
       type: 3}
     type: 11
@@ -342,7 +342,7 @@ MonoBehaviour:
   - itemId: 10
     itemValueMin: 2
     itemValueMax: 10
-    weight: 5
+    weight: 3
     prefab: {fileID: 4128430794202135926, guid: 5c8567e98ad6d3648923f0b20e99f966,
       type: 3}
     type: 12
